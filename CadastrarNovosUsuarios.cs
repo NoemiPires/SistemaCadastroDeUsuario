@@ -17,9 +17,11 @@ namespace SistemaCadastroDeUsuario
             InitializeComponent();
         }
 
+        #region Erro de Clicar Duas Vezes
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
+        #endregion
     }
 }

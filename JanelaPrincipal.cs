@@ -13,16 +13,17 @@ namespace SistemaCadastroDeUsuario
     public partial class JanelaPrincipal : Form
     {
         private static JanelaPrincipal _instance;
-        private JanelaPrincipal()
+        private JanelaPrincipal(Usuario usuario)
         {
             InitializeComponent();
+            Text = $"Bem vindo {usuario.Nome}";
         }
 
-        public static JanelaPrincipal GetInstance()
+        public static JanelaPrincipal GetInstance(Usuario usuario)
         {
             if (_instance == null)
             {
-                _instance = new JanelaPrincipal();
+                _instance = new JanelaPrincipal(usuario);
             }
             return _instance;
         }
