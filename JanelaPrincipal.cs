@@ -13,19 +13,34 @@ namespace SistemaCadastroDeUsuario
     public partial class JanelaPrincipal : Form
     {
         private static JanelaPrincipal _instance;
-        private JanelaPrincipal(Usuario usuario)
+        private JanelaPrincipal()
         {
             InitializeComponent();
-            Text = $"Bem vindo {usuario.Nome}";
+
         }
 
-        public static JanelaPrincipal GetInstance(Usuario usuario)
+        public static JanelaPrincipal GetInstance()
         {
             if (_instance == null)
             {
-                _instance = new JanelaPrincipal(usuario);
+                _instance = new JanelaPrincipal();
             }
             return _instance;
+
+        }
+
+        private void mnuAjudaSobre_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Sistema de Cadastro de Usuários\nVersão 1.0\nDesenvolvido por Noemi e Mellany");
+        }
+
+        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastrarNovosUsuarios cadastrarNovosUsuarios = new CadastrarNovosUsuarios();   
+            cadastrarNovosUsuarios.MdiParent = this;
+            cadastrarNovosUsuarios.WindowState = FormWindowState.Normal;
+            cadastrarNovosUsuarios.BringToFront();
+            cadastrarNovosUsuarios.Show();
         }
     }
 }
