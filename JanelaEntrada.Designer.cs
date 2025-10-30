@@ -121,6 +121,7 @@
             MinimizeBox = false;
             Name = "JanelaEntrada";
             Text = "Janela de Entrada";
+            FormClosed += JanelaEntrada_FormClosed;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

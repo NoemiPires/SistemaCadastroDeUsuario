@@ -79,7 +79,7 @@ namespace SistemaCadastroDeUsuario
                         var usuarios = UsuarioRepository.FindAll();
                         Usuario usuario = usuarios.FirstOrDefault();
 
-                            this.Hide();
+                        this.Hide();
 
                         JanelaPrincipal.GetInstance(usuario).Show();
                     }
@@ -97,6 +97,9 @@ namespace SistemaCadastroDeUsuario
             lblAlerta.Visible = false;
         }
 
-      
+        private void JanelaEntrada_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

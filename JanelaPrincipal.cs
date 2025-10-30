@@ -19,7 +19,7 @@ namespace SistemaCadastroDeUsuario
 
             Text = $"Sistema de Cadastro de Usuários - {usuario.Nome}";
 
-            //mnuCadastroUsuario.Enabled = usuario.Credencial.Gerente; 
+            mnuCadastroUsuario.Enabled = usuario.Credencial.Gerente; 
 
 
         }
@@ -56,12 +56,5 @@ namespace SistemaCadastroDeUsuario
 
         }
 
-        private void mnuRelatorioUsuarios(object sender, EventArgs e)
-        {
-            //UsuariosCadastrados usuariosCadastrados = UsuariosCadastrados.GetInstance();
-            //usuariosCadastrados.MdiParent = this;
-            //usuariosCadastrados.BringToFront();
-            //usuariosCadastrados.Show();
-        }
     }
 }
