@@ -30,8 +30,8 @@
         {
             panel1 = new Panel();
             menuStrip1 = new MenuStrip();
-            arquivoToolStripMenuItem = new ToolStripMenuItem();
-            sairToolStripMenuItem = new ToolStripMenuItem();
+            mnuArquivo = new ToolStripMenuItem();
+            mnuArquivoSair = new ToolStripMenuItem();
             cadastroToolStripMenuItem = new ToolStripMenuItem();
             usuárioToolStripMenuItem = new ToolStripMenuItem();
             relToolStripMenuItem = new ToolStripMenuItem();
@@ -53,25 +53,26 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, cadastroToolStripMenuItem, relToolStripMenuItem, mnuAjuda });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuArquivo, cadastroToolStripMenuItem, relToolStripMenuItem, mnuAjuda });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(776, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
-            // arquivoToolStripMenuItem
+            // mnuArquivo
             // 
-            arquivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sairToolStripMenuItem });
-            arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            arquivoToolStripMenuItem.Size = new Size(61, 20);
-            arquivoToolStripMenuItem.Text = "Arquivo";
+            mnuArquivo.DropDownItems.AddRange(new ToolStripItem[] { mnuArquivoSair });
+            mnuArquivo.Name = "mnuArquivo";
+            mnuArquivo.Size = new Size(61, 20);
+            mnuArquivo.Text = "Arquivo";
             // 
-            // sairToolStripMenuItem
+            // mnuArquivoSair
             // 
-            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(93, 22);
-            sairToolStripMenuItem.Text = "Sair";
+            mnuArquivoSair.Name = "mnuArquivoSair";
+            mnuArquivoSair.Size = new Size(180, 22);
+            mnuArquivoSair.Text = "Sair";
+            mnuArquivoSair.Click += mnuArquivoSair_Click;
             // 
             // cadastroToolStripMenuItem
             // 
@@ -83,7 +84,7 @@
             // usuárioToolStripMenuItem
             // 
             usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            usuárioToolStripMenuItem.Size = new Size(180, 22);
+            usuárioToolStripMenuItem.Size = new Size(114, 22);
             usuárioToolStripMenuItem.Text = "Usuário";
             usuárioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
             // 
@@ -110,7 +111,7 @@
             // mnuAjudaSobre
             // 
             mnuAjudaSobre.Name = "mnuAjudaSobre";
-            mnuAjudaSobre.Size = new Size(180, 22);
+            mnuAjudaSobre.Size = new Size(104, 22);
             mnuAjudaSobre.Text = "Sobre";
             mnuAjudaSobre.Click += mnuAjudaSobre_Click;
             // 
@@ -134,9 +135,9 @@
 
         private Panel panel1;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem arquivoToolStripMenuItem;
+        private ToolStripMenuItem mnuArquivo;
         private ToolStripMenuItem cadastroToolStripMenuItem;
-        private ToolStripMenuItem sairToolStripMenuItem;
+        private ToolStripMenuItem mnuArquivoSair;
         private ToolStripMenuItem usuárioToolStripMenuItem;
         private ToolStripMenuItem relToolStripMenuItem;
         private ToolStripMenuItem usuáriosToolStripMenuItem;

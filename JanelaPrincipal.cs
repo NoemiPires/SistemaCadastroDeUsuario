@@ -29,6 +29,7 @@ namespace SistemaCadastroDeUsuario
 
         }
 
+
         private void mnuAjudaSobre_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Sistema de Cadastro de Usuários\nVersão 1.0\nDesenvolvido por Noemi e Mellany");
@@ -36,11 +37,17 @@ namespace SistemaCadastroDeUsuario
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastrarNovosUsuarios cadastrarNovosUsuarios = new CadastrarNovosUsuarios();   
+            CadastrarNovosUsuarios cadastrarNovosUsuarios = new CadastrarNovosUsuarios();
             cadastrarNovosUsuarios.MdiParent = this;
             cadastrarNovosUsuarios.WindowState = FormWindowState.Normal;
             cadastrarNovosUsuarios.BringToFront();
             cadastrarNovosUsuarios.Show();
+        }
+
+        private void mnuArquivoSair_Click(object sender, EventArgs e)
+        {
+            Close();
+            JanelaEntrada.GetInstance().Show();
         }
     }
 }
