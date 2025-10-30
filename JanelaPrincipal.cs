@@ -13,6 +13,8 @@ namespace SistemaCadastroDeUsuario
     public partial class JanelaPrincipal : Form
     {
         private static JanelaPrincipal _instance;
+        // Change the access modifier of lblAcesso from private to public
+
         private JanelaPrincipal(Usuario usuario)
         {
             InitializeComponent();
@@ -55,10 +57,18 @@ namespace SistemaCadastroDeUsuario
             Close();
 
         }
-
+        #region
         private void lblAcesso_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+
+
+        }
+        #endregion
     }
 }

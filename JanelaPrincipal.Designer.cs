@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            lblAcesso = new Label();
             mnu = new MenuStrip();
             mnuArquivo = new ToolStripMenuItem();
             mnuArquivoSair = new ToolStripMenuItem();
@@ -38,8 +39,6 @@
             mnuRelatorioUsuario = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
-            label1 = new Label();
-            lblAcesso = new Label();
             panel1.SuspendLayout();
             mnu.SuspendLayout();
             SuspendLayout();
@@ -53,6 +52,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 426);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
+            // 
+            // lblAcesso
+            // 
+            lblAcesso.AutoSize = true;
+            lblAcesso.Location = new Point(644, 396);
+            lblAcesso.Name = "lblAcesso";
+            lblAcesso.Size = new Size(0, 15);
+            lblAcesso.TabIndex = 1;
+            lblAcesso.Click += lblAcesso_Click;
             // 
             // mnu
             // 
@@ -118,30 +127,11 @@
             mnuAjudaSobre.Text = "Sobre";
             mnuAjudaSobre.Click += mnuAjudaSobre_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
-            // 
-            // lblAcesso
-            // 
-            lblAcesso.AutoSize = true;
-            lblAcesso.Location = new Point(717, 401);
-            lblAcesso.Name = "lblAcesso";
-            lblAcesso.Size = new Size(0, 15);
-            lblAcesso.TabIndex = 1;
-            lblAcesso.Click += lblAcesso_Click;
-            // 
             // JanelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
             Controls.Add(panel1);
             MainMenuStrip = mnu;
             Name = "JanelaPrincipal";
@@ -151,7 +141,6 @@
             mnu.ResumeLayout(false);
             mnu.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -166,7 +155,7 @@
         private ToolStripMenuItem mnuAjuda;
         private ToolStripMenuItem mnuAjudaSobre;
         private ToolStripMenuItem mnuRelatorioUsuario;
-        private Label lblAcesso;
         private Label label1;
+        public Label lblAcesso;
     }
 }
