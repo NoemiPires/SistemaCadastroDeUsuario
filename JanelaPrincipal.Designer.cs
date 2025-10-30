@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            menuStrip1 = new MenuStrip();
+            mnu = new MenuStrip();
             mnuArquivo = new ToolStripMenuItem();
             mnuArquivoSair = new ToolStripMenuItem();
             mnuCadastro = new ToolStripMenuItem();
@@ -39,26 +39,26 @@
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
             panel1.SuspendLayout();
-            menuStrip1.SuspendLayout();
+            mnu.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(menuStrip1);
+            panel1.Controls.Add(mnu);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 426);
             panel1.TabIndex = 0;
             // 
-            // menuStrip1
+            // mnu
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, relToolStripMenuItem, mnuAjuda });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(776, 24);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            mnu.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, relToolStripMenuItem, mnuAjuda });
+            mnu.Location = new Point(0, 0);
+            mnu.Name = "mnu";
+            mnu.Size = new Size(776, 24);
+            mnu.TabIndex = 0;
+            mnu.Text = "menuStrip1";
             // 
             // mnuArquivo
             // 
@@ -122,20 +122,20 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             IsMdiContainer = true;
-            MainMenuStrip = menuStrip1;
+            MainMenuStrip = mnu;
             Name = "JanelaPrincipal";
             Text = "Janela Principal";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            mnu.ResumeLayout(false);
+            mnu.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private MenuStrip menuStrip1;
+        private MenuStrip mnu;
         private ToolStripMenuItem mnuArquivo;
         private ToolStripMenuItem mnuCadastro;
         private ToolStripMenuItem mnuArquivoSair;

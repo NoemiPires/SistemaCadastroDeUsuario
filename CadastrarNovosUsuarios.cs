@@ -12,9 +12,19 @@ namespace SistemaCadastroDeUsuario
 {
     public partial class CadastrarNovosUsuarios : Form
     {
+        private static CadastrarNovosUsuarios _instance;
         public CadastrarNovosUsuarios()
         {
             InitializeComponent();
+        }
+
+        public static CadastrarNovosUsuarios GetInstance()
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new CadastrarNovosUsuarios();
+            }
+            return _instance;
         }
 
         #region Erro de Clicar Duas Vezes

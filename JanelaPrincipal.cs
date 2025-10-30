@@ -40,9 +40,8 @@ namespace SistemaCadastroDeUsuario
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastrarNovosUsuarios cadastrarNovosUsuarios = new CadastrarNovosUsuarios();
+            CadastrarNovosUsuarios cadastrarNovosUsuarios = CadastrarNovosUsuarios.GetInstance();
             cadastrarNovosUsuarios.MdiParent = this;
-            cadastrarNovosUsuarios.WindowState = FormWindowState.Normal;
             cadastrarNovosUsuarios.BringToFront();
             cadastrarNovosUsuarios.Show();
         }
