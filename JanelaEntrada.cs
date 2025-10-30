@@ -82,6 +82,9 @@ namespace SistemaCadastroDeUsuario
                         this.Hide();
 
                         JanelaPrincipal.GetInstance(usuario).Show();
+
+                        var Acesso = DateTime.Now;
+                        JanelaPrincipal.GetInstance(usuario).lblAcesso.Text = $"Último Acesso: {Acesso}";
                     }
 
                     break;

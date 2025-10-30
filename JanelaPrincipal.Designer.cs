@@ -38,6 +38,8 @@
             mnuRelatorioUsuario = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
+            label1 = new Label();
+            lblAcesso = new Label();
             panel1.SuspendLayout();
             mnu.SuspendLayout();
             SuspendLayout();
@@ -45,6 +47,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(lblAcesso);
             panel1.Controls.Add(mnu);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
@@ -70,7 +73,7 @@
             // mnuArquivoSair
             // 
             mnuArquivoSair.Name = "mnuArquivoSair";
-            mnuArquivoSair.Size = new Size(180, 22);
+            mnuArquivoSair.Size = new Size(93, 22);
             mnuArquivoSair.Text = "Sair";
             mnuArquivoSair.Click += mnuArquivoSair_Click;
             // 
@@ -84,7 +87,7 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(180, 22);
+            mnuCadastroUsuario.Size = new Size(114, 22);
             mnuCadastroUsuario.Text = "Usuário";
             mnuCadastroUsuario.Click += usuárioToolStripMenuItem_Click;
             // 
@@ -98,7 +101,7 @@
             // mnuRelatorioUsuario
             // 
             mnuRelatorioUsuario.Name = "mnuRelatorioUsuario";
-            mnuRelatorioUsuario.Size = new Size(180, 22);
+            mnuRelatorioUsuario.Size = new Size(119, 22);
             mnuRelatorioUsuario.Text = "Usuarios";
             // 
             // mnuAjuda
@@ -111,15 +114,34 @@
             // mnuAjudaSobre
             // 
             mnuAjudaSobre.Name = "mnuAjudaSobre";
-            mnuAjudaSobre.Size = new Size(180, 22);
+            mnuAjudaSobre.Size = new Size(104, 22);
             mnuAjudaSobre.Text = "Sobre";
             mnuAjudaSobre.Click += mnuAjudaSobre_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 1;
+            label1.Text = "label1";
+            // 
+            // lblAcesso
+            // 
+            lblAcesso.AutoSize = true;
+            lblAcesso.Location = new Point(717, 401);
+            lblAcesso.Name = "lblAcesso";
+            lblAcesso.Size = new Size(0, 15);
+            lblAcesso.TabIndex = 1;
+            lblAcesso.Click += lblAcesso_Click;
             // 
             // JanelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(panel1);
             MainMenuStrip = mnu;
             Name = "JanelaPrincipal";
@@ -129,6 +151,7 @@
             mnu.ResumeLayout(false);
             mnu.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -143,5 +166,7 @@
         private ToolStripMenuItem mnuAjuda;
         private ToolStripMenuItem mnuAjudaSobre;
         private ToolStripMenuItem mnuRelatorioUsuario;
+        private Label lblAcesso;
+        private Label label1;
     }
 }

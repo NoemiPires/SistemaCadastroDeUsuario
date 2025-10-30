@@ -19,7 +19,7 @@ namespace SistemaCadastroDeUsuario
 
             Text = $"Sistema de Cadastro de Usuários - {usuario.Nome}";
 
-            mnuCadastroUsuario.Enabled = usuario.Credencial.Gerente; 
+            mnuCadastroUsuario.Enabled = usuario?.Credencial?.Gerente ?? true;
 
 
         }
@@ -56,5 +56,9 @@ namespace SistemaCadastroDeUsuario
 
         }
 
+        private void lblAcesso_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
