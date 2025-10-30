@@ -49,9 +49,10 @@ namespace SistemaCadastroDeUsuario
 
         private void mnuArquivoSair_Click(object sender, EventArgs e)
         {
-            Close();
+           
             JanelaEntrada.GetInstance().Show();
-          
+            JanelaEntrada.GetInstance().LimparCampos();
+            Close();
 
         }
     }

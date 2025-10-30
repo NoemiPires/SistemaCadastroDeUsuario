@@ -21,6 +21,13 @@ namespace SistemaCadastroDeUsuario
             return _instance;
         }
 
+        public void LimparCampos()
+        {
+            txtUsuario.Clear();
+            txtSenha.Clear();
+            txtUsuario.Focus();
+        }
+
         #region Erro
         private void label1_Click(object sender, EventArgs e)
         {
@@ -66,6 +73,7 @@ namespace SistemaCadastroDeUsuario
 
 
         }
+
 
         private void txbNome_TextChanged(object sender, EventArgs e)
         {
