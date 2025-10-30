@@ -24,7 +24,6 @@ namespace SistemaCadastroDeUsuario
 
         }
 
-
         public static JanelaPrincipal GetInstance(Usuario usuario)
         {
             if (_instance == null)
@@ -34,7 +33,6 @@ namespace SistemaCadastroDeUsuario
             return _instance;
 
         }
-
 
         private void mnuAjudaSobre_Click(object sender, EventArgs e)
         {

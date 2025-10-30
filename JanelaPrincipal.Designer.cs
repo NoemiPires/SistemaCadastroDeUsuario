@@ -35,6 +35,7 @@
             mnuCadastro = new ToolStripMenuItem();
             mnuCadastroUsuario = new ToolStripMenuItem();
             mnuRelatorio = new ToolStripMenuItem();
+            mnuRelatorioUsuario = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
             panel1.SuspendLayout();
@@ -69,7 +70,7 @@
             // mnuArquivoSair
             // 
             mnuArquivoSair.Name = "mnuArquivoSair";
-            mnuArquivoSair.Size = new Size(93, 22);
+            mnuArquivoSair.Size = new Size(180, 22);
             mnuArquivoSair.Text = "Sair";
             mnuArquivoSair.Click += mnuArquivoSair_Click;
             // 
@@ -83,11 +84,22 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(114, 22);
+            mnuCadastroUsuario.Size = new Size(180, 22);
             mnuCadastroUsuario.Text = "Usuário";
             mnuCadastroUsuario.Click += usuárioToolStripMenuItem_Click;
- 
-            
+            // 
+            // mnuRelatorio
+            // 
+            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioUsuario });
+            mnuRelatorio.Name = "mnuRelatorio";
+            mnuRelatorio.Size = new Size(66, 20);
+            mnuRelatorio.Text = "Relatorio";
+            // 
+            // mnuRelatorioUsuario
+            // 
+            mnuRelatorioUsuario.Name = "mnuRelatorioUsuario";
+            mnuRelatorioUsuario.Size = new Size(180, 22);
+            mnuRelatorioUsuario.Text = "Usuarios";
             // 
             // mnuAjuda
             // 
@@ -99,7 +111,7 @@
             // mnuAjudaSobre
             // 
             mnuAjudaSobre.Name = "mnuAjudaSobre";
-            mnuAjudaSobre.Size = new Size(104, 22);
+            mnuAjudaSobre.Size = new Size(180, 22);
             mnuAjudaSobre.Text = "Sobre";
             mnuAjudaSobre.Click += mnuAjudaSobre_Click;
             // 
@@ -128,8 +140,8 @@
         private ToolStripMenuItem mnuArquivoSair;
         private ToolStripMenuItem mnuCadastroUsuario;
         private ToolStripMenuItem mnuRelatorio;
-        private ToolStripMenuItem mnuRelatorioUsuarios;
         private ToolStripMenuItem mnuAjuda;
         private ToolStripMenuItem mnuAjudaSobre;
+        private ToolStripMenuItem mnuRelatorioUsuario;
     }
 }

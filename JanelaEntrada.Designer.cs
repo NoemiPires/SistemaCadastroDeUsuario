@@ -117,6 +117,8 @@
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(392, 142);
             Controls.Add(panel1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "JanelaEntrada";
             Text = "Janela de Entrada";
             panel1.ResumeLayout(false);
