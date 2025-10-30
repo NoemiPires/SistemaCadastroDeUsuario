@@ -35,7 +35,6 @@
             mnuCadastro = new ToolStripMenuItem();
             mnuCadastroUsuario = new ToolStripMenuItem();
             mnuRelatorio = new ToolStripMenuItem();
-            mnuRelatorioUsuarios = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
             panel1.SuspendLayout();
@@ -87,20 +86,8 @@
             mnuCadastroUsuario.Size = new Size(114, 22);
             mnuCadastroUsuario.Text = "Usuário";
             mnuCadastroUsuario.Click += usuárioToolStripMenuItem_Click;
-            // 
-            // mnuRelatorio
-            // 
-            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioUsuarios });
-            mnuRelatorio.Name = "mnuRelatorio";
-            mnuRelatorio.Size = new Size(66, 20);
-            mnuRelatorio.Text = "Relatório";
-            // 
-            // mnuRelatorioUsuarios
-            // 
-            mnuRelatorioUsuarios.Name = "mnuRelatorioUsuarios";
-            mnuRelatorioUsuarios.Size = new Size(180, 22);
-            mnuRelatorioUsuarios.Text = "Usuários";
-            mnuRelatorioUsuarios.Click += this.mnuRelatorioUsuarios;
+ 
+            
             // 
             // mnuAjuda
             // 
