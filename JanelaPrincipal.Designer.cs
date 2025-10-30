@@ -32,8 +32,8 @@
             menuStrip1 = new MenuStrip();
             mnuArquivo = new ToolStripMenuItem();
             mnuArquivoSair = new ToolStripMenuItem();
-            cadastroToolStripMenuItem = new ToolStripMenuItem();
-            usuárioToolStripMenuItem = new ToolStripMenuItem();
+            mnuCadastro = new ToolStripMenuItem();
+            mnuCadastroUsuario = new ToolStripMenuItem();
             relToolStripMenuItem = new ToolStripMenuItem();
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
@@ -53,7 +53,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuArquivo, cadastroToolStripMenuItem, relToolStripMenuItem, mnuAjuda });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, relToolStripMenuItem, mnuAjuda });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(776, 24);
@@ -70,23 +70,23 @@
             // mnuArquivoSair
             // 
             mnuArquivoSair.Name = "mnuArquivoSair";
-            mnuArquivoSair.Size = new Size(180, 22);
+            mnuArquivoSair.Size = new Size(93, 22);
             mnuArquivoSair.Text = "Sair";
             mnuArquivoSair.Click += mnuArquivoSair_Click;
             // 
-            // cadastroToolStripMenuItem
+            // mnuCadastro
             // 
-            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuárioToolStripMenuItem });
-            cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(66, 20);
-            cadastroToolStripMenuItem.Text = "Cadastro";
+            mnuCadastro.DropDownItems.AddRange(new ToolStripItem[] { mnuCadastroUsuario });
+            mnuCadastro.Name = "mnuCadastro";
+            mnuCadastro.Size = new Size(66, 20);
+            mnuCadastro.Text = "Cadastro";
             // 
-            // usuárioToolStripMenuItem
+            // mnuCadastroUsuario
             // 
-            usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            usuárioToolStripMenuItem.Size = new Size(114, 22);
-            usuárioToolStripMenuItem.Text = "Usuário";
-            usuárioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
+            mnuCadastroUsuario.Name = "mnuCadastroUsuario";
+            mnuCadastroUsuario.Size = new Size(180, 22);
+            mnuCadastroUsuario.Text = "Usuário";
+            mnuCadastroUsuario.Click += usuárioToolStripMenuItem_Click;
             // 
             // relToolStripMenuItem
             // 
@@ -121,6 +121,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
+            IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "JanelaPrincipal";
             Text = "Janela Principal";
@@ -136,9 +137,9 @@
         private Panel panel1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem mnuArquivo;
-        private ToolStripMenuItem cadastroToolStripMenuItem;
+        private ToolStripMenuItem mnuCadastro;
         private ToolStripMenuItem mnuArquivoSair;
-        private ToolStripMenuItem usuárioToolStripMenuItem;
+        private ToolStripMenuItem mnuCadastroUsuario;
         private ToolStripMenuItem relToolStripMenuItem;
         private ToolStripMenuItem usuáriosToolStripMenuItem;
         private ToolStripMenuItem mnuAjuda;

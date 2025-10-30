@@ -9,7 +9,7 @@ namespace SistemaCadastroDeUsuario
         private JanelaEntrada()
         {
             InitializeComponent();
- 
+
         }
 
         public static JanelaEntrada GetInstance()
@@ -31,9 +31,9 @@ namespace SistemaCadastroDeUsuario
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            #region
             List<Credencial> c = new List<Credencial>();
             c = CredencialRepository.FindAll();
-
 
             if (txtUsuario.Text.Trim() == "" || txtSenha.Text.Trim() == "")
             {
@@ -53,15 +53,17 @@ namespace SistemaCadastroDeUsuario
                     if (n.Senha == Credencial.ComputeSHA256(txtSenha.Text, Credencial.SALT))
                     {
                         this.Hide();
-                       JanelaPrincipal.GetInstance().Show();
+
+                        JanelaPrincipal.GetInstance().Show();
                     }
 
                     break;
                 }
             }
+            #endregion
 
 
-            
+
 
         }
 
@@ -69,5 +71,7 @@ namespace SistemaCadastroDeUsuario
         {
             lblAlerta.Visible = false;
         }
+
+      
     }
 }

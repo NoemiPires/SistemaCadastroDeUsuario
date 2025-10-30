@@ -16,8 +16,11 @@ namespace SistemaCadastroDeUsuario
         private JanelaPrincipal()
         {
             InitializeComponent();
-
+            
+            //Text = $"Sistema de Cadastro de Usuários - Bem vindo, {usuario.Nome}";
+            //mnuCadastroUsuario.Enabled = usuario.Credencial.Gerente;
         }
+      
 
         public static JanelaPrincipal GetInstance()
         {
@@ -48,6 +51,8 @@ namespace SistemaCadastroDeUsuario
         {
             Close();
             JanelaEntrada.GetInstance().Show();
+          
+
         }
     }
 }
