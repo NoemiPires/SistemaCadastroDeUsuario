@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            lblAcesso = new Label();
             mnu = new MenuStrip();
             mnuArquivo = new ToolStripMenuItem();
             mnuArquivoSair = new ToolStripMenuItem();
@@ -39,37 +37,17 @@
             mnuRelatorioUsuario = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
-            panel1.SuspendLayout();
+            lblAcesso = new Label();
             mnu.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(lblAcesso);
-            panel1.Controls.Add(mnu);
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(776, 426);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
-            // 
-            // lblAcesso
-            // 
-            lblAcesso.AutoSize = true;
-            lblAcesso.Location = new Point(644, 396);
-            lblAcesso.Name = "lblAcesso";
-            lblAcesso.Size = new Size(0, 15);
-            lblAcesso.TabIndex = 1;
-            lblAcesso.Click += lblAcesso_Click;
             // 
             // mnu
             // 
             mnu.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, mnuRelatorio, mnuAjuda });
             mnu.Location = new Point(0, 0);
             mnu.Name = "mnu";
-            mnu.Size = new Size(776, 24);
-            mnu.TabIndex = 0;
+            mnu.Size = new Size(800, 24);
+            mnu.TabIndex = 1;
             mnu.Text = "menuStrip1";
             // 
             // mnuArquivo
@@ -84,7 +62,6 @@
             mnuArquivoSair.Name = "mnuArquivoSair";
             mnuArquivoSair.Size = new Size(93, 22);
             mnuArquivoSair.Text = "Sair";
-            mnuArquivoSair.Click += mnuArquivoSair_Click;
             // 
             // mnuCadastro
             // 
@@ -98,7 +75,6 @@
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
             mnuCadastroUsuario.Size = new Size(114, 22);
             mnuCadastroUsuario.Text = "Usuário";
-            mnuCadastroUsuario.Click += usuárioToolStripMenuItem_Click;
             // 
             // mnuRelatorio
             // 
@@ -125,38 +101,43 @@
             mnuAjudaSobre.Name = "mnuAjudaSobre";
             mnuAjudaSobre.Size = new Size(104, 22);
             mnuAjudaSobre.Text = "Sobre";
-            mnuAjudaSobre.Click += mnuAjudaSobre_Click;
+            // 
+            // lblAcesso
+            // 
+            lblAcesso.AutoSize = true;
+            lblAcesso.Location = new Point(626, 384);
+            lblAcesso.Name = "lblAcesso";
+            lblAcesso.Size = new Size(12, 15);
+            lblAcesso.TabIndex = 2;
+            lblAcesso.Text = "°";
             // 
             // JanelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel1);
-            MainMenuStrip = mnu;
+            Controls.Add(lblAcesso);
+            Controls.Add(mnu);
             Name = "JanelaPrincipal";
             Text = "Janela Principal";
             FormClosed += JanelaPrincipal_FormClosed;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             mnu.ResumeLayout(false);
             mnu.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
+        private Label label1;
         private MenuStrip mnu;
         private ToolStripMenuItem mnuArquivo;
-        private ToolStripMenuItem mnuCadastro;
         private ToolStripMenuItem mnuArquivoSair;
+        private ToolStripMenuItem mnuCadastro;
         private ToolStripMenuItem mnuCadastroUsuario;
         private ToolStripMenuItem mnuRelatorio;
+        private ToolStripMenuItem mnuRelatorioUsuario;
         private ToolStripMenuItem mnuAjuda;
         private ToolStripMenuItem mnuAjudaSobre;
-        private ToolStripMenuItem mnuRelatorioUsuario;
-        private Label label1;
         public Label lblAcesso;
     }
 }

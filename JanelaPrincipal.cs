@@ -43,10 +43,10 @@ namespace SistemaCadastroDeUsuario
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //CadastrarNovosUsuarios cadastrarNovosUsuarios = CadastrarNovosUsuarios.GetInstance();
-            //cadastrarNovosUsuarios.MdiParent = this;
-            //cadastrarNovosUsuarios.BringToFront();
-            //cadastrarNovosUsuarios.Show();
+            CadastrarNovosUsuarios cadastrarNovosUsuarios = CadastrarNovosUsuarios.GetInstance();
+            cadastrarNovosUsuarios.MdiParent = this;
+            cadastrarNovosUsuarios.BringToFront();
+            cadastrarNovosUsuarios.Show();
         }
 
         private void mnuArquivoSair_Click(object sender, EventArgs e)
@@ -69,11 +69,11 @@ namespace SistemaCadastroDeUsuario
 
 
         }
-        #endregion
 
         private void JanelaPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
         }
+        #endregion
     }
 }

@@ -37,9 +37,9 @@ namespace SistemaCadastroDeUsuario
 
             u2.Credencial = c2;
 
-            UsuarioRepository.SaveOrUpdate(u2);
+            
             UsuarioRepository.SaveOrUpdate(u1);
-
+            UsuarioRepository.SaveOrUpdate(u2);
         }
 
         public static JanelaEntrada GetInstance()
