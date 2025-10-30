@@ -13,20 +13,23 @@ namespace SistemaCadastroDeUsuario
     public partial class JanelaPrincipal : Form
     {
         private static JanelaPrincipal _instance;
-        private JanelaPrincipal()
+        private JanelaPrincipal(Usuario usuario)
         {
             InitializeComponent();
-            
-            //Text = $"Sistema de Cadastro de Usuários - Bem vindo, {usuario.Nome}";
-            //mnuCadastroUsuario.Enabled = usuario.Credencial.Gerente;
-        }
-      
 
-        public static JanelaPrincipal GetInstance()
+            Text = $"Sistema de Cadastro de Usuários - {usuario.Nome}";
+
+            //mnuCadastroUsuario.Enabled = usuario.Credencial.Gerente; 
+
+
+        }
+
+
+        public static JanelaPrincipal GetInstance(Usuario usuario)
         {
             if (_instance == null)
             {
-                _instance = new JanelaPrincipal();
+                _instance = new JanelaPrincipal(usuario);
             }
             return _instance;
 
@@ -40,19 +43,27 @@ namespace SistemaCadastroDeUsuario
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastrarNovosUsuarios cadastrarNovosUsuarios = CadastrarNovosUsuarios.GetInstance();
-            cadastrarNovosUsuarios.MdiParent = this;
-            cadastrarNovosUsuarios.BringToFront();
-            cadastrarNovosUsuarios.Show();
+            //CadastrarNovosUsuarios cadastrarNovosUsuarios = CadastrarNovosUsuarios.GetInstance();
+            //cadastrarNovosUsuarios.MdiParent = this;
+            //cadastrarNovosUsuarios.BringToFront();
+            //cadastrarNovosUsuarios.Show();
         }
 
         private void mnuArquivoSair_Click(object sender, EventArgs e)
         {
-           
+
             JanelaEntrada.GetInstance().Show();
             JanelaEntrada.GetInstance().LimparCampos();
             Close();
 
+        }
+
+        private void mnuRelatorioUsuarios(object sender, EventArgs e)
+        {
+            //UsuariosCadastrados usuariosCadastrados = UsuariosCadastrados.GetInstance();
+            //usuariosCadastrados.MdiParent = this;
+            //usuariosCadastrados.BringToFront();
+            //usuariosCadastrados.Show();
         }
     }
 }

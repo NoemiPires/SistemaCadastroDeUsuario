@@ -1,5 +1,6 @@
 using System.Diagnostics.Eventing.Reader;
 using Google.Protobuf.WellKnownTypes;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace SistemaCadastroDeUsuario
 {
@@ -9,8 +10,6 @@ namespace SistemaCadastroDeUsuario
         private JanelaEntrada()
         {
             InitializeComponent();
-
-
 
             Credencial c1 = new Credencial();
 
@@ -77,18 +76,18 @@ namespace SistemaCadastroDeUsuario
                 {
                     if (n.Senha == Credencial.ComputeSHA256(txtSenha.Text, Credencial.SALT))
                     {
-                        this.Hide();
+                        var usuarios = UsuarioRepository.FindAll();
+                        Usuario usuario = usuarios.FirstOrDefault();
 
-                        JanelaPrincipal.GetInstance().Show();
+                            this.Hide();
+
+                        JanelaPrincipal.GetInstance(usuario).Show();
                     }
 
                     break;
                 }
             }
             #endregion
-
-
-
 
         }
 
