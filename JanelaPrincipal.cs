@@ -70,5 +70,10 @@ namespace SistemaCadastroDeUsuario
 
         }
         #endregion
+
+        private void JanelaPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

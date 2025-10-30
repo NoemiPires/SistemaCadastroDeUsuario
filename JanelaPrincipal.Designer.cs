@@ -136,6 +136,7 @@
             MainMenuStrip = mnu;
             Name = "JanelaPrincipal";
             Text = "Janela Principal";
+            FormClosed += JanelaPrincipal_FormClosed;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             mnu.ResumeLayout(false);

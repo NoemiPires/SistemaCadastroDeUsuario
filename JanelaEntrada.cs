@@ -25,6 +25,19 @@ namespace SistemaCadastroDeUsuario
 
             u1.Credencial = c1;
 
+            Credencial c2 = new Credencial();
+            c2.Senha = "654321";
+            c2.Gerente = false;
+            c2.Nome = "UserPadrao";
+
+            Usuario u2 = new Usuario();
+            u2.Nome = "Usuario Padrão";
+            u2.Telefone = "349991067708";
+            u2.Email = "user@naoseioque";
+
+            u2.Credencial = c2;
+
+            UsuarioRepository.SaveOrUpdate(u2);
             UsuarioRepository.SaveOrUpdate(u1);
 
         }
