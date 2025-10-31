@@ -32,7 +32,7 @@ namespace SistemaCadastroDeUsuario
             }
         }
 
-        public static Usuario FindById(UInt64 id) 
+        public static Usuario? FindById(UInt64 id) 
         {
             try
             {
@@ -54,6 +54,21 @@ namespace SistemaCadastroDeUsuario
                 using (Repository dbContext = new())
                 {
                     return dbContext.Usuarios.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static List<Usuario> FindAllWithCredencial()
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Usuarios.Include("Credencial").ToList();
                 }
             }
             catch (Exception)

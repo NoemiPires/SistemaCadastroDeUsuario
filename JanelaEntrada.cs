@@ -10,36 +10,6 @@ namespace SistemaCadastroDeUsuario
         private JanelaEntrada()
         {
             InitializeComponent();
-
-            Credencial c1 = new Credencial();
-
-            c1.Senha = "123456";
-            c1.Gerente = true;
-            c1.Nome = "JDCria";
-
-            Usuario u1 = new Usuario();
-
-            u1.Nome = "Giovanna";
-            u1.Telefone = "349991067707";
-            u1.Email = "gmss3@aluno.ifnmg.edu.br";
-
-            u1.Credencial = c1;
-
-            Credencial c2 = new Credencial();
-            c2.Senha = "654321";
-            c2.Gerente = false;
-            c2.Nome = "UserPadrao";
-
-            Usuario u2 = new Usuario();
-            u2.Nome = "Usuario Padrão";
-            u2.Telefone = "349991067708";
-            u2.Email = "user@naoseioque";
-
-            u2.Credencial = c2;
-
-            
-            UsuarioRepository.SaveOrUpdate(u1);
-            UsuarioRepository.SaveOrUpdate(u2);
         }
 
         public static JanelaEntrada GetInstance()
@@ -69,8 +39,8 @@ namespace SistemaCadastroDeUsuario
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             #region
-            List<Credencial> c = new List<Credencial>();
-            c = CredencialRepository.FindAll();
+            List<Usuario> c = new List<Usuario>();
+            c = UsuarioRepository.FindAllWithCredencial();
 
             if (txtUsuario.Text.Trim() == "" || txtSenha.Text.Trim() == "")
             {
@@ -83,28 +53,21 @@ namespace SistemaCadastroDeUsuario
                 return;
             }
 
-            foreach (Credencial n in c)
+            foreach (Usuario n in c)
             {
-                if (n.Nome == txtUsuario.Text)
+                if (n.Credencial.Nome == txtUsuario.Text)
                 {
-                    if (n.Senha == Credencial.ComputeSHA256(txtSenha.Text, Credencial.SALT))
-                    {
-                        var usuarios = UsuarioRepository.FindAll();
-                        Usuario usuario = usuarios.FirstOrDefault();
+                    if (n.Credencial.Senha == Credencial.ComputeSHA256(txtSenha.Text, Credencial.SALT)) {
 
-                        this.Hide();
+                        Hide();
 
-                        JanelaPrincipal.GetInstance(usuario).Show();
-
-                        var Acesso = DateTime.Now;
-                        JanelaPrincipal.GetInstance(usuario).lblAcesso.Text = $"{Acesso}";
+                        JanelaPrincipal.GetInstance(n).Show();
                     }
 
                     break;
                 }
             }
             #endregion
-
         }
 
 

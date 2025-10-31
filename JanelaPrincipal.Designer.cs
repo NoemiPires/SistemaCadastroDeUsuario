@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            mnu = new MenuStrip();
+            mnuJanelaPrincipal = new MenuStrip();
             mnuArquivo = new ToolStripMenuItem();
             mnuArquivoSair = new ToolStripMenuItem();
             mnuCadastro = new ToolStripMenuItem();
@@ -37,18 +37,20 @@
             mnuRelatorioUsuario = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
-            lblAcesso = new Label();
-            mnu.SuspendLayout();
+            staBarraEstado = new StatusStrip();
+            staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
+            mnuJanelaPrincipal.SuspendLayout();
+            staBarraEstado.SuspendLayout();
             SuspendLayout();
             // 
-            // mnu
+            // mnuJanelaPrincipal
             // 
-            mnu.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, mnuRelatorio, mnuAjuda });
-            mnu.Location = new Point(0, 0);
-            mnu.Name = "mnu";
-            mnu.Size = new Size(800, 24);
-            mnu.TabIndex = 1;
-            mnu.Text = "menuStrip1";
+            mnuJanelaPrincipal.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, mnuRelatorio, mnuAjuda });
+            mnuJanelaPrincipal.Location = new Point(0, 0);
+            mnuJanelaPrincipal.Name = "mnuJanelaPrincipal";
+            mnuJanelaPrincipal.Size = new Size(800, 24);
+            mnuJanelaPrincipal.TabIndex = 1;
+            mnuJanelaPrincipal.Text = "menuStrip1";
             // 
             // mnuArquivo
             // 
@@ -62,6 +64,7 @@
             mnuArquivoSair.Name = "mnuArquivoSair";
             mnuArquivoSair.Size = new Size(93, 22);
             mnuArquivoSair.Text = "Sair";
+            mnuArquivoSair.Click += mnuArquivoSair_Click_1;
             // 
             // mnuCadastro
             // 
@@ -99,37 +102,46 @@
             // mnuAjudaSobre
             // 
             mnuAjudaSobre.Name = "mnuAjudaSobre";
-            mnuAjudaSobre.Size = new Size(104, 22);
+            mnuAjudaSobre.Size = new Size(180, 22);
             mnuAjudaSobre.Text = "Sobre";
+            mnuAjudaSobre.Click += mnuAjudaSobre_Click_1;
             // 
-            // lblAcesso
+            // staBarraEstado
             // 
-            lblAcesso.AutoSize = true;
-            lblAcesso.Location = new Point(626, 384);
-            lblAcesso.Name = "lblAcesso";
-            lblAcesso.Size = new Size(12, 15);
-            lblAcesso.TabIndex = 2;
-            lblAcesso.Text = "°";
+            staBarraEstado.Items.AddRange(new ToolStripItem[] { staBarraEstadoUltimoAcesso });
+            staBarraEstado.Location = new Point(0, 428);
+            staBarraEstado.Name = "staBarraEstado";
+            staBarraEstado.Size = new Size(800, 22);
+            staBarraEstado.TabIndex = 3;
+            staBarraEstado.Text = "statusStrip1";
+            // 
+            // staBarraEstadoUltimoAcesso
+            // 
+            staBarraEstadoUltimoAcesso.Name = "staBarraEstadoUltimoAcesso";
+            staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
+            staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
             // 
             // JanelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(lblAcesso);
-            Controls.Add(mnu);
+            Controls.Add(staBarraEstado);
+            Controls.Add(mnuJanelaPrincipal);
             Name = "JanelaPrincipal";
             Text = "Janela Principal";
             FormClosed += JanelaPrincipal_FormClosed;
-            mnu.ResumeLayout(false);
-            mnu.PerformLayout();
+            mnuJanelaPrincipal.ResumeLayout(false);
+            mnuJanelaPrincipal.PerformLayout();
+            staBarraEstado.ResumeLayout(false);
+            staBarraEstado.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private Label label1;
-        private MenuStrip mnu;
+        private MenuStrip mnuJanelaPrincipal;
         private ToolStripMenuItem mnuArquivo;
         private ToolStripMenuItem mnuArquivoSair;
         private ToolStripMenuItem mnuCadastro;
@@ -138,6 +150,7 @@
         private ToolStripMenuItem mnuRelatorioUsuario;
         private ToolStripMenuItem mnuAjuda;
         private ToolStripMenuItem mnuAjudaSobre;
-        public Label lblAcesso;
+        private StatusStrip staBarraEstado;
+        private ToolStripStatusLabel staBarraEstadoUltimoAcesso;
     }
 }

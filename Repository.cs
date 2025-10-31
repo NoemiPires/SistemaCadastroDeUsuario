@@ -14,7 +14,25 @@ namespace SistemaCadastroDeUsuario
         // Verificar se Credencial deverar ser registrado
         public DbSet<Credencial> Credenciais {  get; set; }
 
-       public Repository() => this.Database.EnsureCreated();
+        public Repository()
+        {
+            if (Database.EnsureCreated())
+            {
+                Credencial c2 = new Credencial();
+                c2.Senha = "123";
+                c2.Gerente = false;
+                c2.Nome = "UserPadrao";
+
+                Usuario u2 = new Usuario();
+                u2.Nome = "Usuario Padrão";
+                u2.Telefone = "349991067708";
+                u2.Email = "user@naoseioque";
+
+                u2.Credencial = c2;
+
+                UsuarioRepository.SaveOrUpdate(u2);
+            }
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);

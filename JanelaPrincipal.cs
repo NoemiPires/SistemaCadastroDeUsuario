@@ -21,14 +21,19 @@ namespace SistemaCadastroDeUsuario
 
             Text = $"Sistema de Cadastro de Usuários - {usuario.Nome}";
 
-            mnuCadastroUsuario.Enabled = usuario?.Credencial?.Gerente ?? true;
+            mnuCadastroUsuario.Enabled = usuario.Credencial.Gerente;
 
+            staBarraEstadoUltimoAcesso.Text = "Último acesso: " + usuario.Credencial.UltimoAcesso;
 
+            if (usuario.Credencial.UltimoAcesso == DateTime.MinValue)
+            {
+                staBarraEstadoUltimoAcesso.Visible = false;
+            }
         }
 
         public static JanelaPrincipal GetInstance(Usuario usuario)
         {
-            if (_instance == null)
+            if (_instance == null || _instance.IsDisposed)
             {
                 _instance = new JanelaPrincipal(usuario);
             }
@@ -36,10 +41,10 @@ namespace SistemaCadastroDeUsuario
 
         }
 
-        private void mnuAjudaSobre_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Sistema de Cadastro de Usuários\nVersão 1.0\nDesenvolvido por Noemi e Mellany");
-        }
+        //private void mnuAjudaSobre_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Sistema de Cadastro de Usuários\nVersão 1.0\nDesenvolvido por Noemi e Mellany");
+        //}
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -49,14 +54,14 @@ namespace SistemaCadastroDeUsuario
             cadastrarNovosUsuarios.Show();
         }
 
-        private void mnuArquivoSair_Click(object sender, EventArgs e)
-        {
+        //private void mnuArquivoSair_Click(object sender, EventArgs e)
+        //{
 
-            JanelaEntrada.GetInstance().Show();
-            JanelaEntrada.GetInstance().LimparCampos();
-            Close();
+        //    JanelaEntrada.GetInstance().Show();
+        //    JanelaEntrada.GetInstance().LimparCampos();
+        //    Close();
 
-        }
+        //}
         #region
         private void lblAcesso_Click(object sender, EventArgs e)
         {
@@ -75,5 +80,20 @@ namespace SistemaCadastroDeUsuario
             //Application.Exit();
         }
         #endregion
+
+        private void mnuArquivoSair_Click_1(object sender, EventArgs e)
+        {
+
+
+            JanelaEntrada.GetInstance().Show();
+            JanelaEntrada.GetInstance().LimparCampos();
+            Close();
+
+        }
+
+        private void mnuAjudaSobre_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Sistema de Cadastro de Usuários\nVersão 1.0\nDesenvolvido por Noemi e Mellany");
+        }
     }
 }
