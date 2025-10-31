@@ -14,7 +14,7 @@ namespace SistemaCadastroDeUsuario
 
         public static JanelaEntrada GetInstance()
         {
-            if (_instance == null)
+            if (_instance == null || _instance.IsDisposed)
             {
                 _instance = new JanelaEntrada();
             }
@@ -38,7 +38,39 @@ namespace SistemaCadastroDeUsuario
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            #region
+            Entrar();
+        }
+
+
+        private void txbNome_TextChanged(object sender, EventArgs e)
+        {
+            lblAlerta.Visible = false;
+        }
+
+        private void JanelaEntrada_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtUsuario_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSenha.Focus();
+                txtSenha.SelectAll();
+            }
+        }
+
+        private void txtSenha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Entrar();
+            }
+        }
+
+        private void Entrar()
+        {
             List<Usuario> c = new List<Usuario>();
             c = UsuarioRepository.FindAllWithCredencial();
 
@@ -57,7 +89,8 @@ namespace SistemaCadastroDeUsuario
             {
                 if (n.Credencial.Nome == txtUsuario.Text)
                 {
-                    if (n.Credencial.Senha == Credencial.ComputeSHA256(txtSenha.Text, Credencial.SALT)) {
+                    if (n.Credencial.Senha == Credencial.ComputeSHA256(txtSenha.Text, Credencial.SALT))
+                    {
 
                         Hide();
 
@@ -67,18 +100,6 @@ namespace SistemaCadastroDeUsuario
                     break;
                 }
             }
-            #endregion
-        }
-
-
-        private void txbNome_TextChanged(object sender, EventArgs e)
-        {
-            lblAlerta.Visible = false;
-        }
-
-        private void JanelaEntrada_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

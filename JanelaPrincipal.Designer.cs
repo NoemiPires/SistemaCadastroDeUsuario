@@ -128,6 +128,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(staBarraEstado);
             Controls.Add(mnuJanelaPrincipal);
+            IsMdiContainer = true;
             Name = "JanelaPrincipal";
             Text = "Janela Principal";
             FormClosed += JanelaPrincipal_FormClosed;

@@ -13,6 +13,8 @@ namespace SistemaCadastroDeUsuario
     public partial class JanelaPrincipal : Form
     {
         private static JanelaPrincipal _instance;
+
+        private Usuario _usuario;
         // Change the access modifier of lblAcesso from private to public
 
         private JanelaPrincipal(Usuario usuario)
@@ -22,6 +24,8 @@ namespace SistemaCadastroDeUsuario
             Text = $"Sistema de Cadastro de Usuários - {usuario.Nome}";
 
             mnuCadastroUsuario.Enabled = usuario.Credencial.Gerente;
+
+            _usuario = usuario;
 
             staBarraEstadoUltimoAcesso.Text = "Último acesso: " + usuario.Credencial.UltimoAcesso;
 
@@ -41,10 +45,6 @@ namespace SistemaCadastroDeUsuario
 
         }
 
-        //private void mnuAjudaSobre_Click(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show("Sistema de Cadastro de Usuários\nVersão 1.0\nDesenvolvido por Noemi e Mellany");
-        //}
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -54,14 +54,6 @@ namespace SistemaCadastroDeUsuario
             cadastrarNovosUsuarios.Show();
         }
 
-        //private void mnuArquivoSair_Click(object sender, EventArgs e)
-        //{
-
-        //    JanelaEntrada.GetInstance().Show();
-        //    JanelaEntrada.GetInstance().LimparCampos();
-        //    Close();
-
-        //}
         #region
         private void lblAcesso_Click(object sender, EventArgs e)
         {
@@ -77,13 +69,18 @@ namespace SistemaCadastroDeUsuario
 
         private void JanelaPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Application.Exit();
+            _usuario.Credencial.UltimoAcesso = DateTime.Now;
+            UsuarioRepository.SaveOrUpdate(_usuario);
+
+            JanelaEntrada.GetInstance().Show();
+            JanelaEntrada.GetInstance().LimparCampos();
         }
         #endregion
 
         private void mnuArquivoSair_Click_1(object sender, EventArgs e)
         {
-
+            _usuario.Credencial.UltimoAcesso = DateTime.Now;
+            UsuarioRepository.SaveOrUpdate(_usuario);
 
             JanelaEntrada.GetInstance().Show();
             JanelaEntrada.GetInstance().LimparCampos();
@@ -93,7 +90,10 @@ namespace SistemaCadastroDeUsuario
 
         private void mnuAjudaSobre_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Sistema de Cadastro de Usuários\nVersão 1.0\nDesenvolvido por Noemi e Mellany");
+           Sobre sobre = Sobre.GetInstance();
+            sobre.MdiParent = this;
+            sobre.WindowState = FormWindowState.Normal;
+            sobre.Show();
         }
     }
 }

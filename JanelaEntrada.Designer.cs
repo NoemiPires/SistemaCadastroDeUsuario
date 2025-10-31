@@ -82,6 +82,7 @@
             txtSenha.PasswordChar = '•';
             txtSenha.Size = new Size(100, 23);
             txtSenha.TabIndex = 3;
+            txtSenha.KeyUp += txtSenha_KeyUp;
             // 
             // txtUsuario
             // 
@@ -90,6 +91,7 @@
             txtUsuario.Size = new Size(289, 23);
             txtUsuario.TabIndex = 2;
             txtUsuario.TextChanged += txbNome_TextChanged;
+            txtUsuario.KeyUp += txtUsuario_KeyUp;
             // 
             // lblSenha
             // 
