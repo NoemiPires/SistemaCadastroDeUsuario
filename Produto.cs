@@ -8,6 +8,7 @@ namespace SistemaCadastroDeUsuario
 {
     public class Produto
     {
+        public UInt32 Id { get; set; }
         public String Nome { get; set; }
         public Decimal Preco { get; set; }
         public UInt32 Estoque { get; set; }

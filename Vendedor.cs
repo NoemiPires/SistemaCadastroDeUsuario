@@ -11,5 +11,6 @@ namespace SistemaCadastroDeUsuario
     {
         [Key]
         public UInt32 Matricula { get; set; }
+        public String Nome { get; set; }
     }
 }
