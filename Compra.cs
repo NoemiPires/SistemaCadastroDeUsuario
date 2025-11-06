@@ -34,7 +34,7 @@ namespace SistemaCadastroDeUsuario
         public Decimal CalcularTotalItens()
         {
             BindingList<Item> c = new BindingList<Item>();
-            c = ItemRepository.FindAllWithPrecoTotal();
+            c = ItemRepository.FindById();
 
             foreach (Item preco in c)
             {

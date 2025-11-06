@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SistemaCadastroDeUsuario
 {
-    internal class UsuarioRepository
+    public class UsuarioRepository
     {
         public static void SaveOrUpdate(Usuario usuario)
         {

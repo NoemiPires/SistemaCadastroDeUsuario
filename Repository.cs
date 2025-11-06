@@ -13,6 +13,7 @@ namespace SistemaCadastroDeUsuario
 
         // Verificar se Credencial deverar ser registrado
         public DbSet<Credencial> Credenciais {  get; set; }
+        public DbSet<Item> Itens { get; set; }
 
         // Cliente Registrado
         public DbSet<Cliente> Clientes { get; set; }
