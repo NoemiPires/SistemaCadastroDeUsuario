@@ -47,5 +47,53 @@ namespace SistemaCadastroDeUsuario
                 throw;
             }
         }
+
+        public static Cliente FindByCpf(String cpf)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Clientes
+                        .Where(c => c.Cpf == cpf)
+                        .FirstOrDefault()!;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static List<Cliente> FindAll()
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Clientes.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static void Delete(Cliente cliente)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    dbContext.Clientes.Remove(cliente);
+                    dbContext.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
