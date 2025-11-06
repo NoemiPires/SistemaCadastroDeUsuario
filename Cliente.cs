@@ -9,8 +9,9 @@ namespace SistemaCadastroDeUsuario
     public class Cliente
     {
         public List<Compra> Compras { get; set; }
-        public Boolean PodeRealizarNovaCompra()
-        {
-            return Compras;
-        }
+        //public Boolean PodeRealizarNovaCompra()
+        //{
+        //   return Compras;
+        //}
     }
+}
