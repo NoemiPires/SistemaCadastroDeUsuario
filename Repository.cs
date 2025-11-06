@@ -20,7 +20,7 @@ namespace SistemaCadastroDeUsuario
             {
                 Credencial c2 = new Credencial();
                 c2.Senha = "123";
-                c2.Gerente = false;
+                c2.Gerente = true;
                 c2.Nome = "UserPadrao";
 
                 Usuario u2 = new Usuario();
