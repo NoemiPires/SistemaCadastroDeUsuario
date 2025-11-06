@@ -16,6 +16,7 @@ namespace SistemaCadastroDeUsuario
             Application.Run(JanelaEntrada.GetInstance());
 
             // Comentaio teste
+  
 
         }
     }

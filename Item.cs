@@ -15,7 +15,7 @@ namespace SistemaCadastroDeUsuario
 
         public Decimal CalcularTotal()
         {
-            return PrecoUnitario * Quantidade - (PrecoUnitario * Desconto);
+            return PrecoUnitario * Quantidade - (PrecoUnitario * Quantidade * (Desconto/100));
         }
     }
 }
