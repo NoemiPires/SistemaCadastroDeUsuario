@@ -13,7 +13,18 @@ namespace SistemaCadastroDeUsuario
         public UInt32 Id { get; set; }
         public DateTime Inicio { get; set; }
         public DateTime Efetivacao { get; set; }
-        public Decimal Comicao { get; set; }
+        //public Decimal Comicao
+        //{
+        //    get
+        //    {
+
+        //    }
+        //    set
+        //    {
+        //        _comicao = value;
+
+        //    }
+        //}
         public List<Pagamento> Pagamentos { get; set; }
         public Cliente Cliente { get; set; }
 
