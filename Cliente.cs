@@ -8,6 +8,10 @@ namespace SistemaCadastroDeUsuario
 {
     public class Cliente
     {
+        public UInt32 Id { get; set; }
+        public String Nome { get; set; }
+        public String Cpf { get; set; }
+
         public List<Compra> Compras { get; set; }
         //public Boolean PodeRealizarNovaCompra()
         //{

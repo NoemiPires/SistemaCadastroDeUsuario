@@ -11,25 +11,34 @@ namespace SistemaCadastroDeUsuario
         public UInt32 Id { get; set; }
         public DateTime Vencimento { get; set; }
         public DateTime DataPagamento { get; set; }
-        private Decimal? _multaAtraso;
-        //public Decimal MultaAtraso
-        //{
-        //    get
-        //    {
+        
+        private Decimal _multaAtraso;                   
 
-        //    }
-        //    set
-        //    {
-        //        _multaAtraso = value;
+        public Decimal MultaAtraso
+        {
+            get
+            {
+                return CalcularMulta();
+            }
+            set
+            {
+                _multaAtraso = value;
+            }
+        }
 
 
-        //    }
-        //}
 
-        //public Decimal CalcularMulta()
-        //{
-        //    DateTime.Now
-        //        while (
-        //}
+        public decimal CalcularMulta()
+        {
+           
+            if (DataPagamento > Vencimento)
+            {
+                TimeSpan atraso = DataPagamento - Vencimento;
+                int mesesAtraso = (atraso.Days / 30);
+                return mesesAtraso * 0.02m;
+            }
+
+            return 0;
+        }
     }
 }

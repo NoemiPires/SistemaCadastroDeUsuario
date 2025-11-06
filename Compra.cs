@@ -9,7 +9,7 @@ namespace SistemaCadastroDeUsuario
 {
     public class Compra
     {
-        [Key]
+        
         public UInt32 Id { get; set; }
         public DateTime Inicio { get; set; }
         public DateTime Efetivacao { get; set; }
