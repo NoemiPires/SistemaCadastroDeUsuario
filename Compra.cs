@@ -22,15 +22,16 @@ namespace SistemaCadastroDeUsuario
         public Vendedor Vendedor { get; set; }
 
         //Read-Only
-        public Decimal Comicao
+        private Decimal _comissao;
+        public Decimal Comissao
         {
             get
             {
-                return CalcularComicao()
+                return _comissao;
             }
             set
             {
-
+                _comissao = value; ;
             }
         }
 
@@ -50,9 +51,13 @@ namespace SistemaCadastroDeUsuario
             return total;
         }
         
-        public Decimal CalcularComissao()
+        public void CalcularComissao()
         {
-            return CalcularTotal() * 1 / 100;
+            Decimal totalItens = CalcularTotal();
+
+            Decimal comissaoCalculada = totalItens * (1/100);
+
+            this.Comissao = comissaoCalculada;
         }
     }
 }
