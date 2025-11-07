@@ -16,6 +16,8 @@ namespace SistemaCadastroDeUsuario
         public DateTime Efetivacao { get; set; }
 
         //Relacionamentos
+        // estado para método PodeRealizarNovaCompra() em Cliente
+        public Estado Estado { get; set; }
         public Cliente Cliente { get; set; }
         public List<Pagamento> Pagamentos { get; set; }
         public List<Item> Itens { get; set; } = new List<Item>();
@@ -29,9 +31,9 @@ namespace SistemaCadastroDeUsuario
             {
                 return _comissao;
             }
-            set
+            private set
             {
-                _comissao = value; ;
+                _comissao = CalcularComissao();
             }
         }
 
@@ -41,7 +43,7 @@ namespace SistemaCadastroDeUsuario
         {
             List<Item> itensDaCompra = ItemRepository.FindByCompraId(this.Id);
 
-            //o m no final, diz que é monetário, reconhecido por UInt32.
+            //o m no final diz que é monetário, reconhecido por UInt32.
             Decimal total = 0m;
 
             foreach (Item item in itensDaCompra)
@@ -52,15 +54,9 @@ namespace SistemaCadastroDeUsuario
             return total;
         }
         
-        public void CalcularComissao()
+        public Decimal CalcularComissao()
         {
-            Decimal totalItens = CalcularTotal();
-
-            //o m no final, diz que é monetário, reconhecido por UInt32.
-            //0.01 = 1/100. 
-            Decimal comissaoCalculada = totalItens * 0.01m;
-
-            this.Comissao = comissaoCalculada;
+            return CalcularTotal() * 0.01m;
         }
     }
 }

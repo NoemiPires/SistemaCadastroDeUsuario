@@ -20,7 +20,8 @@ namespace SistemaCadastroDeUsuario
 
         public Decimal CalcularTotal()
         {
-            return PrecoUnitario * Quantidade - (PrecoUnitario * Quantidade * (Desconto/100));
+            Decimal precoBruto = PrecoUnitario * Quantidade;
+            return precoBruto - (precoBruto * (Desconto / 100m));
         }
     }
 }

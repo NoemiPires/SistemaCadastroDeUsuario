@@ -10,12 +10,8 @@ namespace SistemaCadastroDeUsuario
             @"server=127.0.0.1;port=3307;uid=root;pwd=;database=Proj1";
 
         public DbSet<Usuario> Usuarios { get; set; }
-
-        // Verificar se Credencial deverar ser registrado
         public DbSet<Credencial> Credenciais {  get; set; }
         public DbSet<Item> Itens { get; set; }
-
-        // Cliente Registrado
         public DbSet<Cliente> Clientes { get; set; }
 
         public Repository()

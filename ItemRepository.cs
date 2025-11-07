@@ -62,21 +62,6 @@ namespace SistemaCadastroDeUsuario
             }
         }
 
-        //public static List<Item> FindAllWithCredencial()
-        //{
-        //    try
-        //    {
-        //        using (Repository dbContext = new())
-        //        {
-        //            return dbContext.Usuarios.Include("Credencial").ToList();
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
-
         public static void Delete(Usuario usuario)
         {
             try
