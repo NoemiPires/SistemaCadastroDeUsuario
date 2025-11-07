@@ -41,11 +41,12 @@ namespace SistemaCadastroDeUsuario
         {
             List<Item> itensDaCompra = ItemRepository.FindByCompraId(this.Id);
 
-            Decimal total = 0;
+            //o m no final, diz que é monetário, reconhecido por UInt32.
+            Decimal total = 0m;
 
             foreach (Item item in itensDaCompra)
             {
-                total += item.CalcularTotal();
+                total = total + item.CalcularTotal();
             }
 
             return total;
@@ -55,7 +56,9 @@ namespace SistemaCadastroDeUsuario
         {
             Decimal totalItens = CalcularTotal();
 
-            Decimal comissaoCalculada = totalItens * (1/100);
+            //o m no final, diz que é monetário, reconhecido por UInt32.
+            //0.01 = 1/100. 
+            Decimal comissaoCalculada = totalItens * 0.01m;
 
             this.Comissao = comissaoCalculada;
         }
