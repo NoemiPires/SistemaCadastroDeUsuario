@@ -95,5 +95,20 @@ namespace SistemaCadastroDeUsuario
             }
         }
 
+        public static List<Item> FindByCompraId(UInt32 idCompra)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Itens.Where(i => i.Compra.Id == idCompra).ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
 }

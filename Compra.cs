@@ -10,10 +10,21 @@ namespace SistemaCadastroDeUsuario
 {
     public class Compra
     {
-        
+        // Propriedades
         public UInt32 Id { get; set; }
         public DateTime Inicio { get; set; }
         public DateTime Efetivacao { get; set; }
+
+        //Relacionamentos
+        public Cliente Cliente { get; set; }
+        public List<Pagamento> Pagamentos { get; set; }
+        public List<Item> Itens { get; set; } = new List<Item>();
+        public Vendedor Vendedor { get; set; }
+
+        //Read-Only
+        public Decimal CalcularTotal => CalcularTotal();
+
+
         private Decimal _comicao;
         public Decimal Comicao
         {
@@ -27,11 +38,11 @@ namespace SistemaCadastroDeUsuario
 
             }
         }
-        public List<Pagamento> Pagamentos { get; set; }
-        public Cliente Cliente { get; set; }
+       
+       
 
         // Fazer Métodos
-        public Decimal CalcularTotalItens()
+        public static Decimal CalcularTotalItens()
         {
             BindingList<Item> c = new BindingList<Item>();
             c = ItemRepository.FindById();
@@ -41,6 +52,7 @@ namespace SistemaCadastroDeUsuario
                 if (preco.CalcularTotal() != 0)
                 {
                     Comicao = Comicao + preco.CalcularTotal();
+
                     return Comicao;
 
                     break;
