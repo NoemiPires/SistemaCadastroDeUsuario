@@ -22,43 +22,37 @@ namespace SistemaCadastroDeUsuario
         public Vendedor Vendedor { get; set; }
 
         //Read-Only
-        public Decimal CalcularTotal => CalcularTotal();
-
-
-        private Decimal _comicao;
         public Decimal Comicao
         {
             get
             {
-                return Comicao;
+                return CalcularComicao()
             }
-            private set
+            set
             {
-              _comicao = (CalcularTotalItens()*(1/100));
 
             }
         }
-       
-       
 
-        // Fazer Métodos
-        public static Decimal CalcularTotalItens()
+        //Metodos
+
+        public Decimal CalcularTotal()
         {
-            BindingList<Item> c = new BindingList<Item>();
-            c = ItemRepository.FindById();
+            List<Item> itensDaCompra = ItemRepository.FindByCompraId(this.Id);
 
-            foreach (Item preco in c)
+            Decimal total = 0;
+
+            foreach (Item item in itensDaCompra)
             {
-                if (preco.CalcularTotal() != 0)
-                {
-                    Comicao = Comicao + preco.CalcularTotal();
-
-                    return Comicao;
-
-                    break;
-                }
-
+                total += item.CalcularTotal();
             }
+
+            return total;
+        }
+        
+        public Decimal CalcularComissao()
+        {
+            return CalcularTotal() * 1 / 100;
         }
     }
 }
