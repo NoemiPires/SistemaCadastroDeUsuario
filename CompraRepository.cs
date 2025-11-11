@@ -70,7 +70,7 @@ namespace SistemaCadastroDeUsuario
                 using (Repository dbContext = new())
                 {
                     return dbContext.Compras
-                        .Where(c => c.Vendedor.Matricula == vendedorId)
+                        .Where(c => c.Vendedor.Id == vendedorId)
                         .ToList();
                 }
             }
