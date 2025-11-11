@@ -21,7 +21,6 @@ namespace SistemaCadastroDeUsuario
         public Cliente Cliente { get; set; }
         public List<Pagamento> Pagamentos { get; set; }
         public List<Item> Itens { get; set; } = new List<Item>();
-        public Vendedor Vendedor { get; set; }
 
         //Read-Only
         private Decimal _comissao;
