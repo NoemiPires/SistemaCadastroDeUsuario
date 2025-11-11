@@ -16,7 +16,6 @@ namespace SistemaCadastroDeUsuario
         public DbSet<Compra> Compras { get; set; }
         public DbSet<Pagamento> Pagamentos { get; set; }
         public DbSet<Produto> Produtos { get; set; }
-        public DbSet<Vendedor> Vendedores { get; set; }
 
         public Repository()
         {
@@ -24,6 +23,7 @@ namespace SistemaCadastroDeUsuario
             {
                 Credencial c1 = new Credencial();
                 c1.Senha = "2468";
+                c1.Vendedor = true;
                 c1.Gerente = false;
                 c1.Nome = "UserComum";
 
@@ -36,6 +36,7 @@ namespace SistemaCadastroDeUsuario
 
                 Credencial c2 = new Credencial();
                 c2.Senha = "123";
+                c2.Vendedor = false;
                 c2.Gerente = true;
                 c2.Nome = "UserPadrao";
 

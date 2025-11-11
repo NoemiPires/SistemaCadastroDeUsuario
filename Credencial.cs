@@ -18,6 +18,22 @@ namespace SistemaCadastroDeUsuario
         public Usuario Usuario { get; set; }
         public Boolean Gerente {  get; set; }
         public  Boolean Vendedor { get; set; }
+    
+        // Vai impedir que um usuario seja vendedor e usuario ao mesmo tempo
+        public Boolean TipoUsuario(Credencial credencial)
+        {
+            if (credencial.Gerente == true)
+            {
+                credencial.Vendedor = false;
+            }
+            else if (credencial.Vendedor == true)
+            {
+                credencial.Gerente = false;
+            }
+
+            return false;
+        }
+
         public DateTime UltimoAcesso { get; set; }
         
         private String _senha;
@@ -29,7 +45,7 @@ namespace SistemaCadastroDeUsuario
                 _senha = ComputeSHA256(value, SALT);
             }
         }
-        #region
+        #region CriptografiaSenha
 
         public static String ComputeSHA256(String input)
         {
@@ -50,15 +66,7 @@ namespace SistemaCadastroDeUsuario
         }
         #endregion
 
-        // Vai impedir que um usuario seja vendedor e usuario ao mesmo tempo
-        public Boolean TipoUsuario(Credencial credencial)
-        {
-            if (credencial.Gerente == true)
-            {
-                credencial.Vendedor = false;
-            }
-            return true;
-        }
+       
 
     }
 }

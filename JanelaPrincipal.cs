@@ -24,9 +24,11 @@ namespace SistemaCadastroDeUsuario
 
             Text = $"Sistema de Cadastro de Usuários - {usuario.Nome}";
 
+            #region
             mnuCadastroUsuario.Enabled = usuario.Credencial.Gerente;
-
+            mnuEstoqueBaixo.Visible = usuario.Credencial.Gerente;
             _usuario = usuario;
+            #endregion
 
             staBarraEstadoUltimoAcesso.Text = "Último acesso: " + usuario.Credencial.UltimoAcesso;
 
@@ -98,6 +100,7 @@ namespace SistemaCadastroDeUsuario
         {
             CadastrarNovosUsuarios cadastrarNovosUsuarios = CadastrarNovosUsuarios.GetInstance();
             cadastrarNovosUsuarios.MdiParent = this;
+            cadastrarNovosUsuarios.WindowState = FormWindowState.Normal;
             cadastrarNovosUsuarios.BringToFront();
             cadastrarNovosUsuarios.Show();
         }
@@ -106,27 +109,24 @@ namespace SistemaCadastroDeUsuario
         {
             UsuariosCadastrados usuariosCadastrados = UsuariosCadastrados.GetInstance();
             usuariosCadastrados.MdiParent = this;
+            usuariosCadastrados.WindowState = FormWindowState.Normal;
             usuariosCadastrados.BringToFront();
             usuariosCadastrados.Show();
         }
 
+        private void mnuEstoqueBaixo_Click(object sender, EventArgs e)
+        {
+               EstoqueBaixo estoqueBaixo = EstoqueBaixo.GetInstance();
+                estoqueBaixo.MdiParent = this;
+            estoqueBaixo.WindowState = FormWindowState.Normal;
+            estoqueBaixo.BringToFront();
+                estoqueBaixo.Show();
+        }
         private void GerenteEstoque(object sender, EventArgs e)
         {
             if (_usuario.Credencial.Gerente == true)
             {
                 mnuEstoqueBaixo.Visible = true;
-            }
-        } 
-
-        private void mnuEstoqueBaixo_Click(object sender, EventArgs e)
-        {
-            if (_usuario.Credencial.Gerente == true)
-            {
-                EstoqueBaixo estoqueBaixo = EstoqueBaixo.GetInstance();
-                estoqueBaixo.MdiParent = this;
-                estoqueBaixo.BringToFront();
-                estoqueBaixo.Show();
-
             }
         }
     }
