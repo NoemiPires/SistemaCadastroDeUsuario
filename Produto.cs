@@ -13,5 +13,7 @@ namespace SistemaCadastroDeUsuario
         public Decimal Preco { get; set; }
         public UInt32 Estoque { get; set; }
         public Boolean Ativo { get; set; }
+        public Categoria Categoria { get; set; }
+
     }
 }
