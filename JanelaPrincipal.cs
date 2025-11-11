@@ -17,6 +17,7 @@ namespace SistemaCadastroDeUsuario
         private Usuario _usuario;
         // Change the access modifier of lblAcesso from private to public
 
+
         private JanelaPrincipal(Usuario usuario)
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace SistemaCadastroDeUsuario
 
             if (usuario.Credencial.UltimoAcesso == DateTime.MinValue)
             {
-                staBarraEstadoUltimoAcesso.Visible = false;
+                staBarraEstadoUltimoAcesso.Visible = true;
             }
         }
 
@@ -46,15 +47,12 @@ namespace SistemaCadastroDeUsuario
         }
 
 
+        #region
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastrarNovosUsuarios cadastrarNovosUsuarios = CadastrarNovosUsuarios.GetInstance();
-            cadastrarNovosUsuarios.MdiParent = this;
-            cadastrarNovosUsuarios.BringToFront();
-            cadastrarNovosUsuarios.Show();
+
         }
 
-        #region
         private void lblAcesso_Click(object sender, EventArgs e)
         {
 
@@ -90,10 +88,39 @@ namespace SistemaCadastroDeUsuario
 
         private void mnuAjudaSobre_Click_1(object sender, EventArgs e)
         {
-           Sobre sobre = Sobre.GetInstance();
+            Sobre sobre = Sobre.GetInstance();
             sobre.MdiParent = this;
             sobre.WindowState = FormWindowState.Normal;
             sobre.Show();
+        }
+
+        private void mnuCadastroUsuario_Click(object sender, EventArgs e)
+        {
+            CadastrarNovosUsuarios cadastrarNovosUsuarios = CadastrarNovosUsuarios.GetInstance();
+            cadastrarNovosUsuarios.MdiParent = this;
+            cadastrarNovosUsuarios.BringToFront();
+            cadastrarNovosUsuarios.Show();
+        }
+
+        private void mnuRelatorioUsuario_Click(object sender, EventArgs e)
+        {
+            UsuariosCadastrados usuariosCadastrados = UsuariosCadastrados.GetInstance();
+            usuariosCadastrados.MdiParent = this;
+            usuariosCadastrados.BringToFront();
+            usuariosCadastrados.Show();
+        }
+
+        private void EstoqueMinimo(Credencial credencial)
+        {
+            EstoqueBaixo estoqueBaixo = EstoqueBaixo.GetInstance();
+            estoqueBaixo.MdiParent = this;
+            estoqueBaixo.BringToFront();
+            if (Credencial.Gerente = true)
+            {
+
+                    EstoqueBaixo.GetInstance().Show();
+            }
+
         }
     }
 }

@@ -76,8 +76,9 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(114, 22);
+            mnuCadastroUsuario.Size = new Size(180, 22);
             mnuCadastroUsuario.Text = "Usuário";
+            mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
             // mnuRelatorio
             // 
@@ -89,8 +90,9 @@
             // mnuRelatorioUsuario
             // 
             mnuRelatorioUsuario.Name = "mnuRelatorioUsuario";
-            mnuRelatorioUsuario.Size = new Size(119, 22);
+            mnuRelatorioUsuario.Size = new Size(180, 22);
             mnuRelatorioUsuario.Text = "Usuarios";
+            mnuRelatorioUsuario.Click += mnuRelatorioUsuario_Click;
             // 
             // mnuAjuda
             // 
@@ -102,7 +104,7 @@
             // mnuAjudaSobre
             // 
             mnuAjudaSobre.Name = "mnuAjudaSobre";
-            mnuAjudaSobre.Size = new Size(180, 22);
+            mnuAjudaSobre.Size = new Size(104, 22);
             mnuAjudaSobre.Text = "Sobre";
             mnuAjudaSobre.Click += mnuAjudaSobre_Click_1;
             // 
@@ -113,7 +115,6 @@
             staBarraEstado.Name = "staBarraEstado";
             staBarraEstado.Size = new Size(800, 22);
             staBarraEstado.TabIndex = 3;
-            staBarraEstado.Text = "statusStrip1";
             // 
             // staBarraEstadoUltimoAcesso
             // 
