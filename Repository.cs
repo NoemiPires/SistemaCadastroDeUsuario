@@ -15,6 +15,7 @@ namespace SistemaCadastroDeUsuario
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Compra> Compras { get; set; }
         public DbSet<Pagamento> Pagamentos { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
 
         public Repository()
         {
