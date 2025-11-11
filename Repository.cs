@@ -13,6 +13,7 @@ namespace SistemaCadastroDeUsuario
         public DbSet<Credencial> Credenciais {  get; set; }
         public DbSet<Item> Itens { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Compra> Compras { get; set; }
 
         public Repository()
         {
