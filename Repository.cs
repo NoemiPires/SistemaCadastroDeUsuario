@@ -22,6 +22,18 @@ namespace SistemaCadastroDeUsuario
         {
             if (Database.EnsureCreated())
             {
+                Credencial c1 = new Credencial();
+                c1.Senha = "2468";
+                c1.Gerente = false;
+                c1.Nome = "UserComum";
+
+                Usuario u1 = new Usuario();
+                u1.Nome = "Usuario Comum";
+                u1.Telefone = "349991067707";
+                u1.Email = "usercomum@naoseioque";
+
+                u1.Credencial = c1;
+
                 Credencial c2 = new Credencial();
                 c2.Senha = "123";
                 c2.Gerente = true;
@@ -34,6 +46,7 @@ namespace SistemaCadastroDeUsuario
 
                 u2.Credencial = c2;
 
+                UsuarioRepository.SaveOrUpdate(u1);
                 UsuarioRepository.SaveOrUpdate(u2);
             }
         }

@@ -110,17 +110,24 @@ namespace SistemaCadastroDeUsuario
             usuariosCadastrados.Show();
         }
 
-        private void EstoqueMinimo(Credencial credencial)
+        private void GerenteEstoque(object sender, EventArgs e)
         {
-            EstoqueBaixo estoqueBaixo = EstoqueBaixo.GetInstance();
-            estoqueBaixo.MdiParent = this;
-            estoqueBaixo.BringToFront();
-            if (Credencial.Gerente = true)
+            if (_usuario.Credencial.Gerente == true)
             {
-
-                    EstoqueBaixo.GetInstance().Show();
+                mnuEstoqueBaixo.Visible = true;
             }
+        } 
 
+        private void mnuEstoqueBaixo_Click(object sender, EventArgs e)
+        {
+            if (_usuario.Credencial.Gerente == true)
+            {
+                EstoqueBaixo estoqueBaixo = EstoqueBaixo.GetInstance();
+                estoqueBaixo.MdiParent = this;
+                estoqueBaixo.BringToFront();
+                estoqueBaixo.Show();
+
+            }
         }
     }
 }

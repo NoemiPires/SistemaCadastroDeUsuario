@@ -37,6 +37,7 @@
             mnuRelatorioUsuario = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
+            mnuEstoqueBaixo = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
             mnuJanelaPrincipal.SuspendLayout();
@@ -45,7 +46,7 @@
             // 
             // mnuJanelaPrincipal
             // 
-            mnuJanelaPrincipal.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, mnuRelatorio, mnuAjuda });
+            mnuJanelaPrincipal.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, mnuRelatorio, mnuAjuda, mnuEstoqueBaixo });
             mnuJanelaPrincipal.Location = new Point(0, 0);
             mnuJanelaPrincipal.Name = "mnuJanelaPrincipal";
             mnuJanelaPrincipal.Size = new Size(800, 24);
@@ -76,7 +77,7 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(180, 22);
+            mnuCadastroUsuario.Size = new Size(114, 22);
             mnuCadastroUsuario.Text = "Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
@@ -90,7 +91,7 @@
             // mnuRelatorioUsuario
             // 
             mnuRelatorioUsuario.Name = "mnuRelatorioUsuario";
-            mnuRelatorioUsuario.Size = new Size(180, 22);
+            mnuRelatorioUsuario.Size = new Size(119, 22);
             mnuRelatorioUsuario.Text = "Usuarios";
             mnuRelatorioUsuario.Click += mnuRelatorioUsuario_Click;
             // 
@@ -107,6 +108,14 @@
             mnuAjudaSobre.Size = new Size(104, 22);
             mnuAjudaSobre.Text = "Sobre";
             mnuAjudaSobre.Click += mnuAjudaSobre_Click_1;
+            // 
+            // mnuEstoqueBaixo
+            // 
+            mnuEstoqueBaixo.Name = "mnuEstoqueBaixo";
+            mnuEstoqueBaixo.Size = new Size(93, 20);
+            mnuEstoqueBaixo.Text = "Estoque Baixo";
+            mnuEstoqueBaixo.Visible = false;
+            mnuEstoqueBaixo.Click += mnuEstoqueBaixo_Click;
             // 
             // staBarraEstado
             // 
@@ -154,5 +163,6 @@
         private ToolStripMenuItem mnuAjudaSobre;
         private StatusStrip staBarraEstado;
         private ToolStripStatusLabel staBarraEstadoUltimoAcesso;
+        private ToolStripMenuItem mnuEstoqueBaixo;
     }
 }

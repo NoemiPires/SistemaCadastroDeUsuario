@@ -16,6 +16,7 @@ namespace SistemaCadastroDeUsuario
         public EstoqueBaixo()
         {
             InitializeComponent();
+            lstEstoqueProdutos.DataSource = ProdutoRepository.FindByEstoqueMinimo();
         }
 
         public static EstoqueBaixo GetInstance()
@@ -26,5 +27,6 @@ namespace SistemaCadastroDeUsuario
             }
             return _instance;
         }
+
     }
 }

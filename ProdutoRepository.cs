@@ -85,7 +85,7 @@ namespace SistemaCadastroDeUsuario
                 using (Repository dbContext = new())
                 {
                     return dbContext.Produtos
-                        .Where(produto => produto.Estoque <= produto.EstoqueMinimo)
+                        .Where(produto => produto.Estoque <= 10)
                         .ToList();
                 }
             }
