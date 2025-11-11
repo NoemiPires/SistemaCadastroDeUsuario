@@ -13,7 +13,6 @@ namespace SistemaCadastroDeUsuario
         public DateTime DataPagamento { get; set; }
         
         private Decimal _multaAtraso;                   
-
         public Decimal MultaAtraso
         {
             get
@@ -25,8 +24,6 @@ namespace SistemaCadastroDeUsuario
                 _multaAtraso = value;
             }
         }
-
-
 
         public decimal CalcularMulta()
         {
