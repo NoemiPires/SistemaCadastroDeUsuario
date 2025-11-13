@@ -33,22 +33,23 @@
             mnuArquivoSair = new ToolStripMenuItem();
             mnuCadastro = new ToolStripMenuItem();
             mnuCadastroUsuario = new ToolStripMenuItem();
+            novaVendaToolStripMenuItem = new ToolStripMenuItem();
             mnuRelatorio = new ToolStripMenuItem();
             mnuRelatorioUsuario = new ToolStripMenuItem();
             vendasToolStripMenuItem = new ToolStripMenuItem();
             estoqueToolStripMenuItem = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
+            mnuEstoqueBaixo = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
-            novaVendaToolStripMenuItem = new ToolStripMenuItem();
             mnuJanelaPrincipal.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
             // 
             // mnuJanelaPrincipal
             // 
-            mnuJanelaPrincipal.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, mnuRelatorio, mnuAjuda });
+            mnuJanelaPrincipal.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, mnuRelatorio, mnuAjuda, mnuEstoqueBaixo });
             mnuJanelaPrincipal.Location = new Point(0, 0);
             mnuJanelaPrincipal.Name = "mnuJanelaPrincipal";
             mnuJanelaPrincipal.Size = new Size(800, 24);
@@ -79,9 +80,15 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(180, 22);
+            mnuCadastroUsuario.Size = new Size(146, 22);
             mnuCadastroUsuario.Text = "Novo Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
+            // 
+            // novaVendaToolStripMenuItem
+            // 
+            novaVendaToolStripMenuItem.Name = "novaVendaToolStripMenuItem";
+            novaVendaToolStripMenuItem.Size = new Size(146, 22);
+            novaVendaToolStripMenuItem.Text = "Nova Venda";
             // 
             // mnuRelatorio
             // 
@@ -93,20 +100,20 @@
             // mnuRelatorioUsuario
             // 
             mnuRelatorioUsuario.Name = "mnuRelatorioUsuario";
-            mnuRelatorioUsuario.Size = new Size(180, 22);
+            mnuRelatorioUsuario.Size = new Size(119, 22);
             mnuRelatorioUsuario.Text = "Usuarios";
             mnuRelatorioUsuario.Click += mnuRelatorioUsuario_Click;
             // 
             // vendasToolStripMenuItem
             // 
             vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
-            vendasToolStripMenuItem.Size = new Size(180, 22);
+            vendasToolStripMenuItem.Size = new Size(119, 22);
             vendasToolStripMenuItem.Text = "Vendas";
             // 
             // estoqueToolStripMenuItem
             // 
             estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            estoqueToolStripMenuItem.Size = new Size(180, 22);
+            estoqueToolStripMenuItem.Size = new Size(119, 22);
             estoqueToolStripMenuItem.Text = "Estoque";
             // 
             // mnuAjuda
@@ -119,9 +126,17 @@
             // mnuAjudaSobre
             // 
             mnuAjudaSobre.Name = "mnuAjudaSobre";
-            mnuAjudaSobre.Size = new Size(104, 22);
+            mnuAjudaSobre.Size = new Size(180, 22);
             mnuAjudaSobre.Text = "Sobre";
             mnuAjudaSobre.Click += mnuAjudaSobre_Click_1;
+            // 
+            // mnuEstoqueBaixo
+            // 
+            mnuEstoqueBaixo.Name = "mnuEstoqueBaixo";
+            mnuEstoqueBaixo.Size = new Size(93, 20);
+            mnuEstoqueBaixo.Text = "Estoque Baixo";
+            mnuEstoqueBaixo.Visible = false;
+            mnuEstoqueBaixo.Click += mnuEstoqueBaixo_Click;
             // 
             // staBarraEstado
             // 
@@ -137,12 +152,6 @@
             staBarraEstadoUltimoAcesso.Name = "staBarraEstadoUltimoAcesso";
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
-            // 
-            // novaVendaToolStripMenuItem
-            // 
-            novaVendaToolStripMenuItem.Name = "novaVendaToolStripMenuItem";
-            novaVendaToolStripMenuItem.Size = new Size(180, 22);
-            novaVendaToolStripMenuItem.Text = "Nova Venda";
             // 
             // JanelaPrincipal
             // 
@@ -179,5 +188,6 @@
         private ToolStripMenuItem vendasToolStripMenuItem;
         private ToolStripMenuItem estoqueToolStripMenuItem;
         private ToolStripMenuItem novaVendaToolStripMenuItem;
+        private ToolStripMenuItem mnuEstoqueBaixo;
     }
 }
