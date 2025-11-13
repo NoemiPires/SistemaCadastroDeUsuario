@@ -34,11 +34,11 @@
             lblCategoria = new Label();
             lblNome = new Label();
             lblId = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            comboBox1 = new ComboBox();
+            txtId = new TextBox();
+            txtPreco = new TextBox();
+            txtNome = new TextBox();
+            txtEstoque = new TextBox();
+            cmbCatergoria = new ComboBox();
             ckbAtivo = new CheckBox();
             btnCadastrar = new Button();
             panel1.SuspendLayout();
@@ -49,11 +49,11 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.Controls.Add(btnCadastrar);
             panel1.Controls.Add(ckbAtivo);
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(cmbCatergoria);
+            panel1.Controls.Add(txtEstoque);
+            panel1.Controls.Add(txtNome);
+            panel1.Controls.Add(txtPreco);
+            panel1.Controls.Add(txtId);
             panel1.Controls.Add(lblPreco);
             panel1.Controls.Add(lblEstoque);
             panel1.Controls.Add(lblCategoria);
@@ -115,46 +115,46 @@
             lblId.TabIndex = 0;
             lblId.Text = "Id";
             // 
-            // textBox1
+            // txtId
             // 
-            textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(125, 19);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(270, 33);
-            textBox1.TabIndex = 5;
+            txtId.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtId.Location = new Point(125, 19);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(270, 33);
+            txtId.TabIndex = 5;
             // 
-            // textBox2
+            // txtPreco
             // 
-            textBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(125, 143);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(270, 33);
-            textBox2.TabIndex = 6;
+            txtPreco.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPreco.Location = new Point(125, 143);
+            txtPreco.Name = "txtPreco";
+            txtPreco.Size = new Size(270, 33);
+            txtPreco.TabIndex = 6;
             // 
-            // textBox3
+            // txtNome
             // 
-            textBox3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(125, 82);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(270, 33);
-            textBox3.TabIndex = 7;
+            txtNome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNome.Location = new Point(125, 82);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(270, 33);
+            txtNome.TabIndex = 7;
             // 
-            // textBox4
+            // txtEstoque
             // 
-            textBox4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(125, 202);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(270, 33);
-            textBox4.TabIndex = 8;
+            txtEstoque.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtEstoque.Location = new Point(125, 202);
+            txtEstoque.Name = "txtEstoque";
+            txtEstoque.Size = new Size(270, 33);
+            txtEstoque.TabIndex = 8;
             // 
-            // comboBox1
+            // cmbCatergoria
             // 
-            comboBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(125, 265);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(270, 33);
-            comboBox1.TabIndex = 9;
+            cmbCatergoria.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbCatergoria.FormattingEnabled = true;
+            cmbCatergoria.Location = new Point(125, 265);
+            cmbCatergoria.Name = "cmbCatergoria";
+            cmbCatergoria.Size = new Size(270, 33);
+            cmbCatergoria.TabIndex = 9;
             // 
             // ckbAtivo
             // 
@@ -200,12 +200,12 @@
         private Label lblPreco;
         private Label lblEstoque;
         private Label lblCategoria;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtEstoque;
+        private TextBox txtNome;
+        private TextBox txtPreco;
+        private TextBox txtId;
         private Button btnCadastrar;
         private CheckBox ckbAtivo;
-        private ComboBox comboBox1;
+        private ComboBox cmbCatergoria;
     }
 }
