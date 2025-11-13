@@ -1,6 +1,6 @@
 ﻿namespace SistemaCadastroDeUsuario
 {
-    partial class RelatorioVendas
+    partial class VendasCadastradas
     {
         /// <summary>
         /// Required designer variable.
@@ -36,17 +36,17 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(382, 426);
+            panel1.Size = new Size(326, 426);
             panel1.TabIndex = 0;
             // 
-            // RelatorioVendas
+            // VendasCadastradas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(406, 450);
+            ClientSize = new Size(350, 450);
             Controls.Add(panel1);
-            Name = "RelatorioVendas";
-            Text = "RelatorioVendas";
+            Name = "VendasCadastradas";
+            Text = "VendasCadastradas";
             ResumeLayout(false);
         }
 
