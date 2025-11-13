@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnCadastrar = new Button();
+            ckbAtivo = new CheckBox();
+            cmbCatergoria = new ComboBox();
+            txtEstoque = new TextBox();
+            txtNome = new TextBox();
+            txtPreco = new TextBox();
+            txtId = new TextBox();
             lblPreco = new Label();
             lblEstoque = new Label();
             lblCategoria = new Label();
             lblNome = new Label();
             lblId = new Label();
-            txtId = new TextBox();
-            txtPreco = new TextBox();
-            txtNome = new TextBox();
-            txtEstoque = new TextBox();
-            cmbCatergoria = new ComboBox();
-            ckbAtivo = new CheckBox();
-            btnCadastrar = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,6 +63,71 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(416, 364);
             panel1.TabIndex = 0;
+            // 
+            // btnCadastrar
+            // 
+            btnCadastrar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCadastrar.Location = new Point(303, 324);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(92, 29);
+            btnCadastrar.TabIndex = 11;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = true;
+            // 
+            // ckbAtivo
+            // 
+            ckbAtivo.AutoSize = true;
+            ckbAtivo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ckbAtivo.Location = new Point(125, 324);
+            ckbAtivo.Name = "ckbAtivo";
+            ckbAtivo.Size = new Size(74, 29);
+            ckbAtivo.TabIndex = 10;
+            ckbAtivo.Text = "Ativo";
+            ckbAtivo.UseVisualStyleBackColor = true;
+            // 
+            // cmbCatergoria
+            // 
+            cmbCatergoria.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbCatergoria.FormattingEnabled = true;
+            cmbCatergoria.Location = new Point(125, 265);
+            cmbCatergoria.Name = "cmbCatergoria";
+            cmbCatergoria.Size = new Size(270, 33);
+            cmbCatergoria.TabIndex = 9;
+            cmbCatergoria.SelectedIndexChanged += cmbCatergoria_SelectedIndexChanged;
+            // 
+            // txtEstoque
+            // 
+            txtEstoque.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtEstoque.Location = new Point(125, 202);
+            txtEstoque.Name = "txtEstoque";
+            txtEstoque.Size = new Size(270, 33);
+            txtEstoque.TabIndex = 8;
+            // 
+            // txtNome
+            // 
+            txtNome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNome.Location = new Point(125, 82);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(270, 33);
+            txtNome.TabIndex = 7;
+            txtNome.KeyUp += txtNome_KeyUp;
+            // 
+            // txtPreco
+            // 
+            txtPreco.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPreco.Location = new Point(125, 143);
+            txtPreco.Name = "txtPreco";
+            txtPreco.Size = new Size(270, 33);
+            txtPreco.TabIndex = 6;
+            // 
+            // txtId
+            // 
+            txtId.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtId.Location = new Point(125, 19);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(270, 33);
+            txtId.TabIndex = 5;
+            txtId.KeyUp += txtId_KeyUp;
             // 
             // lblPreco
             // 
@@ -114,68 +179,6 @@
             lblId.Size = new Size(28, 25);
             lblId.TabIndex = 0;
             lblId.Text = "Id";
-            // 
-            // txtId
-            // 
-            txtId.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtId.Location = new Point(125, 19);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(270, 33);
-            txtId.TabIndex = 5;
-            // 
-            // txtPreco
-            // 
-            txtPreco.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPreco.Location = new Point(125, 143);
-            txtPreco.Name = "txtPreco";
-            txtPreco.Size = new Size(270, 33);
-            txtPreco.TabIndex = 6;
-            // 
-            // txtNome
-            // 
-            txtNome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNome.Location = new Point(125, 82);
-            txtNome.Name = "txtNome";
-            txtNome.Size = new Size(270, 33);
-            txtNome.TabIndex = 7;
-            // 
-            // txtEstoque
-            // 
-            txtEstoque.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEstoque.Location = new Point(125, 202);
-            txtEstoque.Name = "txtEstoque";
-            txtEstoque.Size = new Size(270, 33);
-            txtEstoque.TabIndex = 8;
-            // 
-            // cmbCatergoria
-            // 
-            cmbCatergoria.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbCatergoria.FormattingEnabled = true;
-            cmbCatergoria.Location = new Point(125, 265);
-            cmbCatergoria.Name = "cmbCatergoria";
-            cmbCatergoria.Size = new Size(270, 33);
-            cmbCatergoria.TabIndex = 9;
-            // 
-            // ckbAtivo
-            // 
-            ckbAtivo.AutoSize = true;
-            ckbAtivo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ckbAtivo.Location = new Point(125, 324);
-            ckbAtivo.Name = "ckbAtivo";
-            ckbAtivo.Size = new Size(74, 29);
-            ckbAtivo.TabIndex = 10;
-            ckbAtivo.Text = "Ativo";
-            ckbAtivo.UseVisualStyleBackColor = true;
-            // 
-            // btnCadastrar
-            // 
-            btnCadastrar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCadastrar.Location = new Point(303, 324);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(92, 29);
-            btnCadastrar.TabIndex = 11;
-            btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.UseVisualStyleBackColor = true;
             // 
             // CadastrarProdutos
             // 
