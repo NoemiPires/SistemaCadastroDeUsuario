@@ -41,6 +41,7 @@
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
+            novaVendaToolStripMenuItem = new ToolStripMenuItem();
             mnuJanelaPrincipal.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -70,7 +71,7 @@
             // 
             // mnuCadastro
             // 
-            mnuCadastro.DropDownItems.AddRange(new ToolStripItem[] { mnuCadastroUsuario });
+            mnuCadastro.DropDownItems.AddRange(new ToolStripItem[] { mnuCadastroUsuario, novaVendaToolStripMenuItem });
             mnuCadastro.Name = "mnuCadastro";
             mnuCadastro.Size = new Size(66, 20);
             mnuCadastro.Text = "Cadastro";
@@ -78,8 +79,8 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(114, 22);
-            mnuCadastroUsuario.Text = "Usuário";
+            mnuCadastroUsuario.Size = new Size(180, 22);
+            mnuCadastroUsuario.Text = "Novo Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
             // mnuRelatorio
@@ -137,6 +138,12 @@
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
             // 
+            // novaVendaToolStripMenuItem
+            // 
+            novaVendaToolStripMenuItem.Name = "novaVendaToolStripMenuItem";
+            novaVendaToolStripMenuItem.Size = new Size(180, 22);
+            novaVendaToolStripMenuItem.Text = "Nova Venda";
+            // 
             // JanelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -171,5 +178,6 @@
         private ToolStripStatusLabel staBarraEstadoUltimoAcesso;
         private ToolStripMenuItem vendasToolStripMenuItem;
         private ToolStripMenuItem estoqueToolStripMenuItem;
+        private ToolStripMenuItem novaVendaToolStripMenuItem;
     }
 }

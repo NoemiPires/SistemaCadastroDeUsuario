@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            lstVendasCadastradas = new ListBox();
             grpDadosVendasCdastradas = new GroupBox();
+            lblPagamento = new Label();
+            lstVendasCadastradas = new ListBox();
+            lblPagamentoPendente = new Label();
+            lblPagamentoEfetuado = new Label();
             panel1.SuspendLayout();
+            grpDadosVendasCdastradas.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -44,6 +48,27 @@
             panel1.Size = new Size(464, 265);
             panel1.TabIndex = 0;
             // 
+            // grpDadosVendasCdastradas
+            // 
+            grpDadosVendasCdastradas.Controls.Add(lblPagamentoEfetuado);
+            grpDadosVendasCdastradas.Controls.Add(lblPagamentoPendente);
+            grpDadosVendasCdastradas.Controls.Add(lblPagamento);
+            grpDadosVendasCdastradas.Location = new Point(276, 3);
+            grpDadosVendasCdastradas.Name = "grpDadosVendasCdastradas";
+            grpDadosVendasCdastradas.Size = new Size(185, 259);
+            grpDadosVendasCdastradas.TabIndex = 1;
+            grpDadosVendasCdastradas.TabStop = false;
+            grpDadosVendasCdastradas.Text = "groupBox1";
+            // 
+            // lblPagamento
+            // 
+            lblPagamento.AutoSize = true;
+            lblPagamento.Location = new Point(18, 28);
+            lblPagamento.Name = "lblPagamento";
+            lblPagamento.Size = new Size(123, 15);
+            lblPagamento.TabIndex = 0;
+            lblPagamento.Text = "Status do Pagamento:";
+            // 
             // lstVendasCadastradas
             // 
             lstVendasCadastradas.FormattingEnabled = true;
@@ -53,14 +78,29 @@
             lstVendasCadastradas.Size = new Size(258, 259);
             lstVendasCadastradas.TabIndex = 0;
             // 
-            // grpDadosVendasCdastradas
+            // lblPagamentoPendente
             // 
-            grpDadosVendasCdastradas.Location = new Point(276, 3);
-            grpDadosVendasCdastradas.Name = "grpDadosVendasCdastradas";
-            grpDadosVendasCdastradas.Size = new Size(185, 259);
-            grpDadosVendasCdastradas.TabIndex = 1;
-            grpDadosVendasCdastradas.TabStop = false;
-            grpDadosVendasCdastradas.Text = "groupBox1";
+            lblPagamentoPendente.AutoSize = true;
+            lblPagamentoPendente.BackColor = Color.FromArgb(192, 0, 0);
+            lblPagamentoPendente.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPagamentoPendente.ForeColor = Color.FromArgb(255, 255, 128);
+            lblPagamentoPendente.Location = new Point(17, 43);
+            lblPagamentoPendente.Name = "lblPagamentoPendente";
+            lblPagamentoPendente.Size = new Size(144, 17);
+            lblPagamentoPendente.TabIndex = 1;
+            lblPagamentoPendente.Text = "Pagamento Pendente!";
+            // 
+            // lblPagamentoEfetuado
+            // 
+            lblPagamentoEfetuado.AutoSize = true;
+            lblPagamentoEfetuado.BackColor = Color.FromArgb(128, 128, 255);
+            lblPagamentoEfetuado.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPagamentoEfetuado.ForeColor = Color.White;
+            lblPagamentoEfetuado.Location = new Point(17, 43);
+            lblPagamentoEfetuado.Name = "lblPagamentoEfetuado";
+            lblPagamentoEfetuado.Size = new Size(141, 17);
+            lblPagamentoEfetuado.TabIndex = 2;
+            lblPagamentoEfetuado.Text = "Pagamento Efetuado!";
             // 
             // VendasCadastradas
             // 
@@ -69,8 +109,10 @@
             ClientSize = new Size(488, 289);
             Controls.Add(panel1);
             Name = "VendasCadastradas";
-            Text = "VendasCadastradas";
+            Text = "Vendas Cadastradas";
             panel1.ResumeLayout(false);
+            grpDadosVendasCdastradas.ResumeLayout(false);
+            grpDadosVendasCdastradas.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -79,5 +121,8 @@
         private Panel panel1;
         private ListBox lstVendasCadastradas;
         private GroupBox grpDadosVendasCdastradas;
+        private Label lblPagamento;
+        private Label lblPagamentoEfetuado;
+        private Label lblPagamentoPendente;
     }
 }
