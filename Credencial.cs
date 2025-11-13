@@ -49,5 +49,21 @@ namespace SistemaCadastroDeUsuario
             return hash;
         }
         #endregion
+
+        public Boolean CargoUsuario()
+        {
+            if ((Gerente == true) && (Vendedor == false))
+            {
+                return true;
+            }
+            else if ((Gerente == false) && (Vendedor == true))
+            {
+                return true;
+            }
+            else
+            {
+              return false;
+            }
+        }
     }
 }
