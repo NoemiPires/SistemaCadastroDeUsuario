@@ -1,6 +1,4 @@
-﻿using System;
-using MySql.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace SistemaCadastroDeUsuario
 {
@@ -10,7 +8,7 @@ namespace SistemaCadastroDeUsuario
             @"server=127.0.0.1;port=3307;uid=root;pwd=;database=Proj1";
 
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Credencial> Credenciais {  get; set; }
+        public DbSet<Credencial> Credenciais { get; set; }
         public DbSet<Item> Itens { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Compra> Compras { get; set; }
