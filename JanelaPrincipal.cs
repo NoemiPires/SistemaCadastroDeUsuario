@@ -128,9 +128,6 @@ namespace SistemaCadastroDeUsuario
             usuario.Show();
         }
 
-        #region HabilitaçãoEstoqueBaixoParaGerente
-
-
         private void VisibleEstoqueBaixo(object sender, EventArgs e)
         {
             if (_credencial.Gerente == true)
@@ -147,6 +144,5 @@ namespace SistemaCadastroDeUsuario
             estoqueBaixo.BringToFront();
             estoqueBaixo.Show();
         }
-        #endregion
     }
 }
