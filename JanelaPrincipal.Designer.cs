@@ -35,6 +35,8 @@
             mnuCadastroUsuario = new ToolStripMenuItem();
             mnuRelatorio = new ToolStripMenuItem();
             mnuRelatorioUsuario = new ToolStripMenuItem();
+            vendasToolStripMenuItem = new ToolStripMenuItem();
+            estoqueToolStripMenuItem = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
@@ -76,13 +78,13 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(180, 22);
+            mnuCadastroUsuario.Size = new Size(114, 22);
             mnuCadastroUsuario.Text = "Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
             // mnuRelatorio
             // 
-            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioUsuario });
+            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioUsuario, vendasToolStripMenuItem, estoqueToolStripMenuItem });
             mnuRelatorio.Name = "mnuRelatorio";
             mnuRelatorio.Size = new Size(66, 20);
             mnuRelatorio.Text = "Relatorio";
@@ -93,6 +95,18 @@
             mnuRelatorioUsuario.Size = new Size(180, 22);
             mnuRelatorioUsuario.Text = "Usuarios";
             mnuRelatorioUsuario.Click += mnuRelatorioUsuario_Click;
+            // 
+            // vendasToolStripMenuItem
+            // 
+            vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
+            vendasToolStripMenuItem.Size = new Size(180, 22);
+            vendasToolStripMenuItem.Text = "Vendas";
+            // 
+            // estoqueToolStripMenuItem
+            // 
+            estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
+            estoqueToolStripMenuItem.Size = new Size(180, 22);
+            estoqueToolStripMenuItem.Text = "Estoque";
             // 
             // mnuAjuda
             // 
@@ -155,5 +169,7 @@
         private ToolStripMenuItem mnuAjudaSobre;
         private StatusStrip staBarraEstado;
         private ToolStripStatusLabel staBarraEstadoUltimoAcesso;
+        private ToolStripMenuItem vendasToolStripMenuItem;
+        private ToolStripMenuItem estoqueToolStripMenuItem;
     }
 }

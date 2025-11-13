@@ -34,7 +34,7 @@ namespace SistemaCadastroDeUsuario
 
                 Credencial c2 = new Credencial();
                 c2.Senha = "123";
-                c2. Vendedor = false;
+                c2.Vendedor = false;
                 c2.Gerente = true;
                 c2.Nome = "UserPadrao";
 
