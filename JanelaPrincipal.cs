@@ -14,28 +14,36 @@ namespace SistemaCadastroDeUsuario
     {
         private static JanelaPrincipal _instance;
 
-        private Usuario _usuario;
+        public Usuario _usuario;
         // Change the access modifier of lblAcesso from private to public
-
-
+        private Credencial? _credencial;
         private JanelaPrincipal(Usuario usuario)
         {
             InitializeComponent();
 
             Text = $"Sistema de Cadastro de Usuários - {usuario.Nome}";
 
-            #region
             mnuCadastroUsuario.Enabled = usuario.Credencial.Gerente;
-            mnuEstoqueBaixo.Visible = usuario.Credencial.Gerente;
+
             _usuario = usuario;
-            #endregion
 
             staBarraEstadoUltimoAcesso.Text = "Último acesso: " + usuario.Credencial.UltimoAcesso;
 
             if (usuario.Credencial.UltimoAcesso == DateTime.MinValue)
             {
-                staBarraEstadoUltimoAcesso.Visible = true;
+                staBarraEstadoUltimoAcesso.Visible = false;
             }
+
+
+            //Text = "Sistema / " + usuario.Nome;
+            //mnuCadastro.Enabled = usuario.Credencial.Gerente;
+
+            //if (usuario.Credencial.UltimoAcesso == DateTime.MinValue)
+            //    staBarraEstadoUltimoAcesso.Visible = false;
+
+            //_credencial = UsuarioRepository.FindByIdWithCredencial(usuario.Id)?.Credencial;
+
+            //staBarraEstadoUltimoAcesso.Text = $"Último Acesso: {_credencial.UltimoAcesso}";
         }
 
         public static JanelaPrincipal GetInstance(Usuario usuario)
@@ -49,12 +57,15 @@ namespace SistemaCadastroDeUsuario
         }
 
 
-        #region
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            CadastroUsuario cadastrarNovosUsuarios = CadastroUsuario.GetInstance();
+            cadastrarNovosUsuarios.MdiParent = this;
+            cadastrarNovosUsuarios.BringToFront();
+            cadastrarNovosUsuarios.Show();
         }
 
+        #region
         private void lblAcesso_Click(object sender, EventArgs e)
         {
 
@@ -93,41 +104,27 @@ namespace SistemaCadastroDeUsuario
             Sobre sobre = Sobre.GetInstance();
             sobre.MdiParent = this;
             sobre.WindowState = FormWindowState.Normal;
+            sobre.BringToFront();
             sobre.Show();
         }
 
         private void mnuCadastroUsuario_Click(object sender, EventArgs e)
         {
-            CadastrarNovosUsuarios cadastrarNovosUsuarios = CadastrarNovosUsuarios.GetInstance();
-            cadastrarNovosUsuarios.MdiParent = this;
-            cadastrarNovosUsuarios.WindowState = FormWindowState.Normal;
-            cadastrarNovosUsuarios.BringToFront();
-            cadastrarNovosUsuarios.Show();
+            CadastroUsuario cadastro = CadastroUsuario.GetInstance();
+            cadastro.MdiParent = this;
+            cadastro.WindowState = FormWindowState.Normal;
+            cadastro.BringToFront();
+            cadastro.Show();
         }
 
         private void mnuRelatorioUsuario_Click(object sender, EventArgs e)
         {
-            UsuariosCadastrados usuariosCadastrados = UsuariosCadastrados.GetInstance();
-            usuariosCadastrados.MdiParent = this;
-            usuariosCadastrados.WindowState = FormWindowState.Normal;
-            usuariosCadastrados.BringToFront();
-            usuariosCadastrados.Show();
-        }
 
-        private void mnuEstoqueBaixo_Click(object sender, EventArgs e)
-        {
-               EstoqueBaixo estoqueBaixo = EstoqueBaixo.GetInstance();
-                estoqueBaixo.MdiParent = this;
-            estoqueBaixo.WindowState = FormWindowState.Normal;
-            estoqueBaixo.BringToFront();
-                estoqueBaixo.Show();
-        }
-        private void GerenteEstoque(object sender, EventArgs e)
-        {
-            if (_usuario.Credencial.Gerente == true)
-            {
-                mnuEstoqueBaixo.Visible = true;
-            }
+            UsuariosCadastrados usuario = UsuariosCadastrados.GetInstance();
+            usuario.MdiParent = this;
+            usuario.WindowState = FormWindowState.Normal;
+            usuario.BringToFront();
+            usuario.Show();
         }
     }
 }
