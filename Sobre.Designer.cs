@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            lblPrograma = new Label();
-            lblVersoes = new Label();
-            lblDesenvolvedores = new Label();
-            lblGiovanna = new Label();
             lblNoemi = new Label();
+            lblGiovanna = new Label();
+            lblDesenvolvedores = new Label();
+            lblVersoes = new Label();
+            lblPrograma = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,25 +50,23 @@
             panel1.Size = new Size(357, 142);
             panel1.TabIndex = 0;
             // 
-            // lblPrograma
+            // lblNoemi
             // 
-            lblPrograma.AutoSize = true;
-            lblPrograma.BackColor = Color.FromArgb(192, 192, 255);
-            lblPrograma.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPrograma.Location = new Point(3, 10);
-            lblPrograma.Name = "lblPrograma";
-            lblPrograma.Size = new Size(339, 25);
-            lblPrograma.TabIndex = 0;
-            lblPrograma.Text = "Programa Para Cadastro de Úsuarios";
+            lblNoemi.AutoSize = true;
+            lblNoemi.Location = new Point(16, 113);
+            lblNoemi.Name = "lblNoemi";
+            lblNoemi.Size = new Size(114, 15);
+            lblNoemi.TabIndex = 4;
+            lblNoemi.Text = "Noemi da Silva Pires";
             // 
-            // lblVersoes
+            // lblGiovanna
             // 
-            lblVersoes.AutoSize = true;
-            lblVersoes.Location = new Point(3, 38);
-            lblVersoes.Name = "lblVersoes";
-            lblVersoes.Size = new Size(59, 15);
-            lblVersoes.TabIndex = 1;
-            lblVersoes.Text = "Versão 1.0";
+            lblGiovanna.AutoSize = true;
+            lblGiovanna.Location = new Point(16, 98);
+            lblGiovanna.Name = "lblGiovanna";
+            lblGiovanna.Size = new Size(166, 15);
+            lblGiovanna.TabIndex = 3;
+            lblGiovanna.Text = "Giovanna Mellany Soares Silva";
             // 
             // lblDesenvolvedores
             // 
@@ -80,23 +78,25 @@
             lblDesenvolvedores.TabIndex = 2;
             lblDesenvolvedores.Text = "Desenvolvedores:";
             // 
-            // lblGiovanna
+            // lblVersoes
             // 
-            lblGiovanna.AutoSize = true;
-            lblGiovanna.Location = new Point(16, 98);
-            lblGiovanna.Name = "lblGiovanna";
-            lblGiovanna.Size = new Size(166, 15);
-            lblGiovanna.TabIndex = 3;
-            lblGiovanna.Text = "Giovanna Mellany Soares Silva";
+            lblVersoes.AutoSize = true;
+            lblVersoes.Location = new Point(3, 38);
+            lblVersoes.Name = "lblVersoes";
+            lblVersoes.Size = new Size(59, 15);
+            lblVersoes.TabIndex = 1;
+            lblVersoes.Text = "Versão 1.0";
             // 
-            // lblNoemi
+            // lblPrograma
             // 
-            lblNoemi.AutoSize = true;
-            lblNoemi.Location = new Point(16, 113);
-            lblNoemi.Name = "lblNoemi";
-            lblNoemi.Size = new Size(98, 15);
-            lblNoemi.TabIndex = 4;
-            lblNoemi.Text = "Noemi Silva Pires";
+            lblPrograma.AutoSize = true;
+            lblPrograma.BackColor = Color.FromArgb(192, 192, 255);
+            lblPrograma.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPrograma.Location = new Point(3, 10);
+            lblPrograma.Name = "lblPrograma";
+            lblPrograma.Size = new Size(339, 25);
+            lblPrograma.TabIndex = 0;
+            lblPrograma.Text = "Programa Para Cadastro de Úsuarios";
             // 
             // Sobre
             // 

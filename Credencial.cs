@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaCadastroDeUsuario
 {
-    [Table("Credencial")]
+    [Table("tbl_credencial")]
     public class Credencial
     {
         public const String SALT = "!@$#_";
@@ -17,23 +17,6 @@ namespace SistemaCadastroDeUsuario
         public UInt64 Id {  get; set; }
         public Usuario Usuario { get; set; }
         public Boolean Gerente {  get; set; }
-        public  Boolean Vendedor { get; set; }
-    
-        // Vai impedir que um usuario seja vendedor e usuario ao mesmo tempo
-        public Boolean TipoUsuario(Credencial credencial)
-        {
-            if (credencial.Gerente == true)
-            {
-                credencial.Vendedor = false;
-            }
-            else if (credencial.Vendedor == true)
-            {
-                credencial.Gerente = false;
-            }
-
-            return false;
-        }
-
         public DateTime UltimoAcesso { get; set; }
         
         private String _senha;
@@ -45,7 +28,7 @@ namespace SistemaCadastroDeUsuario
                 _senha = ComputeSHA256(value, SALT);
             }
         }
-        #region CriptografiaSenha
+        #region
 
         public static String ComputeSHA256(String input)
         {
@@ -65,8 +48,5 @@ namespace SistemaCadastroDeUsuario
             return hash;
         }
         #endregion
-
-       
-
     }
 }

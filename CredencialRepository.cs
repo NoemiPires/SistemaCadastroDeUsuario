@@ -80,6 +80,21 @@ namespace SistemaCadastroDeUsuario
             }
         }
 
+        public static List<Credencial> FindAllWithUsuario()
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Credenciais.Include("Usuario").ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
     }
 }
