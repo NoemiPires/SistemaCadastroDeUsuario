@@ -30,10 +30,12 @@
         {
             panel1 = new Panel();
             grpDadosVendasCdastradas = new GroupBox();
+            lblPagamentoEfetuado = new Label();
+            lblPagamentoPendente = new Label();
             lblPagamento = new Label();
             lstVendasCadastradas = new ListBox();
-            lblPagamentoPendente = new Label();
-            lblPagamentoEfetuado = new Label();
+            lblPreco = new Label();
+            lblPrecoDado = new Label();
             panel1.SuspendLayout();
             grpDadosVendasCdastradas.SuspendLayout();
             SuspendLayout();
@@ -50,6 +52,8 @@
             // 
             // grpDadosVendasCdastradas
             // 
+            grpDadosVendasCdastradas.Controls.Add(lblPrecoDado);
+            grpDadosVendasCdastradas.Controls.Add(lblPreco);
             grpDadosVendasCdastradas.Controls.Add(lblPagamentoEfetuado);
             grpDadosVendasCdastradas.Controls.Add(lblPagamentoPendente);
             grpDadosVendasCdastradas.Controls.Add(lblPagamento);
@@ -60,10 +64,34 @@
             grpDadosVendasCdastradas.TabStop = false;
             grpDadosVendasCdastradas.Text = "groupBox1";
             // 
+            // lblPagamentoEfetuado
+            // 
+            lblPagamentoEfetuado.AutoSize = true;
+            lblPagamentoEfetuado.BackColor = Color.FromArgb(128, 128, 255);
+            lblPagamentoEfetuado.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPagamentoEfetuado.ForeColor = Color.White;
+            lblPagamentoEfetuado.Location = new Point(0, 236);
+            lblPagamentoEfetuado.Name = "lblPagamentoEfetuado";
+            lblPagamentoEfetuado.Size = new Size(141, 17);
+            lblPagamentoEfetuado.TabIndex = 2;
+            lblPagamentoEfetuado.Text = "Pagamento Efetuado!";
+            // 
+            // lblPagamentoPendente
+            // 
+            lblPagamentoPendente.AutoSize = true;
+            lblPagamentoPendente.BackColor = Color.FromArgb(192, 0, 0);
+            lblPagamentoPendente.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPagamentoPendente.ForeColor = Color.FromArgb(255, 255, 128);
+            lblPagamentoPendente.Location = new Point(0, 236);
+            lblPagamentoPendente.Name = "lblPagamentoPendente";
+            lblPagamentoPendente.Size = new Size(144, 17);
+            lblPagamentoPendente.TabIndex = 1;
+            lblPagamentoPendente.Text = "Pagamento Pendente!";
+            // 
             // lblPagamento
             // 
             lblPagamento.AutoSize = true;
-            lblPagamento.Location = new Point(18, 28);
+            lblPagamento.Location = new Point(0, 221);
             lblPagamento.Name = "lblPagamento";
             lblPagamento.Size = new Size(123, 15);
             lblPagamento.TabIndex = 0;
@@ -78,29 +106,23 @@
             lstVendasCadastradas.Size = new Size(258, 259);
             lstVendasCadastradas.TabIndex = 0;
             // 
-            // lblPagamentoPendente
+            // lblPreco
             // 
-            lblPagamentoPendente.AutoSize = true;
-            lblPagamentoPendente.BackColor = Color.FromArgb(192, 0, 0);
-            lblPagamentoPendente.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPagamentoPendente.ForeColor = Color.FromArgb(255, 255, 128);
-            lblPagamentoPendente.Location = new Point(17, 43);
-            lblPagamentoPendente.Name = "lblPagamentoPendente";
-            lblPagamentoPendente.Size = new Size(144, 17);
-            lblPagamentoPendente.TabIndex = 1;
-            lblPagamentoPendente.Text = "Pagamento Pendente!";
+            lblPreco.AutoSize = true;
+            lblPreco.Location = new Point(6, 19);
+            lblPreco.Name = "lblPreco";
+            lblPreco.Size = new Size(40, 15);
+            lblPreco.TabIndex = 3;
+            lblPreco.Text = "Preço:";
             // 
-            // lblPagamentoEfetuado
+            // lblPrecoDado
             // 
-            lblPagamentoEfetuado.AutoSize = true;
-            lblPagamentoEfetuado.BackColor = Color.FromArgb(128, 128, 255);
-            lblPagamentoEfetuado.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPagamentoEfetuado.ForeColor = Color.White;
-            lblPagamentoEfetuado.Location = new Point(17, 43);
-            lblPagamentoEfetuado.Name = "lblPagamentoEfetuado";
-            lblPagamentoEfetuado.Size = new Size(141, 17);
-            lblPagamentoEfetuado.TabIndex = 2;
-            lblPagamentoEfetuado.Text = "Pagamento Efetuado!";
+            lblPrecoDado.AutoSize = true;
+            lblPrecoDado.Location = new Point(52, 19);
+            lblPrecoDado.Name = "lblPrecoDado";
+            lblPrecoDado.Size = new Size(38, 15);
+            lblPrecoDado.TabIndex = 4;
+            lblPrecoDado.Text = "label1";
             // 
             // VendasCadastradas
             // 
@@ -124,5 +146,7 @@
         private Label lblPagamento;
         private Label lblPagamentoEfetuado;
         private Label lblPagamentoPendente;
+        private Label lblPreco;
+        private Label lblPrecoDado;
     }
 }
