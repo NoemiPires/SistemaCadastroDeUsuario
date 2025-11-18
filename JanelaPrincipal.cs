@@ -23,7 +23,8 @@ namespace SistemaCadastroDeUsuario
 
             Text = $"Sistema de Cadastro de Usuários - {usuario.Nome}";
 
-            mnuCadastroUsuario.Enabled = usuario.Credencial.Gerente;
+            // Possivel erro
+            mnuCadastroUsuario.Enabled = usuario.Credencial.PermitirAcesso();
 
 
             _usuario = usuario;
