@@ -128,21 +128,6 @@ namespace SistemaCadastroDeUsuario
             usuario.Show();
         }
 
-        private void VisibleEstoqueBaixo(object sender, EventArgs e)
-        {
-            if (_credencial.Gerente == true)
-            {
-                mnuEstoqueBaixo.Visible = true;
-            }
-        }
 
-        private void mnuEstoqueBaixo_Click(object sender, EventArgs e)
-        {
-            EstoqueBaixo estoqueBaixo = EstoqueBaixo.GetInstance();
-            estoqueBaixo.MdiParent = this;
-            estoqueBaixo.WindowState = FormWindowState.Normal;
-            estoqueBaixo.BringToFront();
-            estoqueBaixo.Show();
-        }
     }
 }
