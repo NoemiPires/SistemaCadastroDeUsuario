@@ -38,16 +38,13 @@ namespace SistemaCadastroDeUsuario
             }
 
             // String? perfil = Usuario.Credencial.TipoUsuario;
-            if (usuario.Credencial.UltimoAcesso == DateTime.MinValue)
-            {
-                lblUltimoAcessoDado.Text = "Usuário não fez acesso!";
-            }
-            else
-            {
-                String ultacess = usuario.Credencial.UltimoAcesso.ToString("dd/MM/yyyy HH:mm");
-                lblUltimoAcessoDado.Text = ultacess;
-            }
 
+            if (PermitirUsuario() = false)
+            {
+                lblPagamentoEfetuado.Visible = false;
+                lblPagamentoPendente.Visible = false;
+            }
+          
             lblNomeDado.Text = usuario.Nome;
             lblEmailDado.Text = usuario.Email;
             lblTelefoneDado.Text = usuario.Telefone;
