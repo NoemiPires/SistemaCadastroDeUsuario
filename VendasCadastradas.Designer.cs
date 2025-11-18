@@ -30,12 +30,16 @@
         {
             panel1 = new Panel();
             grpDadosVendasCdastradas = new GroupBox();
+            lblClienteDado = new Label();
+            lblCliente = new Label();
+            lblIdDado = new Label();
+            lblId = new Label();
+            lblPrecoDado = new Label();
+            lblPreco = new Label();
             lblPagamentoEfetuado = new Label();
             lblPagamentoPendente = new Label();
             lblPagamento = new Label();
             lstVendasCadastradas = new ListBox();
-            lblPreco = new Label();
-            lblPrecoDado = new Label();
             panel1.SuspendLayout();
             grpDadosVendasCdastradas.SuspendLayout();
             SuspendLayout();
@@ -52,6 +56,10 @@
             // 
             // grpDadosVendasCdastradas
             // 
+            grpDadosVendasCdastradas.Controls.Add(lblClienteDado);
+            grpDadosVendasCdastradas.Controls.Add(lblCliente);
+            grpDadosVendasCdastradas.Controls.Add(lblIdDado);
+            grpDadosVendasCdastradas.Controls.Add(lblId);
             grpDadosVendasCdastradas.Controls.Add(lblPrecoDado);
             grpDadosVendasCdastradas.Controls.Add(lblPreco);
             grpDadosVendasCdastradas.Controls.Add(lblPagamentoEfetuado);
@@ -62,7 +70,61 @@
             grpDadosVendasCdastradas.Size = new Size(185, 259);
             grpDadosVendasCdastradas.TabIndex = 1;
             grpDadosVendasCdastradas.TabStop = false;
-            grpDadosVendasCdastradas.Text = "groupBox1";
+            grpDadosVendasCdastradas.Text = "INFORMAÇÕES";
+            // 
+            // lblClienteDado
+            // 
+            lblClienteDado.AutoSize = true;
+            lblClienteDado.Location = new Point(59, 65);
+            lblClienteDado.Name = "lblClienteDado";
+            lblClienteDado.Size = new Size(38, 15);
+            lblClienteDado.TabIndex = 8;
+            lblClienteDado.Text = "label1";
+            // 
+            // lblCliente
+            // 
+            lblCliente.AutoSize = true;
+            lblCliente.Location = new Point(6, 65);
+            lblCliente.Name = "lblCliente";
+            lblCliente.Size = new Size(47, 15);
+            lblCliente.TabIndex = 7;
+            lblCliente.Text = "Cliente:";
+            // 
+            // lblIdDado
+            // 
+            lblIdDado.AutoSize = true;
+            lblIdDado.Location = new Point(33, 22);
+            lblIdDado.Name = "lblIdDado";
+            lblIdDado.Size = new Size(38, 15);
+            lblIdDado.TabIndex = 6;
+            lblIdDado.Text = "label1";
+            // 
+            // lblId
+            // 
+            lblId.AutoSize = true;
+            lblId.Location = new Point(6, 22);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(21, 15);
+            lblId.TabIndex = 5;
+            lblId.Text = "ID:";
+            // 
+            // lblPrecoDado
+            // 
+            lblPrecoDado.AutoSize = true;
+            lblPrecoDado.Location = new Point(52, 43);
+            lblPrecoDado.Name = "lblPrecoDado";
+            lblPrecoDado.Size = new Size(38, 15);
+            lblPrecoDado.TabIndex = 4;
+            lblPrecoDado.Text = "label1";
+            // 
+            // lblPreco
+            // 
+            lblPreco.AutoSize = true;
+            lblPreco.Location = new Point(6, 43);
+            lblPreco.Name = "lblPreco";
+            lblPreco.Size = new Size(40, 15);
+            lblPreco.TabIndex = 3;
+            lblPreco.Text = "Preço:";
             // 
             // lblPagamentoEfetuado
             // 
@@ -105,24 +167,7 @@
             lstVendasCadastradas.Name = "lstVendasCadastradas";
             lstVendasCadastradas.Size = new Size(258, 259);
             lstVendasCadastradas.TabIndex = 0;
-            // 
-            // lblPreco
-            // 
-            lblPreco.AutoSize = true;
-            lblPreco.Location = new Point(6, 19);
-            lblPreco.Name = "lblPreco";
-            lblPreco.Size = new Size(40, 15);
-            lblPreco.TabIndex = 3;
-            lblPreco.Text = "Preço:";
-            // 
-            // lblPrecoDado
-            // 
-            lblPrecoDado.AutoSize = true;
-            lblPrecoDado.Location = new Point(52, 19);
-            lblPrecoDado.Name = "lblPrecoDado";
-            lblPrecoDado.Size = new Size(38, 15);
-            lblPrecoDado.TabIndex = 4;
-            lblPrecoDado.Text = "label1";
+            lstVendasCadastradas.Click += lstVendasCadastradas_Click;
             // 
             // VendasCadastradas
             // 
@@ -148,5 +193,9 @@
         private Label lblPagamentoPendente;
         private Label lblPreco;
         private Label lblPrecoDado;
+        private Label lblCliente;
+        private Label lblIdDado;
+        private Label lblId;
+        private Label lblClienteDado;
     }
 }

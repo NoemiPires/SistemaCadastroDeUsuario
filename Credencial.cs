@@ -16,10 +16,8 @@ namespace SistemaCadastroDeUsuario
         public String Nome {  get; set; }
         public UInt64 Id {  get; set; }
         public Usuario Usuario { get; set; }
-        public Boolean Gerente {  get; set; }
-        public Boolean Vendedor {  get; set; }  
-        public DateTime UltimoAcesso { get; set; }
-        
+
+        private TipoUsuario TipoUsuario { get; set; }
         private String _senha;
         public String Senha
         {
