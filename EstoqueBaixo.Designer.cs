@@ -30,12 +30,14 @@
         {
             pnlEstoqueBaixo = new Panel();
             lstEstoqueProdutos = new ListBox();
+            groupBox1 = new GroupBox();
             pnlEstoqueBaixo.SuspendLayout();
             SuspendLayout();
             // 
             // pnlEstoqueBaixo
             // 
             pnlEstoqueBaixo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlEstoqueBaixo.Controls.Add(groupBox1);
             pnlEstoqueBaixo.Controls.Add(lstEstoqueProdutos);
             pnlEstoqueBaixo.Location = new Point(12, 12);
             pnlEstoqueBaixo.Name = "pnlEstoqueBaixo";
@@ -48,8 +50,17 @@
             lstEstoqueProdutos.ItemHeight = 15;
             lstEstoqueProdutos.Location = new Point(23, 9);
             lstEstoqueProdutos.Name = "lstEstoqueProdutos";
-            lstEstoqueProdutos.Size = new Size(281, 364);
+            lstEstoqueProdutos.Size = new Size(258, 364);
             lstEstoqueProdutos.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(308, 9);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(186, 244);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
             // 
             // EstoqueBaixo
             // 
@@ -69,5 +80,6 @@
 
         private Panel pnlEstoqueBaixo;
         private ListBox lstEstoqueProdutos;
+        private GroupBox groupBox1;
     }
 }

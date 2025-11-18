@@ -12,9 +12,20 @@ namespace SistemaCadastroDeUsuario
 {
     public partial class VendasCadastradas : Form
     {
+        private static VendasCadastradas _instance;
+
         public VendasCadastradas()
         {
             InitializeComponent();
+        }
+
+        public static VendasCadastradas GetInstance()
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new VendasCadastradas();
+            }
+            return _instance;
         }
     }
 }

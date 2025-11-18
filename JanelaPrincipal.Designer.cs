@@ -36,13 +36,13 @@
             novaVendaToolStripMenuItem = new ToolStripMenuItem();
             mnuRelatorio = new ToolStripMenuItem();
             mnuRelatorioUsuario = new ToolStripMenuItem();
-            vendasToolStripMenuItem = new ToolStripMenuItem();
+            mnuRelatorioVendas = new ToolStripMenuItem();
             estoqueToolStripMenuItem = new ToolStripMenuItem();
+            mnuRelatorioEstoqueMinimo = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
-            mnuRelatorioEstoqueMinimo = new ToolStripMenuItem();
             mnuJanelaPrincipal.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -80,19 +80,19 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(180, 22);
+            mnuCadastroUsuario.Size = new Size(146, 22);
             mnuCadastroUsuario.Text = "Novo Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
             // novaVendaToolStripMenuItem
             // 
             novaVendaToolStripMenuItem.Name = "novaVendaToolStripMenuItem";
-            novaVendaToolStripMenuItem.Size = new Size(180, 22);
+            novaVendaToolStripMenuItem.Size = new Size(146, 22);
             novaVendaToolStripMenuItem.Text = "Nova Venda";
             // 
             // mnuRelatorio
             // 
-            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioUsuario, vendasToolStripMenuItem, estoqueToolStripMenuItem });
+            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioUsuario, mnuRelatorioVendas, estoqueToolStripMenuItem });
             mnuRelatorio.Name = "mnuRelatorio";
             mnuRelatorio.Size = new Size(66, 20);
             mnuRelatorio.Text = "Relatorio";
@@ -104,11 +104,12 @@
             mnuRelatorioUsuario.Text = "Usuarios";
             mnuRelatorioUsuario.Click += mnuRelatorioUsuario_Click;
             // 
-            // vendasToolStripMenuItem
+            // mnuRelatorioVendas
             // 
-            vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
-            vendasToolStripMenuItem.Size = new Size(180, 22);
-            vendasToolStripMenuItem.Text = "Vendas";
+            mnuRelatorioVendas.Name = "mnuRelatorioVendas";
+            mnuRelatorioVendas.Size = new Size(180, 22);
+            mnuRelatorioVendas.Text = "Vendas";
+            mnuRelatorioVendas.Click += mnuRelatorioVendas_Click;
             // 
             // estoqueToolStripMenuItem
             // 
@@ -116,6 +117,12 @@
             estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
             estoqueToolStripMenuItem.Size = new Size(180, 22);
             estoqueToolStripMenuItem.Text = "Estoque";
+            // 
+            // mnuRelatorioEstoqueMinimo
+            // 
+            mnuRelatorioEstoqueMinimo.Name = "mnuRelatorioEstoqueMinimo";
+            mnuRelatorioEstoqueMinimo.Size = new Size(116, 22);
+            mnuRelatorioEstoqueMinimo.Text = "Minimo";
             // 
             // mnuAjuda
             // 
@@ -145,12 +152,6 @@
             staBarraEstadoUltimoAcesso.Name = "staBarraEstadoUltimoAcesso";
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
-            // 
-            // mnuRelatorioEstoqueMinimo
-            // 
-            mnuRelatorioEstoqueMinimo.Name = "mnuRelatorioEstoqueMinimo";
-            mnuRelatorioEstoqueMinimo.Size = new Size(180, 22);
-            mnuRelatorioEstoqueMinimo.Text = "Minimo";
             // 
             // JanelaPrincipal
             // 
@@ -184,7 +185,7 @@
         private ToolStripMenuItem mnuAjudaSobre;
         private StatusStrip staBarraEstado;
         private ToolStripStatusLabel staBarraEstadoUltimoAcesso;
-        private ToolStripMenuItem vendasToolStripMenuItem;
+        private ToolStripMenuItem mnuRelatorioVendas;
         private ToolStripMenuItem estoqueToolStripMenuItem;
         private ToolStripMenuItem novaVendaToolStripMenuItem;
         private ToolStripMenuItem mnuRelatorioEstoqueMinimo;

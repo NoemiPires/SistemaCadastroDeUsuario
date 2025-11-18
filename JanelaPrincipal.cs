@@ -128,6 +128,13 @@ namespace SistemaCadastroDeUsuario
             usuario.Show();
         }
 
-
+        private void mnuRelatorioVendas_Click(object sender, EventArgs e)
+        {
+            VendasCadastradas vendas = VendasCadastradas.GetInstance();
+            vendas.MdiParent = this;
+            vendas.WindowState = FormWindowState.Normal;
+            vendas.BringToFront();
+            vendas.Show();
+        }
     }
 }
