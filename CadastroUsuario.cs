@@ -134,7 +134,6 @@ namespace SistemaCadastroDeUsuario
             {
                 Nome = txtUsuario.Text,
                 Senha = txtSenha.Text,
-                Gerente = chkGerente.Checked
             };
 
             Usuario novoUsuario = new Usuario()

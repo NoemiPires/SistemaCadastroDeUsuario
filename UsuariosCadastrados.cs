@@ -41,7 +41,7 @@ namespace SistemaCadastroDeUsuario
                 return;
             }
 
-            String? perfil = usuario.Credencial.Gerente ? "Gerente" : "Comum";
+            String? perfil = usuario.Credencial.Tipo.ToString();
 
             if (usuario.Credencial.UltimoAcesso == DateTime.MinValue)
             {

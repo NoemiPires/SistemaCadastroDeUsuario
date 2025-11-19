@@ -14,6 +14,8 @@ namespace SistemaCadastroDeUsuario
     {
         private static VendasCadastradas _instance;
 
+        private static Usuario _usuario;
+
         public VendasCadastradas()
         {
             InitializeComponent();
@@ -39,17 +41,21 @@ namespace SistemaCadastroDeUsuario
 
             // String? perfil = Usuario.Credencial.TipoUsuario;
 
-            if (PermitirUsuario() = false)
+            if (_usuario.Credencial.PermitirAcesso() == false)
             {
                 lblPagamentoEfetuado.Visible = false;
                 lblPagamentoPendente.Visible = false;
             }
-          
-            lblNomeDado.Text = usuario.Nome;
-            lblEmailDado.Text = usuario.Email;
-            lblTelefoneDado.Text = usuario.Telefone;
-            lblUsuarioDado.Text = usuario.Credencial.Nome;
-            lblPerfilDado.Text = perfil;
+            else
+            {
+                lblPagamentoEfetuado.Visible = true;
+                lblPagamentoPendente.Visible = true;
+            }
+
+            lblIdDado.Text = compra.Id.ToString();
+            lblPrecoDado.Text = compra.CalcularTotal();
+
+
 
             grpCadastros.Visible = true;
         }

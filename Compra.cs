@@ -24,6 +24,7 @@ namespace SistemaCadastroDeUsuario
 
         public Usuario Vendedor { get; set; }
 
+
         //Read-Only
         private Decimal _comissao;
         public Decimal Comissao
@@ -35,6 +36,19 @@ namespace SistemaCadastroDeUsuario
             private set
             {
                 _comissao = CalcularComissao();
+            }
+        }
+
+        private Decimal _total;
+        public Decimal Total
+        {
+            get
+            {
+                return _total;
+            }
+            private set
+            {
+                _total = CalcularTotal();
             }
         }
 

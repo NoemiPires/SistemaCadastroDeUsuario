@@ -17,8 +17,8 @@ namespace SistemaCadastroDeUsuario
         public UInt64 Id {  get; set; }
         public Usuario Usuario { get; set; }
         public DateTime UltimoAcesso { get; set; }
+        public TipoUsuario Tipo { get; set; }
 
-        public TipoUsuario TipoUsuario { get; set; }
         private String _senha;
         public String Senha
         {
@@ -51,7 +51,7 @@ namespace SistemaCadastroDeUsuario
 
         public Boolean PermitirAcesso()
         {
-            if (((this.TipoUsuario == TipoUsuario.CLIENTE) || (this.TipoUsuario == TipoUsuario.OPERADORCAIXA)) || (this.TipoUsuario == TipoUsuario.GERENTE))
+            if (((this.Tipo == TipoUsuario.VENDEDOR) || (this.Tipo == TipoUsuario.OPERADORCAIXA)) || (this.Tipo == TipoUsuario.GERENTE))
             {
                 return true;
 

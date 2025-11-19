@@ -22,8 +22,7 @@ namespace SistemaCadastroDeUsuario
             {
                 Credencial c1 = new Credencial();
                 c1.Senha = "2468";
-                c1.Vendedor = true;
-                c1.Gerente = false;
+                c1.Tipo = TipoUsuario.VENDEDOR;
                 c1.Nome = "UserComum";
 
                 Usuario u1 = new Usuario();
@@ -35,8 +34,7 @@ namespace SistemaCadastroDeUsuario
 
                 Credencial c2 = new Credencial();
                 c2.Senha = "123";
-                c2.Vendedor = false;
-                c2.Gerente = true;
+                c2.Tipo = TipoUsuario.GERENTE;
                 c2.Nome = "UserPadrao";
 
                 Usuario u2 = new Usuario();
