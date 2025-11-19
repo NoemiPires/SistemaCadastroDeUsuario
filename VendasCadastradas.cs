@@ -54,7 +54,7 @@ namespace SistemaCadastroDeUsuario
 
             lblIdDado.Text = compra.Id.ToString();
             lblPrecoDado.Text = compra.Total.ToString();
-            lblCliente.Text = 
+            lblCliente.Text = compra.Cliente.ToString();
 
 
 
