@@ -53,11 +53,12 @@ namespace SistemaCadastroDeUsuario
             }
 
             lblIdDado.Text = compra.Id.ToString();
-            lblPrecoDado.Text = compra.CalcularTotal();
+            lblPrecoDado.Text = compra.Total.ToString();
+            lblCliente.Text = 
 
 
 
-            grpCadastros.Visible = true;
+            // grpCadastros.Visible = true;
         }
     }
 }
