@@ -58,28 +58,6 @@ namespace SistemaCadastroDeUsuario
 
         }
 
-
-        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CadastroUsuario cadastrarNovosUsuarios = CadastroUsuario.GetInstance();
-            cadastrarNovosUsuarios.MdiParent = this;
-            cadastrarNovosUsuarios.BringToFront();
-            cadastrarNovosUsuarios.Show();
-        }
-
-        #region
-        private void lblAcesso_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-
-
-        }
-
         private void JanelaPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             _usuario.Credencial.UltimoAcesso = DateTime.Now;
@@ -88,7 +66,8 @@ namespace SistemaCadastroDeUsuario
             JanelaEntrada.GetInstance().Show();
             JanelaEntrada.GetInstance().LimparCampos();
         }
-        #endregion
+
+        #region Mdiparents
 
         private void mnuArquivoSair_Click_1(object sender, EventArgs e)
         {
@@ -137,5 +116,32 @@ namespace SistemaCadastroDeUsuario
             vendas.BringToFront();
             vendas.Show();
         }
+
+        private void mnuRelatorioEstoqueMinimo_Click(object sender, EventArgs e)
+        {
+            EstoqueBaixo estoqueBaixo = EstoqueBaixo.GetInstance();
+            estoqueBaixo.MdiParent = this;
+            estoqueBaixo.WindowState = FormWindowState.Normal;
+            estoqueBaixo.BringToFront();
+            estoqueBaixo.Show();
+
+        }
+
+        private void mnuCadastroNovoProduto_Click(object sender, EventArgs e)
+        {
+            CadastrarProdutos cadastrar = CadastrarProdutos.GetInstance();
+            cadastrar.MdiParent = this;
+            cadastrar.BringToFront();
+            cadastrar.Show();
+        }
+
+        private void mnuCadastroNovaCategoria_Click_1(object sender, EventArgs e)
+        {
+            CadastrarCategoria categoria = CadastrarCategoria.GetInstance();
+            categoria.MdiParent = this;
+            categoria.BringToFront();
+            categoria.Show();
+        }
+        #endregion
     }
 }

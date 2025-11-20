@@ -12,13 +12,13 @@ namespace SistemaCadastroDeUsuario
 {
     public partial class CadastrarProdutos : Form
     {
-        private CadastrarProdutos _intance;
+        private static CadastrarProdutos _intance;
         public CadastrarProdutos()
         {
             InitializeComponent();
         }
 
-        public CadastrarProdutos GetInstance()
+        public static CadastrarProdutos GetInstance()
         {
             if (_intance == null || _intance.IsDisposed)
             {
@@ -56,6 +56,31 @@ namespace SistemaCadastroDeUsuario
         }
         #endregion
 
+        #region Salvar Produto
+        private void Save()
+        {
+            Produto produto = new Produto();
+            produto.Id = UInt32.Parse(txtId.Text);
+            produto.Nome = txtNome.Text;
+            produto.Preco = Decimal.Parse(txtPreco.Text);
+            produto.Estoque = UInt32.Parse(txtEstoque.Text);
+            produto.Categoria = (Categoria)cmbCatergoria.SelectedItem;
+            
+            ProdutoRepository.SaveOrUpdate(produto);
+
+            txtId.Clear();
+            txtNome.Clear();
+            txtPreco.Clear();
+            txtEstoque.Clear();
+            cmbCatergoria.SelectedIndex = -1;
+
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+        #endregion
 
     }
 }

@@ -33,7 +33,9 @@
             mnuArquivoSair = new ToolStripMenuItem();
             mnuCadastro = new ToolStripMenuItem();
             mnuCadastroUsuario = new ToolStripMenuItem();
-            novaVendaToolStripMenuItem = new ToolStripMenuItem();
+            mnuCadastroNovaCategoria = new ToolStripMenuItem();
+            mnuCadastroNovoProduto = new ToolStripMenuItem();
+            mnuCadastroNovaVenda = new ToolStripMenuItem();
             mnuRelatorio = new ToolStripMenuItem();
             mnuRelatorioUsuario = new ToolStripMenuItem();
             mnuRelatorioVendas = new ToolStripMenuItem();
@@ -72,7 +74,7 @@
             // 
             // mnuCadastro
             // 
-            mnuCadastro.DropDownItems.AddRange(new ToolStripItem[] { mnuCadastroUsuario, novaVendaToolStripMenuItem });
+            mnuCadastro.DropDownItems.AddRange(new ToolStripItem[] { mnuCadastroUsuario, mnuCadastroNovaCategoria, mnuCadastroNovoProduto, mnuCadastroNovaVenda });
             mnuCadastro.Name = "mnuCadastro";
             mnuCadastro.Size = new Size(66, 20);
             mnuCadastro.Text = "Cadastro";
@@ -80,15 +82,29 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(146, 22);
+            mnuCadastroUsuario.Size = new Size(180, 22);
             mnuCadastroUsuario.Text = "Novo Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
-            // novaVendaToolStripMenuItem
+            // mnuCadastroNovaCategoria
             // 
-            novaVendaToolStripMenuItem.Name = "novaVendaToolStripMenuItem";
-            novaVendaToolStripMenuItem.Size = new Size(146, 22);
-            novaVendaToolStripMenuItem.Text = "Nova Venda";
+            mnuCadastroNovaCategoria.Name = "mnuCadastroNovaCategoria";
+            mnuCadastroNovaCategoria.Size = new Size(180, 22);
+            mnuCadastroNovaCategoria.Text = "Nova Categoria";
+            mnuCadastroNovaCategoria.Click += mnuCadastroNovaCategoria_Click_1;
+            // 
+            // mnuCadastroNovoProduto
+            // 
+            mnuCadastroNovoProduto.Name = "mnuCadastroNovoProduto";
+            mnuCadastroNovoProduto.Size = new Size(180, 22);
+            mnuCadastroNovoProduto.Text = "Novo Produto";
+            mnuCadastroNovoProduto.Click += mnuCadastroNovoProduto_Click;
+            // 
+            // mnuCadastroNovaVenda
+            // 
+            mnuCadastroNovaVenda.Name = "mnuCadastroNovaVenda";
+            mnuCadastroNovaVenda.Size = new Size(180, 22);
+            mnuCadastroNovaVenda.Text = "Nova Venda";
             // 
             // mnuRelatorio
             // 
@@ -100,14 +116,14 @@
             // mnuRelatorioUsuario
             // 
             mnuRelatorioUsuario.Name = "mnuRelatorioUsuario";
-            mnuRelatorioUsuario.Size = new Size(180, 22);
+            mnuRelatorioUsuario.Size = new Size(119, 22);
             mnuRelatorioUsuario.Text = "Usuarios";
             mnuRelatorioUsuario.Click += mnuRelatorioUsuario_Click;
             // 
             // mnuRelatorioVendas
             // 
             mnuRelatorioVendas.Name = "mnuRelatorioVendas";
-            mnuRelatorioVendas.Size = new Size(180, 22);
+            mnuRelatorioVendas.Size = new Size(119, 22);
             mnuRelatorioVendas.Text = "Vendas";
             mnuRelatorioVendas.Click += mnuRelatorioVendas_Click;
             // 
@@ -115,7 +131,7 @@
             // 
             estoqueToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioEstoqueMinimo });
             estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            estoqueToolStripMenuItem.Size = new Size(180, 22);
+            estoqueToolStripMenuItem.Size = new Size(119, 22);
             estoqueToolStripMenuItem.Text = "Estoque";
             // 
             // mnuRelatorioEstoqueMinimo
@@ -123,6 +139,7 @@
             mnuRelatorioEstoqueMinimo.Name = "mnuRelatorioEstoqueMinimo";
             mnuRelatorioEstoqueMinimo.Size = new Size(116, 22);
             mnuRelatorioEstoqueMinimo.Text = "Minimo";
+            mnuRelatorioEstoqueMinimo.Click += mnuRelatorioEstoqueMinimo_Click;
             // 
             // mnuAjuda
             // 
@@ -187,7 +204,9 @@
         private ToolStripStatusLabel staBarraEstadoUltimoAcesso;
         private ToolStripMenuItem mnuRelatorioVendas;
         private ToolStripMenuItem estoqueToolStripMenuItem;
-        private ToolStripMenuItem novaVendaToolStripMenuItem;
+        private ToolStripMenuItem mnuCadastroNovaVenda;
         private ToolStripMenuItem mnuRelatorioEstoqueMinimo;
+        private ToolStripMenuItem mnuCadastroNovoProduto;
+        private ToolStripMenuItem mnuCadastroNovaCategoria;
     }
 }
