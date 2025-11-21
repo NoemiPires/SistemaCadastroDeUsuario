@@ -45,6 +45,7 @@
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
+            cToolStripMenuItem = new ToolStripMenuItem();
             mnuJanelaPrincipal.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -82,33 +83,33 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(180, 22);
+            mnuCadastroUsuario.Size = new Size(156, 22);
             mnuCadastroUsuario.Text = "Novo Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
             // mnuCadastroNovaCategoria
             // 
             mnuCadastroNovaCategoria.Name = "mnuCadastroNovaCategoria";
-            mnuCadastroNovaCategoria.Size = new Size(180, 22);
+            mnuCadastroNovaCategoria.Size = new Size(156, 22);
             mnuCadastroNovaCategoria.Text = "Nova Categoria";
             mnuCadastroNovaCategoria.Click += mnuCadastroNovaCategoria_Click_1;
             // 
             // mnuCadastroNovoProduto
             // 
             mnuCadastroNovoProduto.Name = "mnuCadastroNovoProduto";
-            mnuCadastroNovoProduto.Size = new Size(180, 22);
+            mnuCadastroNovoProduto.Size = new Size(156, 22);
             mnuCadastroNovoProduto.Text = "Novo Produto";
             mnuCadastroNovoProduto.Click += mnuCadastroNovoProduto_Click;
             // 
             // mnuCadastroNovaVenda
             // 
             mnuCadastroNovaVenda.Name = "mnuCadastroNovaVenda";
-            mnuCadastroNovaVenda.Size = new Size(180, 22);
+            mnuCadastroNovaVenda.Size = new Size(156, 22);
             mnuCadastroNovaVenda.Text = "Nova Venda";
             // 
             // mnuRelatorio
             // 
-            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioUsuario, mnuRelatorioVendas, estoqueToolStripMenuItem });
+            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioUsuario, mnuRelatorioVendas, estoqueToolStripMenuItem, cToolStripMenuItem });
             mnuRelatorio.Name = "mnuRelatorio";
             mnuRelatorio.Size = new Size(66, 20);
             mnuRelatorio.Text = "Relatorio";
@@ -116,14 +117,14 @@
             // mnuRelatorioUsuario
             // 
             mnuRelatorioUsuario.Name = "mnuRelatorioUsuario";
-            mnuRelatorioUsuario.Size = new Size(119, 22);
+            mnuRelatorioUsuario.Size = new Size(180, 22);
             mnuRelatorioUsuario.Text = "Usuarios";
             mnuRelatorioUsuario.Click += mnuRelatorioUsuario_Click;
             // 
             // mnuRelatorioVendas
             // 
             mnuRelatorioVendas.Name = "mnuRelatorioVendas";
-            mnuRelatorioVendas.Size = new Size(119, 22);
+            mnuRelatorioVendas.Size = new Size(180, 22);
             mnuRelatorioVendas.Text = "Vendas";
             mnuRelatorioVendas.Click += mnuRelatorioVendas_Click;
             // 
@@ -131,7 +132,7 @@
             // 
             estoqueToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioEstoqueMinimo });
             estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            estoqueToolStripMenuItem.Size = new Size(119, 22);
+            estoqueToolStripMenuItem.Size = new Size(180, 22);
             estoqueToolStripMenuItem.Text = "Estoque";
             // 
             // mnuRelatorioEstoqueMinimo
@@ -169,6 +170,12 @@
             staBarraEstadoUltimoAcesso.Name = "staBarraEstadoUltimoAcesso";
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
+            // 
+            // cToolStripMenuItem
+            // 
+            cToolStripMenuItem.Name = "cToolStripMenuItem";
+            cToolStripMenuItem.Size = new Size(180, 22);
+            cToolStripMenuItem.Text = "C";
             // 
             // JanelaPrincipal
             // 
@@ -208,5 +215,6 @@
         private ToolStripMenuItem mnuRelatorioEstoqueMinimo;
         private ToolStripMenuItem mnuCadastroNovoProduto;
         private ToolStripMenuItem mnuCadastroNovaCategoria;
+        private ToolStripMenuItem cToolStripMenuItem;
     }
 }

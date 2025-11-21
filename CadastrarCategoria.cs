@@ -26,20 +26,35 @@ namespace SistemaCadastroDeUsuario
             }
             return _instance;
         }
+
         #region Salvar
-        private void Save()
-        {
-            Categoria categoria = new Categoria();
-            categoria.Id = UInt32.Parse(txtId.Text);
-            categoria.Nome = txtCategoriaNome.Text;
-            CategoriaRepository.SaveOrUpdate(categoria);
-            txtCategoriaNome.Clear();
-            txtCategoriaNome.Focus();
-        }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Save();
+        }
+
+        private void txtCategoriaNome_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Save();
+            }
+        }
+        private void Save()
+        {
+
+                Categoria categoria = new Categoria();
+                categoria.Nome = txtCategoriaNome.Text;
+
+
+                CategoriaRepository.SaveOrUpdate(categoria);
+
+                txtCategoriaNome.Clear();
+                txtCategoriaNome.Focus();
+
+            lblCadastroEfetuado.Visible = true;
+
         }
         #endregion
     }

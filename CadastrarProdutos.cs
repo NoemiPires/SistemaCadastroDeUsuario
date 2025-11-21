@@ -16,6 +16,7 @@ namespace SistemaCadastroDeUsuario
         public CadastrarProdutos()
         {
             InitializeComponent();
+            cmbCatergoria.
         }
 
         public static CadastrarProdutos GetInstance()
@@ -30,7 +31,7 @@ namespace SistemaCadastroDeUsuario
 
         private void cmbCatergoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Categoria> categorias = CategoriaRepository.FindAll();
+            List<Categoria> categorias = CategoriaRepository.FindByNome();
         }
 
         #region KeyUp Events

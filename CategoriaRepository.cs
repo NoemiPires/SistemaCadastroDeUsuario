@@ -31,6 +31,22 @@ namespace SistemaCadastroDeUsuario
             }
         }
 
+        public static Categoria? FindByNome(String nome)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Categorias.Find(nome);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
         public static Categoria? FindById(UInt32 id)
         {
             try
@@ -45,6 +61,8 @@ namespace SistemaCadastroDeUsuario
                 throw;
             }
         }
+
+
 
         public static List<Categoria> FindAll()
         {
@@ -75,6 +93,11 @@ namespace SistemaCadastroDeUsuario
             {
                 throw;
             }
+        }
+
+        internal static List<Categoria> FindByNome()
+        {
+            throw new NotImplementedException();
         }
     }
 

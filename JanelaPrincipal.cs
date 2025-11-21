@@ -143,5 +143,7 @@ namespace SistemaCadastroDeUsuario
             categoria.Show();
         }
         #endregion
+
+    
     }
 }
