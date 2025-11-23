@@ -41,11 +41,12 @@
             mnuRelatorioVendas = new ToolStripMenuItem();
             estoqueToolStripMenuItem = new ToolStripMenuItem();
             mnuRelatorioEstoqueMinimo = new ToolStripMenuItem();
+            cToolStripMenuItem = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
-            cToolStripMenuItem = new ToolStripMenuItem();
+            mnuRelatorioCompraVendas = new ToolStripMenuItem();
             mnuJanelaPrincipal.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -142,6 +143,13 @@
             mnuRelatorioEstoqueMinimo.Text = "Minimo";
             mnuRelatorioEstoqueMinimo.Click += mnuRelatorioEstoqueMinimo_Click;
             // 
+            // cToolStripMenuItem
+            // 
+            cToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioCompraVendas });
+            cToolStripMenuItem.Name = "cToolStripMenuItem";
+            cToolStripMenuItem.Size = new Size(180, 22);
+            cToolStripMenuItem.Text = "Compra";
+            // 
             // mnuAjuda
             // 
             mnuAjuda.DropDownItems.AddRange(new ToolStripItem[] { mnuAjudaSobre });
@@ -171,11 +179,12 @@
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
             // 
-            // cToolStripMenuItem
+            // mnuRelatorioCompraVendas
             // 
-            cToolStripMenuItem.Name = "cToolStripMenuItem";
-            cToolStripMenuItem.Size = new Size(180, 22);
-            cToolStripMenuItem.Text = "C";
+            mnuRelatorioCompraVendas.Name = "mnuRelatorioCompraVendas";
+            mnuRelatorioCompraVendas.Size = new Size(180, 22);
+            mnuRelatorioCompraVendas.Text = "Vendas por Periodo";
+            mnuRelatorioCompraVendas.Click += mnuRelatorioCompraVendas_Click;
             // 
             // JanelaPrincipal
             // 
@@ -216,5 +225,6 @@
         private ToolStripMenuItem mnuCadastroNovoProduto;
         private ToolStripMenuItem mnuCadastroNovaCategoria;
         private ToolStripMenuItem cToolStripMenuItem;
+        private ToolStripMenuItem mnuRelatorioCompraVendas;
     }
 }

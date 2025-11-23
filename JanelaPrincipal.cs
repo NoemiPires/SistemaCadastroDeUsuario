@@ -144,6 +144,14 @@ namespace SistemaCadastroDeUsuario
         }
         #endregion
 
-    
+
+        private void mnuRelatorioCompraVendas_Click(object sender, EventArgs e)
+        {
+            RelatorioTotalPeriodo vendas = RelatorioTotalPeriodo.GetInstance();
+            vendas.MdiParent = this; 
+            vendas.WindowState = FormWindowState.Normal;
+            vendas.BringToFront();
+            vendas.Show();
+        }
     }
 }

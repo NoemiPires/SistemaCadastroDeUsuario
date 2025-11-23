@@ -97,6 +97,29 @@ namespace SistemaCadastroDeUsuario
             }
         }
 
+        // Novo método: conta clientes distintos que fizeram compras na data informada
+        public static int CountClientesPorData(DateTime data)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    var start = data.Date;
+                    var end = start.AddDays(1);
+
+                    return dbContext.Compras
+                        .Where(c => c.Inicio >= start && c.Inicio < end && c.Cliente != null)
+                        .Select(c => c.Cliente.Id)
+                        .Distinct()
+                        .Count();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static List<Compra> FindByEstado(Estado estado)
         {
             try
