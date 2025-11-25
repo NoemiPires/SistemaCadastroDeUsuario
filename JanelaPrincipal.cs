@@ -147,7 +147,8 @@ namespace SistemaCadastroDeUsuario
 
         private void mnuRelatorioCompraVendas_Click(object sender, EventArgs e)
         {
-            RelatorioTotalPeriodo vendas = RelatorioTotalPeriodo.GetInstance();
+            DateTime data = DateTime.Today;
+            RelatorioTotalPeriodo vendas = RelatorioTotalPeriodo.GetInstance(data);
             vendas.MdiParent = this; 
             vendas.WindowState = FormWindowState.Normal;
             vendas.BringToFront();

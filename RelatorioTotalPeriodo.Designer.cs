@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             pnlPrincipal = new Panel();
-            cmbPeriodo = new ComboBox();
+            lstPeriodo = new ListBox();
             gpbTotalPeriodo = new GroupBox();
+            lblRespostaTotal = new Label();
             lblTotal = new Label();
             pnlPrincipal.SuspendLayout();
             gpbTotalPeriodo.SuspendLayout();
@@ -39,44 +40,56 @@
             // pnlPrincipal
             // 
             pnlPrincipal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlPrincipal.Controls.Add(lstPeriodo);
             pnlPrincipal.Controls.Add(gpbTotalPeriodo);
-            pnlPrincipal.Controls.Add(cmbPeriodo);
             pnlPrincipal.Location = new Point(12, 12);
             pnlPrincipal.Name = "pnlPrincipal";
-            pnlPrincipal.Size = new Size(374, 137);
+            pnlPrincipal.Size = new Size(374, 114);
             pnlPrincipal.TabIndex = 0;
             // 
-            // cmbPeriodo
+            // lstPeriodo
             // 
-            cmbPeriodo.FormattingEnabled = true;
-            cmbPeriodo.Location = new Point(14, 15);
-            cmbPeriodo.Name = "cmbPeriodo";
-            cmbPeriodo.Size = new Size(163, 23);
-            cmbPeriodo.TabIndex = 0;
+            lstPeriodo.FormattingEnabled = true;
+            lstPeriodo.ItemHeight = 15;
+            lstPeriodo.Location = new Point(20, 9);
+            lstPeriodo.Name = "lstPeriodo";
+            lstPeriodo.Size = new Size(120, 94);
+            lstPeriodo.TabIndex = 2;
+            lstPeriodo.Click += lstPeriodo_Click;
             // 
             // gpbTotalPeriodo
             // 
+            gpbTotalPeriodo.Controls.Add(lblRespostaTotal);
             gpbTotalPeriodo.Controls.Add(lblTotal);
-            gpbTotalPeriodo.Location = new Point(194, 15);
+            gpbTotalPeriodo.Location = new Point(183, 3);
             gpbTotalPeriodo.Name = "gpbTotalPeriodo";
             gpbTotalPeriodo.Size = new Size(165, 100);
             gpbTotalPeriodo.TabIndex = 1;
             gpbTotalPeriodo.TabStop = false;
+            // 
+            // lblRespostaTotal
+            // 
+            lblRespostaTotal.AutoSize = true;
+            lblRespostaTotal.Location = new Point(6, 43);
+            lblRespostaTotal.Name = "lblRespostaTotal";
+            lblRespostaTotal.Size = new Size(62, 15);
+            lblRespostaTotal.TabIndex = 1;
+            lblRespostaTotal.Text = "(Resposta)";
             // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
             lblTotal.Location = new Point(6, 19);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(33, 15);
+            lblTotal.Size = new Size(91, 15);
             lblTotal.TabIndex = 0;
-            lblTotal.Text = "Total";
+            lblTotal.Text = "Total de Vendas:";
             // 
             // RelatorioTotalPeriodo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(398, 161);
+            ClientSize = new Size(398, 138);
             Controls.Add(pnlPrincipal);
             MaximizeBox = false;
             MinimizeBox = false;
@@ -91,8 +104,9 @@
         #endregion
 
         private Panel pnlPrincipal;
-        private ComboBox cmbPeriodo;
         private GroupBox gpbTotalPeriodo;
         private Label lblTotal;
+        private Label lblRespostaTotal;
+        private ListBox lstPeriodo;
     }
 }

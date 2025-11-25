@@ -16,7 +16,8 @@ namespace SistemaCadastroDeUsuario
         public CadastrarProdutos()
         {
             InitializeComponent();
-            cmbCatergoria.
+            // Erro
+           
         }
 
         public static CadastrarProdutos GetInstance()
@@ -31,15 +32,10 @@ namespace SistemaCadastroDeUsuario
 
         private void cmbCatergoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Categoria> categorias = CategoriaRepository.FindByNome();
+            //List<Categoria> categorias = CategoriaRepository.FindAll();
         }
 
         #region KeyUp Events
-        private void txtId_KeyUp(object sender, KeyEventArgs e)
-        {
-            txtNome.Focus();
-            txtNome.SelectAll();
-        }
 
         private void txtNome_KeyUp(object sender, KeyEventArgs e)
         {
@@ -58,29 +54,30 @@ namespace SistemaCadastroDeUsuario
         #endregion
 
         #region Salvar Produto
-        private void Save()
-        {
-            Produto produto = new Produto();
-            produto.Id = UInt32.Parse(txtId.Text);
-            produto.Nome = txtNome.Text;
-            produto.Preco = Decimal.Parse(txtPreco.Text);
-            produto.Estoque = UInt32.Parse(txtEstoque.Text);
-            produto.Categoria = (Categoria)cmbCatergoria.SelectedItem;
-            
-            ProdutoRepository.SaveOrUpdate(produto);
-
-            txtId.Clear();
-            txtNome.Clear();
-            txtPreco.Clear();
-            txtEstoque.Clear();
-            cmbCatergoria.SelectedIndex = -1;
-
-        }
-
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Save();
         }
+
+        private void Save()
+        {
+            Produto produto = new Produto();
+            produto.Nome = txtNome.Text;
+            produto.Preco = Decimal.Parse(txtPreco.Text);
+            produto.Estoque = UInt32.Parse(txtEstoque.Text);
+
+
+            ProdutoRepository.SaveOrUpdate(produto);
+
+            txtNome.Clear();
+            txtPreco.Clear();
+            txtEstoque.Clear();
+            txtNome.Focus();
+
+            lblaprodutoCadastrado.Visible = true;
+
+        }
+
         #endregion
 
     }

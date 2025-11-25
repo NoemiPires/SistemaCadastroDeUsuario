@@ -33,7 +33,6 @@
             txtCategoriaNome = new TextBox();
             lblCategoriaNome = new Label();
             btnCadastrar = new Button();
-            txtCartegoria = new TextBox();
             lblNome = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -41,11 +40,10 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(lblCadastroEfetuado);
             panel1.Controls.Add(txtCategoriaNome);
+            panel1.Controls.Add(lblCadastroEfetuado);
             panel1.Controls.Add(lblCategoriaNome);
             panel1.Controls.Add(btnCadastrar);
-            panel1.Controls.Add(txtCartegoria);
             panel1.Controls.Add(lblNome);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
@@ -67,7 +65,7 @@
             // txtCategoriaNome
             // 
             txtCategoriaNome.Font = new Font("Segoe UI", 9.75F);
-            txtCategoriaNome.Location = new Point(93, 21);
+            txtCategoriaNome.Location = new Point(93, 23);
             txtCategoriaNome.Name = "txtCategoriaNome";
             txtCategoriaNome.Size = new Size(296, 25);
             txtCategoriaNome.TabIndex = 5;
@@ -93,14 +91,6 @@
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
             btnCadastrar.Click += btnCadastrar_Click;
-            // 
-            // txtCartegoria
-            // 
-            txtCartegoria.Font = new Font("Segoe UI", 9.75F);
-            txtCartegoria.Location = new Point(94, 19);
-            txtCartegoria.Name = "txtCartegoria";
-            txtCartegoria.Size = new Size(296, 25);
-            txtCartegoria.TabIndex = 2;
             // 
             // lblNome
             // 
@@ -132,7 +122,6 @@
         private TextBox txtCategoriaNome;
         private Label lblCategoriaNome;
         private Button btnCadastrar;
-        private TextBox txtCartegoria;
         private Label lblCadastroEfetuado;
     }
 }
