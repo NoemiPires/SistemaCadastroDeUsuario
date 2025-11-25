@@ -22,7 +22,7 @@ namespace SistemaCadastroDeUsuario
         public List<Pagamento> Pagamentos { get; set; }
         public List<Item> Itens { get; set; } = new List<Item>();
 
-        public Usuario Vendedor { get; set; }
+        public Usuario VendedorId { get; set; }
 
 
         //Read-Only

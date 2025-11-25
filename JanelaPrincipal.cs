@@ -142,17 +142,27 @@ namespace SistemaCadastroDeUsuario
             categoria.BringToFront();
             categoria.Show();
         }
-        #endregion
-
 
         private void mnuRelatorioCompraVendas_Click(object sender, EventArgs e)
         {
             DateTime data = DateTime.Today;
             RelatorioTotalPeriodo vendas = RelatorioTotalPeriodo.GetInstance(data);
-            vendas.MdiParent = this; 
+            vendas.MdiParent = this;
             vendas.WindowState = FormWindowState.Normal;
             vendas.BringToFront();
             vendas.Show();
         }
+
+        private void mnuRelatorioCompraComissao_Click(object sender, EventArgs e)
+        {
+            RelatorioComissaoPeriodo comissao = RelatorioComissaoPeriodo.GetInstance((UInt32)_usuario.Id);
+            comissao.MdiParent = this;
+            comissao.WindowState = FormWindowState.Normal;
+            comissao.BringToFront();
+            comissao.Show();
+        }
+        #endregion
+
+
     }
 }

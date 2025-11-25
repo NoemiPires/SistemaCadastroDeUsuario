@@ -31,6 +31,7 @@
             lstVendedores = new ListBox();
             lstPeriodo = new ListBox();
             lblComissao = new Label();
+            lblRespostaTotal = new Label();
             SuspendLayout();
             // 
             // lstVendedores
@@ -55,17 +56,28 @@
             // lblComissao
             // 
             lblComissao.AutoSize = true;
+            lblComissao.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblComissao.Location = new Point(274, 13);
             lblComissao.Name = "lblComissao";
-            lblComissao.Size = new Size(59, 15);
+            lblComissao.Size = new Size(61, 15);
             lblComissao.TabIndex = 2;
-            lblComissao.Text = "Comissao";
+            lblComissao.Text = "Comissao:";
+            // 
+            // lblRespostaTotal
+            // 
+            lblRespostaTotal.AutoSize = true;
+            lblRespostaTotal.Location = new Point(274, 38);
+            lblRespostaTotal.Name = "lblRespostaTotal";
+            lblRespostaTotal.Size = new Size(67, 15);
+            lblRespostaTotal.TabIndex = 3;
+            lblRespostaTotal.Text = "(Resultado)";
             // 
             // RelatorioComissaoPeriodo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(391, 164);
+            Controls.Add(lblRespostaTotal);
             Controls.Add(lblComissao);
             Controls.Add(lstPeriodo);
             Controls.Add(lstVendedores);
@@ -80,5 +92,6 @@
         private ListBox lstVendedores;
         private ListBox lstPeriodo;
         private Label lblComissao;
+        private Label lblRespostaTotal;
     }
 }

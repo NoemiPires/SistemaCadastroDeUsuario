@@ -29,33 +29,8 @@ namespace SistemaCadastroDeUsuario
                 value.Usuario = this;
             }
         }
+
         
-        public Compra Compra { get; set; }
-
-
-        // Método para calcular a comissão do usuário usuario se ele for do tipo vendedor, somando 
-        // todas as comissoes das vendas realizadas por ele na classe Compra no metodo Calcular Comissao. 
-        public Decimal CalcularComisasaoUsuario(TipoUsuario Tipo)
-        {
-            if (this.Tipo != TipoUsuario.Vendedor)
-            {
-                return 0;
-            }
-            else
-            {
-                List<Compra> comprasDoVendedor = CompraRepository.FindByVendedorId(this.Id);
-                Decimal totalComissao = 0;
-                foreach (var compra in comprasDoVendedor)
-                {
-
-                    if (compra != null)
-                    {
-                        totalComissao += compra.CalcularComissao();
-                    }
-                }
-                return totalComissao;
-            }
-        }
     }
 
 }

@@ -25,7 +25,6 @@ namespace SistemaCadastroDeUsuario
                 {
                     return false;
 
-                    break;
                 }
            }
 

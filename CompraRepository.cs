@@ -70,7 +70,7 @@ namespace SistemaCadastroDeUsuario
                 using (Repository dbContext = new())
                 {
                     return dbContext.Compras
-                        .Where(c => c.Vendedor.Id == vendedorId)
+                        .Where(c => c.VendedorId.Id == vendedorId)
                         .ToList();
                 }
             }
@@ -128,6 +128,46 @@ namespace SistemaCadastroDeUsuario
                 {
                     return dbContext.Compras
                         .Where(c => c.Estado == estado)
+                        .ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        // Soma todas as comissoes de um vendedorId em uma data específica
+        public static Decimal SumComissoesByVendedorIdAndDate(UInt32 vendedorId, DateTime data)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    var start = data.Date;
+                    var end = start.AddDays(1);
+                    return dbContext.Compras
+                        .Where(c => c.VendedorId.Id == vendedorId && c.Inicio >= start && c.Inicio < end)
+                        .Sum(c => c.Comissao);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        // Datas de vendas de cada vendedorid
+        public static List<DateTime> FindDatasByVendedorId(UInt32 vendedorId)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Compras
+                        .Where(c => c.VendedorId.Id == vendedorId)
+                        .Select(c => c.Inicio.Date)
+                        .Distinct()
                         .ToList();
                 }
             }

@@ -42,11 +42,12 @@
             estoqueToolStripMenuItem = new ToolStripMenuItem();
             mnuRelatorioEstoqueMinimo = new ToolStripMenuItem();
             cToolStripMenuItem = new ToolStripMenuItem();
+            mnuRelatorioCompraVendas = new ToolStripMenuItem();
+            mnuRelatorioCompraComissao = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
-            mnuRelatorioCompraVendas = new ToolStripMenuItem();
             mnuJanelaPrincipal.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -145,10 +146,24 @@
             // 
             // cToolStripMenuItem
             // 
-            cToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioCompraVendas });
+            cToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioCompraVendas, mnuRelatorioCompraComissao });
             cToolStripMenuItem.Name = "cToolStripMenuItem";
             cToolStripMenuItem.Size = new Size(180, 22);
             cToolStripMenuItem.Text = "Compra";
+            // 
+            // mnuRelatorioCompraVendas
+            // 
+            mnuRelatorioCompraVendas.Name = "mnuRelatorioCompraVendas";
+            mnuRelatorioCompraVendas.Size = new Size(197, 22);
+            mnuRelatorioCompraVendas.Text = "Vendas por Periodo";
+            mnuRelatorioCompraVendas.Click += mnuRelatorioCompraVendas_Click;
+            // 
+            // mnuRelatorioCompraComissao
+            // 
+            mnuRelatorioCompraComissao.Name = "mnuRelatorioCompraComissao";
+            mnuRelatorioCompraComissao.Size = new Size(197, 22);
+            mnuRelatorioCompraComissao.Text = "Comissao Do Vendedor";
+            mnuRelatorioCompraComissao.Click += mnuRelatorioCompraComissao_Click;
             // 
             // mnuAjuda
             // 
@@ -178,13 +193,6 @@
             staBarraEstadoUltimoAcesso.Name = "staBarraEstadoUltimoAcesso";
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
-            // 
-            // mnuRelatorioCompraVendas
-            // 
-            mnuRelatorioCompraVendas.Name = "mnuRelatorioCompraVendas";
-            mnuRelatorioCompraVendas.Size = new Size(180, 22);
-            mnuRelatorioCompraVendas.Text = "Vendas por Periodo";
-            mnuRelatorioCompraVendas.Click += mnuRelatorioCompraVendas_Click;
             // 
             // JanelaPrincipal
             // 
@@ -226,5 +234,6 @@
         private ToolStripMenuItem mnuCadastroNovaCategoria;
         private ToolStripMenuItem cToolStripMenuItem;
         private ToolStripMenuItem mnuRelatorioCompraVendas;
+        private ToolStripMenuItem mnuRelatorioCompraComissao;
     }
 }

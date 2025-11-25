@@ -13,7 +13,7 @@ namespace SistemaCadastroDeUsuario
     public partial class RelatorioComissaoPeriodo : Form
     {
         private static RelatorioComissaoPeriodo _instance;
-        public RelatorioComissaoPeriodo(DateTime data)
+        public RelatorioComissaoPeriodo(UInt32 vendedorId)
         {
             InitializeComponent();
 
@@ -21,29 +21,32 @@ namespace SistemaCadastroDeUsuario
             List<Usuario> usuarios = UsuarioRepository.FindNomeByTipoVendedor();
             lstVendedores.Items.AddRange(usuarios.ToArray());
 
-            lstPeriodo.DisplayMember = "inicio";
-            List<Compra> compras = new List<Compra>();
-            compras = CompraRepository.FindByData(data);
-            lstPeriodo.Items.AddRange(compras.ToArray());
+            lstPeriodo.DisplayMember = "Inicio";
+            List<DateTime> datas = CompraRepository.FindDatasByVendedorId(vendedorId);
+            lstPeriodo.Items.AddRange(datas.Cast<object>().ToArray());
+
+
         }
-        public static RelatorioComissaoPeriodo GetInstance(DateTime data)
+        public static RelatorioComissaoPeriodo GetInstance(UInt32 vendedorId)
         {
             if (_instance == null || _instance.IsDisposed)
             {
-                _instance = new RelatorioComissaoPeriodo(data);
+                _instance = new RelatorioComissaoPeriodo(vendedorId);
             }
             return _instance;
         }
 
+        // Depois de selecionar o vendedor e o periodo,
+        // mostrar a comissao total do vendedor no periodo selecionado
         private void lstVendedores_Click(object sender, EventArgs e)
         {
-            Usuario? usuario = (Usuario?)lstVendedores.SelectedItem;
-            if (usuario == null)
+            if (lstVendedores.SelectedItem != null && lstPeriodo.SelectedItem != null)
             {
-                return;
+                Usuario vendedorSelecionado = (Usuario)lstVendedores.SelectedItem;
+                DateTime periodoSelecionado = (DateTime)lstPeriodo.SelectedItem;
+                Decimal comissaoTotal = CompraRepository.SumComissoesByVendedorIdAndDate((UInt32)vendedorSelecionado.Id, periodoSelecionado);
+                lblComissao.Text = $"Comissão Total: {comissaoTotal:C}";
             }
-            // Additional item-click behavior can be added here if needed.
-
         }
     }
 }
