@@ -8,6 +8,6 @@ namespace SistemaCadastroDeUsuario
 {
     public enum TipoUsuario
     {
-        VENDEDOR, GERENTE, OPERADORCAIXA, CLIENTE
+        VENDEDOR, GERENTE, OPERADORCAIXA
     }
 }

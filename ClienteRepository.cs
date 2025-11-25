@@ -65,6 +65,26 @@ namespace SistemaCadastroDeUsuario
             }
         }
 
+        // Listar todos os clientes que estão com o estado pendente
+        //em suas compras
+        public static List<Cliente> FindByCompraPendente()
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Clientes
+                        .Where(c => c.Compras
+                            .Any(compra => compra.Estado == Estado.PENDENTE))
+                        .ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static List<Cliente> FindAll()
         {
             try

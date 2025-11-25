@@ -161,8 +161,16 @@ namespace SistemaCadastroDeUsuario
             comissao.BringToFront();
             comissao.Show();
         }
-        #endregion
 
+        private void inadiplentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelatorioClientesInadimplentes inadimplentes = RelatorioClientesInadimplentes.GetInstance();
+            inadimplentes.MdiParent = this;
+            inadimplentes.WindowState = FormWindowState.Normal;
+            inadimplentes.BringToFront();
+            inadimplentes.Show();
+        }
+        #endregion
 
     }
 }

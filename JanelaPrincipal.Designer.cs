@@ -48,6 +48,8 @@
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
+            clientesToolStripMenuItem = new ToolStripMenuItem();
+            inadiplentesToolStripMenuItem = new ToolStripMenuItem();
             mnuJanelaPrincipal.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -111,7 +113,7 @@
             // 
             // mnuRelatorio
             // 
-            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioUsuario, mnuRelatorioVendas, estoqueToolStripMenuItem, cToolStripMenuItem });
+            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioUsuario, mnuRelatorioVendas, estoqueToolStripMenuItem, cToolStripMenuItem, clientesToolStripMenuItem });
             mnuRelatorio.Name = "mnuRelatorio";
             mnuRelatorio.Size = new Size(66, 20);
             mnuRelatorio.Text = "Relatorio";
@@ -194,6 +196,20 @@
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
             // 
+            // clientesToolStripMenuItem
+            // 
+            clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { inadiplentesToolStripMenuItem });
+            clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            clientesToolStripMenuItem.Size = new Size(180, 22);
+            clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // inadiplentesToolStripMenuItem
+            // 
+            inadiplentesToolStripMenuItem.Name = "inadiplentesToolStripMenuItem";
+            inadiplentesToolStripMenuItem.Size = new Size(180, 22);
+            inadiplentesToolStripMenuItem.Text = "Inadiplentes";
+            inadiplentesToolStripMenuItem.Click += inadiplentesToolStripMenuItem_Click;
+            // 
             // JanelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -235,5 +251,7 @@
         private ToolStripMenuItem cToolStripMenuItem;
         private ToolStripMenuItem mnuRelatorioCompraVendas;
         private ToolStripMenuItem mnuRelatorioCompraComissao;
+        private ToolStripMenuItem clientesToolStripMenuItem;
+        private ToolStripMenuItem inadiplentesToolStripMenuItem;
     }
 }
