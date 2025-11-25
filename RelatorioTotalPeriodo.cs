@@ -23,8 +23,7 @@ namespace SistemaCadastroDeUsuario
 
             lstPeriodo.DisplayMember = "inicio"; 
             lstPeriodo.Items.AddRange(compras.ToArray());
-            // int totalPeriodo = ;
-            //lblRespostaTotal.Text = totalPeriodo.ToString("C2");
+            lstPeriodo.SelectedIndex = 0;
         }
 
         public static RelatorioTotalPeriodo GetInstance(DateTime data)
@@ -45,6 +44,7 @@ namespace SistemaCadastroDeUsuario
                 return;
             }
 
+            // Additional item-click behavior can be added here if needed.
         }
     }
 }

@@ -77,6 +77,75 @@ namespace SistemaCadastroDeUsuario
             }
         }
 
+        public static Usuario? FindByIdWithCredencial(UInt64 id)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Usuarios
+                        .Include("Credencial")
+                        .FirstOrDefault(u => u.Id == id);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static Usuario? FindByEmail(string email)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Usuarios
+                        .FirstOrDefault(u => u.Email == email);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static List<Usuario> FindByName(string name)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Usuarios
+                        .Where(u => u.Nome.Contains(name))
+                        .ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static List<Usuario>FindNomeByTipoVendedor()
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Usuarios
+                        .Include("Credencial")
+                        .Where(u => u.Credencial.Tipo == TipoUsuario.VENDEDOR)
+                        .ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
         public static void Delete(Usuario usuario)
         {
             try
