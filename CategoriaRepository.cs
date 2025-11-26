@@ -63,6 +63,23 @@ namespace SistemaCadastroDeUsuario
             }
         }
 
+        // Buscar o id da categoria pelo nome
+        public static UInt32? BuscarIdPorNome(String nome)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    var categoria = dbContext.Categorias.FirstOrDefault(c => c.Nome == nome);
+                    return categoria?.Id;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static Categoria? FindById(UInt32 id)
         {
             try

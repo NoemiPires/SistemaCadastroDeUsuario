@@ -67,12 +67,17 @@ namespace SistemaCadastroDeUsuario
             produto.Estoque = UInt32.Parse(txtEstoque.Text);
             produto.Ativo = ckhAtivo.Checked;
 
-            // Buscar a categoria selecionada no ComboBox,
-            // em findAll e retornar o id da categoria
-            //String categoriaNome = cmdCatergoria.SelectedItem.ToString();
-            //Categoria categoria = CategoriaRepository.FindByName(categoriaNome);
-            //produto.CategoriaId = categoria;
-
+            // Buscar o id da categoria selecionada no combobox
+            UInt32? categoriaId = CategoriaRepository.BuscarIdPorNome(cmdCatergoria.SelectedItem?.ToString());
+            if (categoriaId.HasValue)
+            {
+                // Carrega a entidade Categoria do repositório e atribui como navegação
+                Categoria categoria = CategoriaRepository.FindById(categoriaId.Value);
+                if (categoria != null)
+                {
+                    produto.CategoriaId = categoria;
+                }
+            }
             ProdutoRepository.SaveOrUpdate(produto);
 
             lblaprodutoCadastrado.Visible = true;
