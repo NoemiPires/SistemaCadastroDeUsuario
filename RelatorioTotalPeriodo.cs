@@ -23,7 +23,7 @@ namespace SistemaCadastroDeUsuario
 
             lstPeriodo.DisplayMember = "inicio"; 
             lstPeriodo.Items.AddRange(compras.ToArray());
-            lstPeriodo.SelectedIndex = 0;
+  
         }
 
         public static RelatorioTotalPeriodo GetInstance(DateTime data)
@@ -38,13 +38,15 @@ namespace SistemaCadastroDeUsuario
 
         private void lstPeriodo_Click(object sender, EventArgs e)
         {
-            Compra? compra = (Compra?)lstPeriodo.SelectedItem;
-            if (compra == null)
+            // Mostrar o total de vendas no período selecionado no lstPeriodo atraves do metodo 
+            // SumVendasByDateRange e exibir no lblRespostaTotal
+            if (lstPeriodo.SelectedItem != null)
             {
-                return;
+                DateTime periodoSelecionado = (DateTime)lstPeriodo.SelectedItem;
+                Decimal totalVendas = CompraRepository.SumVendasByDateRange(periodoSelecionado, periodoSelecionado);
+                lblRespostaTotal.Text = $"{totalVendas:C}";
             }
 
-            // Additional item-click behavior can be added here if needed.
         }
     }
 }

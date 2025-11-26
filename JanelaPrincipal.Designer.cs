@@ -44,12 +44,13 @@
             cToolStripMenuItem = new ToolStripMenuItem();
             mnuRelatorioCompraVendas = new ToolStripMenuItem();
             mnuRelatorioCompraComissao = new ToolStripMenuItem();
+            clientesToolStripMenuItem = new ToolStripMenuItem();
+            inadiplentesToolStripMenuItem = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
-            clientesToolStripMenuItem = new ToolStripMenuItem();
-            inadiplentesToolStripMenuItem = new ToolStripMenuItem();
+            ultimosTrintaDiasToolStripMenuItem = new ToolStripMenuItem();
             mnuJanelaPrincipal.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -167,6 +168,20 @@
             mnuRelatorioCompraComissao.Text = "Comissao Do Vendedor";
             mnuRelatorioCompraComissao.Click += mnuRelatorioCompraComissao_Click;
             // 
+            // clientesToolStripMenuItem
+            // 
+            clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { inadiplentesToolStripMenuItem, ultimosTrintaDiasToolStripMenuItem });
+            clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            clientesToolStripMenuItem.Size = new Size(180, 22);
+            clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // inadiplentesToolStripMenuItem
+            // 
+            inadiplentesToolStripMenuItem.Name = "inadiplentesToolStripMenuItem";
+            inadiplentesToolStripMenuItem.Size = new Size(180, 22);
+            inadiplentesToolStripMenuItem.Text = "Inadiplentes";
+            inadiplentesToolStripMenuItem.Click += inadiplentesToolStripMenuItem_Click;
+            // 
             // mnuAjuda
             // 
             mnuAjuda.DropDownItems.AddRange(new ToolStripItem[] { mnuAjudaSobre });
@@ -196,19 +211,11 @@
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
             // 
-            // clientesToolStripMenuItem
+            // ultimosTrintaDiasToolStripMenuItem
             // 
-            clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { inadiplentesToolStripMenuItem });
-            clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(180, 22);
-            clientesToolStripMenuItem.Text = "Clientes";
-            // 
-            // inadiplentesToolStripMenuItem
-            // 
-            inadiplentesToolStripMenuItem.Name = "inadiplentesToolStripMenuItem";
-            inadiplentesToolStripMenuItem.Size = new Size(180, 22);
-            inadiplentesToolStripMenuItem.Text = "Inadiplentes";
-            inadiplentesToolStripMenuItem.Click += inadiplentesToolStripMenuItem_Click;
+            ultimosTrintaDiasToolStripMenuItem.Name = "ultimosTrintaDiasToolStripMenuItem";
+            ultimosTrintaDiasToolStripMenuItem.Size = new Size(180, 22);
+            ultimosTrintaDiasToolStripMenuItem.Text = "Ultimos Trinta Dias";
             // 
             // JanelaPrincipal
             // 
@@ -253,5 +260,6 @@
         private ToolStripMenuItem mnuRelatorioCompraComissao;
         private ToolStripMenuItem clientesToolStripMenuItem;
         private ToolStripMenuItem inadiplentesToolStripMenuItem;
+        private ToolStripMenuItem ultimosTrintaDiasToolStripMenuItem;
     }
 }

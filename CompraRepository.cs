@@ -157,6 +157,26 @@ namespace SistemaCadastroDeUsuario
             }
         }
 
+        // Total de vendas em um periodo
+        public static Decimal SumVendasByDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    var start = startDate.Date;
+                    var end = endDate.Date.AddDays(1);
+                    return dbContext.Compras
+                        .Where(c => c.Inicio >= start && c.Inicio < end)
+                        .Sum(c => c.Total);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         // Datas de vendas de cada vendedorid
         public static List<DateTime> FindDatasByVendedorId(UInt32 vendedorId)
         {
