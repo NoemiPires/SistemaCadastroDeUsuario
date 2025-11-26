@@ -46,11 +46,11 @@
             mnuRelatorioCompraComissao = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
             inadiplentesToolStripMenuItem = new ToolStripMenuItem();
+            ultimosTrintaDiasToolStripMenuItem = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
-            ultimosTrintaDiasToolStripMenuItem = new ToolStripMenuItem();
             mnuJanelaPrincipal.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -182,6 +182,13 @@
             inadiplentesToolStripMenuItem.Text = "Inadiplentes";
             inadiplentesToolStripMenuItem.Click += inadiplentesToolStripMenuItem_Click;
             // 
+            // ultimosTrintaDiasToolStripMenuItem
+            // 
+            ultimosTrintaDiasToolStripMenuItem.Name = "ultimosTrintaDiasToolStripMenuItem";
+            ultimosTrintaDiasToolStripMenuItem.Size = new Size(180, 22);
+            ultimosTrintaDiasToolStripMenuItem.Text = "Ultimos Trinta Dias";
+            ultimosTrintaDiasToolStripMenuItem.Click += ultimosTrintaDiasToolStripMenuItem_Click;
+            // 
             // mnuAjuda
             // 
             mnuAjuda.DropDownItems.AddRange(new ToolStripItem[] { mnuAjudaSobre });
@@ -192,7 +199,7 @@
             // mnuAjudaSobre
             // 
             mnuAjudaSobre.Name = "mnuAjudaSobre";
-            mnuAjudaSobre.Size = new Size(104, 22);
+            mnuAjudaSobre.Size = new Size(180, 22);
             mnuAjudaSobre.Text = "Sobre";
             mnuAjudaSobre.Click += mnuAjudaSobre_Click_1;
             // 
@@ -210,12 +217,6 @@
             staBarraEstadoUltimoAcesso.Name = "staBarraEstadoUltimoAcesso";
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
-            // 
-            // ultimosTrintaDiasToolStripMenuItem
-            // 
-            ultimosTrintaDiasToolStripMenuItem.Name = "ultimosTrintaDiasToolStripMenuItem";
-            ultimosTrintaDiasToolStripMenuItem.Size = new Size(180, 22);
-            ultimosTrintaDiasToolStripMenuItem.Text = "Ultimos Trinta Dias";
             // 
             // JanelaPrincipal
             // 

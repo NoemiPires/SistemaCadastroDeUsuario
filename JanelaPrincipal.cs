@@ -171,7 +171,16 @@ namespace SistemaCadastroDeUsuario
             inadimplentes.BringToFront();
             inadimplentes.Show();
         }
-        #endregion
 
+        private void ultimosTrintaDiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelatorioUltimosTrintaDias relatorio = RelatorioUltimosTrintaDias.GetInstance();
+            relatorio.MdiParent = this;
+            relatorio.WindowState = FormWindowState.Normal;
+            relatorio.BringToFront();
+            relatorio.Show();
+        }
+
+        #endregion
     }
 }

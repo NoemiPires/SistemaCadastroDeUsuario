@@ -33,6 +33,83 @@ namespace SistemaCadastroDeUsuario
 
         }
 
+        // Listar clientes por nome
+        public static List<Cliente> FindByNome(String? nome = null)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    if (String.IsNullOrEmpty(nome))
+                    {
+                        return dbContext.Clientes.ToList();
+                    }
+                    else
+                    {
+                        return dbContext.Clientes
+                            .Where(c => c.Nome.Contains(nome))
+                            .ToList();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        // Listar Compras pelo id do cliente
+        public static List<Compra> FindComprasByClienteId(UInt32 clienteId)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    Cliente? cliente = dbContext.Clientes
+                        .Where(c => c.Id == clienteId)
+                        .FirstOrDefault();
+                    if (cliente != null)
+                    {
+                        return cliente.Compras;
+                    }
+                    else
+                    {
+                        return new List<Compra>();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        // Buscar id pelo nome
+        public static UInt32? FindIdByNome(String nome)
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    Cliente? cliente = dbContext.Clientes
+                        .Where(c => c.Nome == nome)
+                        .FirstOrDefault();
+                    if (cliente != null)
+                    {
+                        return cliente.Id;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static Cliente? FindById(UInt32 id)
         {
             try
