@@ -129,7 +129,8 @@ namespace SistemaCadastroDeUsuario
 
         private void mnuCadastroNovoProduto_Click(object sender, EventArgs e)
         {
-            CadastrarProdutos cadastrar = CadastrarProdutos.GetInstance();
+            Categoria categoria = CategoriaRepository.FindAll().First();
+            CadastrarProdutos cadastrar = CadastrarProdutos.GetInstance(categoria);
             cadastrar.MdiParent = this;
             cadastrar.BringToFront();
             cadastrar.Show();

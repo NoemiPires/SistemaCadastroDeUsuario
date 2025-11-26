@@ -31,8 +31,8 @@
             panel1 = new Panel();
             lblaprodutoCadastrado = new Label();
             btnCadastrar = new Button();
-            ckbAtivo = new CheckBox();
-            cmbCatergoria = new ComboBox();
+            ckhAtivo = new CheckBox();
+            cmdCatergoria = new ComboBox();
             txtEstoque = new TextBox();
             txtNome = new TextBox();
             txtPreco = new TextBox();
@@ -48,8 +48,8 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.Controls.Add(lblaprodutoCadastrado);
             panel1.Controls.Add(btnCadastrar);
-            panel1.Controls.Add(ckbAtivo);
-            panel1.Controls.Add(cmbCatergoria);
+            panel1.Controls.Add(ckhAtivo);
+            panel1.Controls.Add(cmdCatergoria);
             panel1.Controls.Add(txtEstoque);
             panel1.Controls.Add(txtNome);
             panel1.Controls.Add(txtPreco);
@@ -84,26 +84,26 @@
             btnCadastrar.UseVisualStyleBackColor = true;
             btnCadastrar.Click += btnCadastrar_Click;
             // 
-            // ckbAtivo
+            // ckhAtivo
             // 
-            ckbAtivo.AutoSize = true;
-            ckbAtivo.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ckbAtivo.Location = new Point(15, 199);
-            ckbAtivo.Name = "ckbAtivo";
-            ckbAtivo.Size = new Size(56, 21);
-            ckbAtivo.TabIndex = 10;
-            ckbAtivo.Text = "Ativo";
-            ckbAtivo.UseVisualStyleBackColor = true;
+            ckhAtivo.AutoSize = true;
+            ckhAtivo.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ckhAtivo.Location = new Point(15, 199);
+            ckhAtivo.Name = "ckhAtivo";
+            ckhAtivo.Size = new Size(56, 21);
+            ckhAtivo.TabIndex = 10;
+            ckhAtivo.Text = "Ativo";
+            ckhAtivo.UseVisualStyleBackColor = true;
             // 
-            // cmbCatergoria
+            // cmdCatergoria
             // 
-            cmbCatergoria.Font = new Font("Segoe UI", 9.75F);
-            cmbCatergoria.FormattingEnabled = true;
-            cmbCatergoria.Location = new Point(77, 158);
-            cmbCatergoria.Name = "cmbCatergoria";
-            cmbCatergoria.Size = new Size(270, 25);
-            cmbCatergoria.TabIndex = 9;
-            cmbCatergoria.SelectedIndexChanged += cmbCatergoria_SelectedIndexChanged;
+            cmdCatergoria.Font = new Font("Segoe UI", 9.75F);
+            cmdCatergoria.FormattingEnabled = true;
+            cmdCatergoria.Location = new Point(77, 158);
+            cmdCatergoria.Name = "cmdCatergoria";
+            cmdCatergoria.Size = new Size(270, 25);
+            cmdCatergoria.TabIndex = 9;
+            cmdCatergoria.SelectedIndexChanged += cmbCatergoria_SelectedIndexChanged;
             // 
             // txtEstoque
             // 
@@ -196,8 +196,8 @@
         private TextBox txtNome;
         private TextBox txtPreco;
         private Button btnCadastrar;
-        private CheckBox ckbAtivo;
-        private ComboBox cmbCatergoria;
+        private CheckBox ckhAtivo;
+        private ComboBox cmdCatergoria;
         private Label lblaprodutoCadastrado;
     }
 }

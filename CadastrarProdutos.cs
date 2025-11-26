@@ -13,18 +13,18 @@ namespace SistemaCadastroDeUsuario
     public partial class CadastrarProdutos : Form
     {
         private static CadastrarProdutos _intance;
-        public CadastrarProdutos()
+        public CadastrarProdutos(Categoria categoria)
         {
             InitializeComponent();
-            // Erro
-           
+            cmdCatergoria.DataSource = CategoriaRepository.ListarNomesCategorias();
+
         }
 
-        public static CadastrarProdutos GetInstance()
+        public static CadastrarProdutos GetInstance(Categoria categoria)
         {
             if (_intance == null || _intance.IsDisposed)
             {
-                _intance = new CadastrarProdutos();
+                _intance = new CadastrarProdutos(categoria);
             }
             return _intance;
         }
@@ -49,7 +49,7 @@ namespace SistemaCadastroDeUsuario
         }
         private void txtEstoque_KeyUp(object sender, KeyEventArgs e)
         {
-            cmbCatergoria.Focus();
+            cmdCatergoria.Focus();
         }
         #endregion
 
@@ -65,16 +65,25 @@ namespace SistemaCadastroDeUsuario
             produto.Nome = txtNome.Text;
             produto.Preco = Decimal.Parse(txtPreco.Text);
             produto.Estoque = UInt32.Parse(txtEstoque.Text);
+            produto.Ativo = ckhAtivo.Checked;
 
+            // Buscar a categoria selecionada no ComboBox,
+            // em findAll e retornar o id da categoria
+            //String categoriaNome = cmdCatergoria.SelectedItem.ToString();
+            //Categoria categoria = CategoriaRepository.FindByName(categoriaNome);
+            //produto.CategoriaId = categoria;
 
             ProdutoRepository.SaveOrUpdate(produto);
+
+            lblaprodutoCadastrado.Visible = true;
 
             txtNome.Clear();
             txtPreco.Clear();
             txtEstoque.Clear();
             txtNome.Focus();
+            cmdCatergoria.SelectedIndex = -1;
+            ckhAtivo.Checked = false;
 
-            lblaprodutoCadastrado.Visible = true;
 
         }
 

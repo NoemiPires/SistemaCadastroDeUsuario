@@ -47,6 +47,22 @@ namespace SistemaCadastroDeUsuario
 
         }
 
+        // Listar todos os nomes de categorias
+        public static List<String> ListarNomesCategorias()
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Categorias.Select(c => c.Nome).ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static Categoria? FindById(UInt32 id)
         {
             try

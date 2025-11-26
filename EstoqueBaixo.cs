@@ -41,7 +41,7 @@ namespace SistemaCadastroDeUsuario
             lblPrecoDado.Text = produto.Preco.ToString("C2");
             lblEstoqueDado.Text = produto.Estoque.ToString();
             lblAtivoDado.Text = produto.Ativo ? "Sim" : "Não";
-            lblCartegoriaDada.Text = produto.Categoria.Nome;
+            lblCartegoriaDada.Text = produto.CategoriaId.Nome;
         }
 
 

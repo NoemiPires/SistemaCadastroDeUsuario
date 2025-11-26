@@ -78,6 +78,7 @@ namespace SistemaCadastroDeUsuario
             }
         }
 
+
         public static List<Produto> FindByEstoqueMinimo()
         {
             try
