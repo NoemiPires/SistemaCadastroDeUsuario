@@ -53,6 +53,7 @@
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
+            registraPagamentoToolStripMenuItem = new ToolStripMenuItem();
             mnuJanelaPrincipal.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -90,34 +91,34 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(180, 22);
+            mnuCadastroUsuario.Size = new Size(156, 22);
             mnuCadastroUsuario.Text = "Novo Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
             // novoClienteToolStripMenuItem
             // 
             novoClienteToolStripMenuItem.Name = "novoClienteToolStripMenuItem";
-            novoClienteToolStripMenuItem.Size = new Size(180, 22);
+            novoClienteToolStripMenuItem.Size = new Size(156, 22);
             novoClienteToolStripMenuItem.Text = "Novo Cliente";
             novoClienteToolStripMenuItem.Click += novoClienteToolStripMenuItem_Click;
             // 
             // mnuCadastroNovaCategoria
             // 
             mnuCadastroNovaCategoria.Name = "mnuCadastroNovaCategoria";
-            mnuCadastroNovaCategoria.Size = new Size(180, 22);
+            mnuCadastroNovaCategoria.Size = new Size(156, 22);
             mnuCadastroNovaCategoria.Text = "Nova Categoria";
             mnuCadastroNovaCategoria.Click += mnuCadastroNovaCategoria_Click_1;
             // 
             // mnuCadastroNovoProduto
             // 
             mnuCadastroNovoProduto.Name = "mnuCadastroNovoProduto";
-            mnuCadastroNovoProduto.Size = new Size(180, 22);
+            mnuCadastroNovoProduto.Size = new Size(156, 22);
             mnuCadastroNovoProduto.Text = "Novo Produto";
             mnuCadastroNovoProduto.Click += mnuCadastroNovoProduto_Click;
             // 
             // mnuVenda
             // 
-            mnuVenda.DropDownItems.AddRange(new ToolStripItem[] { mnuRegistrarNovaVenda });
+            mnuVenda.DropDownItems.AddRange(new ToolStripItem[] { mnuRegistrarNovaVenda, registraPagamentoToolStripMenuItem });
             mnuVenda.Name = "mnuVenda";
             mnuVenda.Size = new Size(51, 20);
             mnuVenda.Text = "Venda";
@@ -235,6 +236,12 @@
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
             // 
+            // registraPagamentoToolStripMenuItem
+            // 
+            registraPagamentoToolStripMenuItem.Name = "registraPagamentoToolStripMenuItem";
+            registraPagamentoToolStripMenuItem.Size = new Size(186, 22);
+            registraPagamentoToolStripMenuItem.Text = "Registra Pagamento";
+            // 
             // JanelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -282,5 +289,6 @@
         private ToolStripMenuItem novoClienteToolStripMenuItem;
         private ToolStripMenuItem mnuVenda;
         private ToolStripMenuItem mnuRegistrarNovaVenda;
+        private ToolStripMenuItem registraPagamentoToolStripMenuItem;
     }
 }

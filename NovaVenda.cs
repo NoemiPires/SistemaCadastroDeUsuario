@@ -22,6 +22,7 @@ namespace SistemaCadastroDeUsuario
             lblTotal.Text = "Total: R$ " + Itens.GetInstance().CalcularTotal(item).ToString("F2");
 
 
+
         }
 
         public static NovaVenda GetInstance(Item item)
