@@ -45,11 +45,12 @@ namespace SistemaCadastroDeUsuario
                 else
                 {
                     lblAviso.Visible = false;
-                    NovaVenda novaVenda = NovaVenda.GetInstance();
+                    Item item = new Item();
+                    NovaVenda novaVenda = NovaVenda.GetInstance(item);
                     novaVenda.MdiParent = this.MdiParent;
                     novaVenda.BringToFront();
                     novaVenda.Show();
-                    this.Hide();
+                    this.Close();
                 }
             }
         }

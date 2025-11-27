@@ -31,7 +31,6 @@ namespace SistemaCadastroDeUsuario
             mnuRelatorioEstoqueMinimo.Enabled = usuario.Credencial.Tipo == TipoUsuario.GERENTE;
             novoClienteToolStripMenuItem.Enabled = usuario.Credencial.Tipo == TipoUsuario.VENDEDOR;
             mnuRegistrarNovaVenda.Enabled = usuario.Credencial.Tipo == TipoUsuario.VENDEDOR;
-            mnuRegistar
 
 
 

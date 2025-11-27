@@ -38,7 +38,6 @@
             txtUsuario = new TextBox();
             txtEmail = new TextBox();
             txtNome = new TextBox();
-            chkGerente = new CheckBox();
             lblSenha = new Label();
             lblUsuario = new Label();
             lblTelefone = new Label();
@@ -59,7 +58,6 @@
             pnlCadastroUsuario.Controls.Add(txtUsuario);
             pnlCadastroUsuario.Controls.Add(txtEmail);
             pnlCadastroUsuario.Controls.Add(txtNome);
-            pnlCadastroUsuario.Controls.Add(chkGerente);
             pnlCadastroUsuario.Controls.Add(lblSenha);
             pnlCadastroUsuario.Controls.Add(lblUsuario);
             pnlCadastroUsuario.Controls.Add(lblTelefone);
@@ -67,7 +65,7 @@
             pnlCadastroUsuario.Controls.Add(lblNome);
             pnlCadastroUsuario.Location = new Point(12, 12);
             pnlCadastroUsuario.Name = "pnlCadastroUsuario";
-            pnlCadastroUsuario.Size = new Size(255, 236);
+            pnlCadastroUsuario.Size = new Size(258, 277);
             pnlCadastroUsuario.TabIndex = 0;
             // 
             // mskTelefone
@@ -82,7 +80,7 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(13, 205);
+            btnSalvar.Location = new Point(13, 241);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(75, 23);
             btnSalvar.TabIndex = 14;
@@ -117,7 +115,7 @@
             lblCadastroEfetuado.AutoSize = true;
             lblCadastroEfetuado.BackColor = Color.Olive;
             lblCadastroEfetuado.ForeColor = SystemColors.ActiveCaptionText;
-            lblCadastroEfetuado.Location = new Point(117, 205);
+            lblCadastroEfetuado.Location = new Point(117, 241);
             lblCadastroEfetuado.Name = "lblCadastroEfetuado";
             lblCadastroEfetuado.Size = new Size(104, 15);
             lblCadastroEfetuado.TabIndex = 11;
@@ -160,16 +158,6 @@
             txtNome.TextChanged += txtNome_TextChanged;
             txtNome.KeyUp += txtNome_KeyUp;
             // 
-            // chkGerente
-            // 
-            chkGerente.AutoSize = true;
-            chkGerente.Location = new Point(13, 180);
-            chkGerente.Name = "chkGerente";
-            chkGerente.Size = new Size(67, 19);
-            chkGerente.TabIndex = 5;
-            chkGerente.Text = "Gerente";
-            chkGerente.UseVisualStyleBackColor = true;
-            // 
             // lblSenha
             // 
             lblSenha.AutoSize = true;
@@ -193,7 +181,7 @@
             lblTelefone.AutoSize = true;
             lblTelefone.Location = new Point(13, 77);
             lblTelefone.Name = "lblTelefone";
-            lblTelefone.Size = new Size(55, 15);
+            lblTelefone.Size = new Size(54, 15);
             lblTelefone.TabIndex = 2;
             lblTelefone.Text = "Telefone:";
             // 
@@ -219,7 +207,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(279, 260);
+            ClientSize = new Size(282, 301);
             Controls.Add(pnlCadastroUsuario);
             Name = "CadastroUsuario";
             Text = "CadastroUsuario";
@@ -235,7 +223,6 @@
         private Label lblNome;
         private TextBox txtEmail;
         private TextBox txtNome;
-        private CheckBox chkGerente;
         private Label lblSenha;
         private Label lblUsuario;
         private Label lblTelefone;

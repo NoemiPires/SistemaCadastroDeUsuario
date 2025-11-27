@@ -29,25 +29,55 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            lsbItens = new ListBox();
+            lblTotal = new Label();
+            lblTotalCompra = new Label();
             lblNomeCliente = new Label();
             btnSalvarCompr = new Button();
-            lblTotalCompra = new Label();
-            lblTotal = new Label();
-            lsbItens = new ListBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(btnSalvarCompr);
             panel1.Controls.Add(lsbItens);
             panel1.Controls.Add(lblTotal);
             panel1.Controls.Add(lblTotalCompra);
             panel1.Controls.Add(lblNomeCliente);
             panel1.Location = new Point(-2, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(375, 334);
+            panel1.Size = new Size(739, 334);
             panel1.TabIndex = 0;
+            // 
+            // lsbItens
+            // 
+            lsbItens.FormattingEnabled = true;
+            lsbItens.ItemHeight = 15;
+            lsbItens.Location = new Point(14, 53);
+            lsbItens.Name = "lsbItens";
+            lsbItens.Size = new Size(182, 229);
+            lsbItens.TabIndex = 3;
+            // 
+            // lblTotal
+            // 
+            lblTotal.AutoSize = true;
+            lblTotal.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblTotal.Location = new Point(113, 305);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(33, 15);
+            lblTotal.TabIndex = 2;
+            lblTotal.Text = "Total";
+            // 
+            // lblTotalCompra
+            // 
+            lblTotalCompra.AutoSize = true;
+            lblTotalCompra.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalCompra.Location = new Point(14, 305);
+            lblTotalCompra.Name = "lblTotalCompra";
+            lblTotalCompra.Size = new Size(83, 15);
+            lblTotalCompra.TabIndex = 1;
+            lblTotalCompra.Text = "Total Compra:";
             // 
             // lblNomeCliente
             // 
@@ -61,50 +91,19 @@
             // 
             // btnSalvarCompr
             // 
-            btnSalvarCompr.Location = new Point(643, 301);
+            btnSalvarCompr.Location = new Point(635, 297);
             btnSalvarCompr.Name = "btnSalvarCompr";
             btnSalvarCompr.Size = new Size(75, 23);
             btnSalvarCompr.TabIndex = 2;
             btnSalvarCompr.Text = "Salvar";
             btnSalvarCompr.UseVisualStyleBackColor = true;
             // 
-            // lblTotalCompra
-            // 
-            lblTotalCompra.AutoSize = true;
-            lblTotalCompra.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalCompra.Location = new Point(14, 305);
-            lblTotalCompra.Name = "lblTotalCompra";
-            lblTotalCompra.Size = new Size(83, 15);
-            lblTotalCompra.TabIndex = 1;
-            lblTotalCompra.Text = "Total Compra:";
-            // 
-            // lblTotal
-            // 
-            lblTotal.AutoSize = true;
-            lblTotal.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblTotal.Location = new Point(113, 305);
-            lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(33, 15);
-            lblTotal.TabIndex = 2;
-            lblTotal.Text = "Total";
-            // 
-            // lsbItens
-            // 
-            lsbItens.FormattingEnabled = true;
-            lsbItens.ItemHeight = 15;
-            lsbItens.Location = new Point(14, 53);
-            lsbItens.Name = "lsbItens";
-            lsbItens.Size = new Size(182, 229);
-            lsbItens.TabIndex = 3;
-            // 
             // NovaVenda
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 336);
-            Controls.Add(btnSalvarCompr);
             Controls.Add(panel1);
-            IsMdiContainer = true;
             Name = "NovaVenda";
             Text = "NovaVenda";
             Load += NovaVenda_Load;

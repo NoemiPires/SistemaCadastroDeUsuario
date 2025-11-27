@@ -5,7 +5,7 @@ namespace SistemaCadastroDeUsuario
     internal class Repository : DbContext
     {
         private static readonly String _databaseConnection =
-            @"server=127.0.0.1;port=3306;uid=root;pwd=;database=Proj2";
+            @"server=127.0.0.1;port=3307;uid=root;pwd=;database=Proj2";
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Credencial> Credenciais { get; set; }
