@@ -36,10 +36,6 @@ namespace SistemaCadastroDeUsuario
 
         private void NovaVenda_Load(object sender, EventArgs e)
         {
-            Itens itens = Itens.GetInstance();
-            itens.MdiParent = this;
-            itens.BringToFront();
-            itens.Show();
 
         }
 
