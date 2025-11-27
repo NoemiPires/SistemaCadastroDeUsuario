@@ -18,9 +18,7 @@ namespace SistemaCadastroDeUsuario
             InitializeComponent();
             // LblNomeCliente vai receber o nome do cliente selecionado na janela ClienteCompra
             lblNomeCliente.Text = ClienteCompra.GetInstance().GetNomeCliente();
-            // lblTotal vai se a soma do preco unitario de todos os itens adicionados na venda atraves da janela Itens
-            lblTotal.Text = "Total: R$ " + Itens.GetInstance().CalcularTotal(item).ToString("F2");
-
+            // lblTotal vai se a soma do preco unitario de todos os itens adicionados na venda atraves da lsbItens
 
 
         }
@@ -36,12 +34,21 @@ namespace SistemaCadastroDeUsuario
 
         private void NovaVenda_Load(object sender, EventArgs e)
         {
+            // encontrar o id do cliente atraves do nome exibido no lblNomeCliente usando o metodo FindIdByNome da classe ClienteRepository
+            UInt32? idCliente = ClienteRepository.FindIdByNome(lblNomeCliente.Text);
+
+            Compra compra = new Compra();
+            compra.Itens = lsbItens.Items.Cast<Item>().ToList();
+            compra.Cliente = ClienteRepository.FindById((UInt32)idCliente);
+
+
 
         }
 
-        // Adicionar os itens cadastrados na lista de itens da venda lsbItens
         private void btnAdicionarItem_Click(object sender, EventArgs e)
         {
+            // Salvar o item na lsbItens, e atualizar o lblTotal com o valor total da venda. Alem de adiciona
+
         }
 
 
