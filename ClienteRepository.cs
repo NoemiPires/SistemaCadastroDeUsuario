@@ -33,23 +33,34 @@ namespace SistemaCadastroDeUsuario
 
         }
 
-        // Listar clientes por nome
-        public static List<Cliente> FindByNome(String? nome = null)
+        // Encontrar cliente pelo nome
+        public static Cliente FindByNome()
         {
             try
             {
                 using (Repository dbContext = new())
                 {
-                    if (String.IsNullOrEmpty(nome))
-                    {
-                        return dbContext.Clientes.ToList();
-                    }
-                    else
-                    {
-                        return dbContext.Clientes
-                            .Where(c => c.Nome.Contains(nome))
-                            .ToList();
-                    }
+                    return dbContext.Clientes
+                        .Where(c => c.Nome == c.Nome)
+                        .FirstOrDefault()!;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+        // Buscar todos os nomes dos clientes
+        public static List<Cliente> FindAllNomes()
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Clientes
+                        .Select(c => new Cliente { Nome = c.Nome })
+                        .ToList();
                 }
             }
             catch (Exception)
@@ -57,6 +68,25 @@ namespace SistemaCadastroDeUsuario
                 throw;
             }
         }
+
+        // Listar os nomes dos clientes
+        public static List<String> FindNomes()
+        {
+            try
+            {
+                using (Repository dbContext = new())
+                {
+                    return dbContext.Clientes
+                        .Select(c => c.Nome)
+                        .ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
         // Listar Compras pelo id do cliente
         public static List<Compra> FindComprasByClienteId(UInt32 clienteId)

@@ -67,6 +67,8 @@ namespace SistemaCadastroDeUsuario
             JanelaEntrada.GetInstance().LimparCampos();
         }
 
+
+
         #region Mdiparents
 
         private void mnuArquivoSair_Click_1(object sender, EventArgs e)
@@ -181,6 +183,34 @@ namespace SistemaCadastroDeUsuario
             relatorio.Show();
         }
 
+        private void mnuRegistrarNovaVenda_Click(object sender, EventArgs e)
+        {
+            ClienteCompra clienteCompra = ClienteCompra.GetInstance();
+            clienteCompra.MdiParent = this;
+            clienteCompra.BringToFront();
+            clienteCompra.Show();
+        }
+
+
+        private void novoClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastrarCliente cadastrarCliente = CadastrarCliente.GetInstance();
+            cadastrarCliente.MdiParent = this;
+            cadastrarCliente.BringToFront();
+            cadastrarCliente.Show();
+
+        }
         #endregion
+
+
+        private void JanelaPrincipal_Load(object sender, EventArgs e)
+        {
+            // Se o usuario for gerente abrir a janela Estoque baixo automaticamente
+            if (_usuario.Credencial.Tipo == TipoUsuario.GERENTE)
+            {
+                mnuRelatorioEstoqueMinimo_Click(sender, e);
+            }
+        }
+
     }
 }

@@ -18,7 +18,7 @@ namespace SistemaCadastroDeUsuario
             InitializeComponent();
 
             List<Cliente> clientes = new List<Cliente>();
-            clientes = ClienteRepository.FindByNome();
+            clientes = ClienteRepository.FindAllNomes();
             lsbClientes.DisplayMember = "Nome";
             lsbClientes.Items.AddRange(clientes.ToArray());
 
