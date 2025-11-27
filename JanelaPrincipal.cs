@@ -24,7 +24,14 @@ namespace SistemaCadastroDeUsuario
             Text = $"Sistema de Cadastro de Usuários - {usuario.Nome}";
 
             // Possivel erro
-            mnuCadastroUsuario.Enabled = usuario.Credencial.PermitirAcesso();
+            mnuCadastroUsuario.Enabled = usuario.Credencial.Tipo == TipoUsuario.GERENTE;
+            mnuCadastroNovaCategoria.Enabled = usuario.Credencial.Tipo == TipoUsuario.GERENTE;
+            mnuCadastroNovoProduto.Enabled = usuario.Credencial.Tipo == TipoUsuario.GERENTE;
+            novoClienteToolStripMenuItem.Enabled = usuario.Credencial.Tipo == TipoUsuario.GERENTE;
+            mnuRelatorioEstoqueMinimo.Enabled = usuario.Credencial.Tipo == TipoUsuario.GERENTE;
+            novoClienteToolStripMenuItem.Enabled = usuario.Credencial.Tipo == TipoUsuario.VENDEDOR;
+            mnuRegistrarNovaVenda.Enabled = usuario.Credencial.Tipo == TipoUsuario.VENDEDOR;
+
 
 
             _usuario = usuario;
