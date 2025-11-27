@@ -13,6 +13,8 @@ namespace SistemaCadastroDeUsuario
         public Decimal PrecoUnitario { get; set; }
         public Decimal Desconto { get; set; }
 
+        public Produto Produto { get; set; }
+
         // Tive que fazer referencia de compra em Itens pra criar em
         // ItemRepository: FindByCompraId pois é necessário para criar
         // Calcular total em Compra.

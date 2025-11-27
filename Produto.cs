@@ -15,5 +15,15 @@ namespace SistemaCadastroDeUsuario
         public Boolean Ativo { get; set; }
         public Categoria CategoriaId { get; set; }
 
+        // Metodo para atualizar o estoque assim que uma compra for realizada
+        public void AtualizarEstoque(UInt32 quantidadeVendida)
+        {
+            if (quantidadeVendida > Estoque)
+            {
+                throw new InvalidOperationException("Quantidade vendida excede o estoque disponível.");
+            }
+            Estoque -= quantidadeVendida;
+        }
+
     }
 }
