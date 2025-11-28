@@ -34,25 +34,25 @@
             lblAlertaClienteCadastrado = new Label();
             btnCadastrar = new Button();
             txtNome = new TextBox();
-            txtCpf = new TextBox();
             lblCpf = new Label();
             lblNome = new Label();
             txtEmail = new TextBox();
-            label1 = new Label();
+            lblAlertaCamposObrigatorios = new Label();
+            mskCpf = new MaskedTextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(mskCpf);
+            panel1.Controls.Add(lblAlertaCamposObrigatorios);
             panel1.Controls.Add(txtEmail);
             panel1.Controls.Add(lblEmail);
             panel1.Controls.Add(lblAlertaEmailInvalido);
             panel1.Controls.Add(lblAlertaClienteCadastrado);
             panel1.Controls.Add(btnCadastrar);
             panel1.Controls.Add(txtNome);
-            panel1.Controls.Add(txtCpf);
             panel1.Controls.Add(lblCpf);
             panel1.Controls.Add(lblNome);
             panel1.Location = new Point(12, 12);
@@ -110,14 +110,6 @@
             txtNome.Size = new Size(270, 25);
             txtNome.TabIndex = 29;
             // 
-            // txtCpf
-            // 
-            txtCpf.Font = new Font("Segoe UI", 9.75F);
-            txtCpf.Location = new Point(77, 121);
-            txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(270, 25);
-            txtCpf.TabIndex = 28;
-            // 
             // lblCpf
             // 
             lblCpf.AutoSize = true;
@@ -142,17 +134,26 @@
             // 
             txtEmail.Location = new Point(77, 67);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(135, 23);
+            txtEmail.Size = new Size(189, 23);
             txtEmail.TabIndex = 37;
             // 
-            // label1
+            // lblAlertaCamposObrigatorios
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(125, 158);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 38;
-            label1.Text = "label1";
+            lblAlertaCamposObrigatorios.AutoSize = true;
+            lblAlertaCamposObrigatorios.BackColor = Color.FromArgb(255, 128, 255);
+            lblAlertaCamposObrigatorios.Location = new Point(13, 191);
+            lblAlertaCamposObrigatorios.Name = "lblAlertaCamposObrigatorios";
+            lblAlertaCamposObrigatorios.Size = new Size(118, 15);
+            lblAlertaCamposObrigatorios.TabIndex = 38;
+            lblAlertaCamposObrigatorios.Text = "Campos obrigatórios";
+            // 
+            // mskCpf
+            // 
+            mskCpf.Location = new Point(77, 123);
+            mskCpf.Mask = "000\\.000\\.000-00";
+            mskCpf.Name = "mskCpf";
+            mskCpf.Size = new Size(100, 23);
+            mskCpf.TabIndex = 39;
             // 
             // CadastrarCliente
             // 
@@ -173,12 +174,12 @@
         private Label lblAlertaClienteCadastrado;
         private Button btnCadastrar;
         private TextBox txtNome;
-        private TextBox txtCpf;
         private Label lblCpf;
         private Label lblNome;
         private Label lblAlertaEmailInvalido;
         private Label lblEmail;
-        private Label label1;
+        private Label lblAlertaCamposObrigatorios;
         private TextBox txtEmail;
+        private MaskedTextBox mskCpf;
     }
 }
