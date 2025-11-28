@@ -44,7 +44,7 @@ namespace SistemaCadastroDeUsuario
 
             ClienteRepository.SaveOrUpdate(cliente);
 
-            lblClienteCadastrado.Visible = true;
+            lblAlertaClienteCadastrado.Visible = true;
 
             txtNome.Clear();
             txtCpf.Clear();

@@ -65,11 +65,13 @@ namespace SistemaCadastroDeUsuario
 
         #region Salvar
 
+        //salvar
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Save();
         }
 
+        // salvar ao pressionar enter
         private void txtCategoriaNome_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -79,29 +81,51 @@ namespace SistemaCadastroDeUsuario
         }
         private void Save()
         {
+            // Deixando todos os alertas invisíveis
+            lblAlertaCategoriaJaExistente.Visible = false;
+            lblAlertaCadastroEfetuado.Visible = false;
+            lblAlertaCampoVazio.Visible = false;
 
-            Categoria categoria = new Categoria();
-            categoria.Nome = txtCategoriaNome.Text;
+            // Verificando se a caixa de texto está vazia
+            if (txtCategoriaNome.Text.Trim() == "")
+            {
+                lblAlertaCampoVazio.Visible = true;
+                return;
+            }
 
+            // Verificando se a categoria já existe
+            foreach (Categoria ca in CategoriaRepository.FindAll())
+            {
+                if (ca.Nome.ToLower() == txtCategoriaNome.Text.ToLower())
+                {
+                    txtCategoriaNome.Focus();
+                    lblAlertaCategoriaJaExistente.Visible = true;
+                    return;
+                }
+            }
 
-            CategoriaRepository.SaveOrUpdate(categoria);
+            // Criando o objeto com o dado
+            Categoria c = new Categoria()
+            {
+                Id = _categoria != null ? _categoria.Id : 0,
+                Nome = txtCategoriaNome.Text.Trim()
+            };
+
+            // Salvando no banco de dados
+            CategoriaRepository.SaveOrUpdate(c);
+            CadastrarProdutos.UpdateListCategoriasSalvos();
 
             txtCategoriaNome.Clear();
             txtCategoriaNome.Focus();
-
             lblAlertaCadastroEfetuado.Visible = true;
-
         }
         #endregion
 
-        private void CadastrarCategoria_Click(object sender, EventArgs e)
-        {
-            Salvar();
-        }
-
+        // Avisos
         private void txtCategoriaNome_TextChanged(object sender, EventArgs e)
         {
             lblAlertaCategoriaJaExistente.Visible = false;
+            lblAlertaCadastroEfetuado.Visible = false;
         }
     }
 }
