@@ -38,6 +38,7 @@
             mnuCadastroNovoProduto = new ToolStripMenuItem();
             mnuVenda = new ToolStripMenuItem();
             mnuRegistrarNovaVenda = new ToolStripMenuItem();
+            registraPagamentoToolStripMenuItem = new ToolStripMenuItem();
             mnuRelatorio = new ToolStripMenuItem();
             mnuRelatorioUsuario = new ToolStripMenuItem();
             mnuRelatorioVendas = new ToolStripMenuItem();
@@ -53,7 +54,6 @@
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
-            registraPagamentoToolStripMenuItem = new ToolStripMenuItem();
             mnuJanelaPrincipal.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -129,6 +129,12 @@
             mnuRegistrarNovaVenda.Size = new Size(186, 22);
             mnuRegistrarNovaVenda.Text = "Registrar Nova Venda";
             mnuRegistrarNovaVenda.Click += mnuRegistrarNovaVenda_Click;
+            // 
+            // registraPagamentoToolStripMenuItem
+            // 
+            registraPagamentoToolStripMenuItem.Name = "registraPagamentoToolStripMenuItem";
+            registraPagamentoToolStripMenuItem.Size = new Size(186, 22);
+            registraPagamentoToolStripMenuItem.Text = "Registra Pagamento";
             // 
             // mnuRelatorio
             // 
@@ -235,12 +241,6 @@
             staBarraEstadoUltimoAcesso.Name = "staBarraEstadoUltimoAcesso";
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
-            // 
-            // registraPagamentoToolStripMenuItem
-            // 
-            registraPagamentoToolStripMenuItem.Name = "registraPagamentoToolStripMenuItem";
-            registraPagamentoToolStripMenuItem.Size = new Size(186, 22);
-            registraPagamentoToolStripMenuItem.Text = "Registra Pagamento";
             // 
             // JanelaPrincipal
             // 

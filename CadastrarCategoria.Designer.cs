@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            lblCadastroEfetuado = new Label();
+            lblAlertaCategoriaJaExistente = new Label();
+            lblAlertaCampoVazio = new Label();
             txtCategoriaNome = new TextBox();
+            lblAlertaCadastroEfetuado = new Label();
             lblCategoriaNome = new Label();
             btnCadastrar = new Button();
             lblNome = new Label();
@@ -40,27 +42,37 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(lblAlertaCategoriaJaExistente);
+            panel1.Controls.Add(lblAlertaCampoVazio);
             panel1.Controls.Add(txtCategoriaNome);
-            panel1.Controls.Add(lblCadastroEfetuado);
+            panel1.Controls.Add(lblAlertaCadastroEfetuado);
             panel1.Controls.Add(lblCategoriaNome);
             panel1.Controls.Add(btnCadastrar);
             panel1.Controls.Add(lblNome);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(397, 97);
+            panel1.Size = new Size(400, 126);
             panel1.TabIndex = 0;
             // 
-            // lblCadastroEfetuado
+            // lblAlertaCategoriaJaExistente
             // 
-            lblCadastroEfetuado.AutoSize = true;
-            lblCadastroEfetuado.BackColor = Color.Olive;
-            lblCadastroEfetuado.ForeColor = SystemColors.ActiveCaptionText;
-            lblCadastroEfetuado.Location = new Point(9, 68);
-            lblCadastroEfetuado.Name = "lblCadastroEfetuado";
-            lblCadastroEfetuado.Size = new Size(104, 15);
-            lblCadastroEfetuado.TabIndex = 12;
-            lblCadastroEfetuado.Text = "Cadastro Efetuado";
-            lblCadastroEfetuado.Visible = false;
+            lblAlertaCategoriaJaExistente.AutoSize = true;
+            lblAlertaCategoriaJaExistente.BackColor = Color.FromArgb(255, 128, 255);
+            lblAlertaCategoriaJaExistente.Location = new Point(201, 68);
+            lblAlertaCategoriaJaExistente.Name = "lblAlertaCategoriaJaExistente";
+            lblAlertaCategoriaJaExistente.Size = new Size(102, 15);
+            lblAlertaCategoriaJaExistente.TabIndex = 14;
+            lblAlertaCategoriaJaExistente.Text = "Categoria já existe";
+            // 
+            // lblAlertaCampoVazio
+            // 
+            lblAlertaCampoVazio.AutoSize = true;
+            lblAlertaCampoVazio.BackColor = Color.FromArgb(255, 128, 255);
+            lblAlertaCampoVazio.Location = new Point(119, 68);
+            lblAlertaCampoVazio.Name = "lblAlertaCampoVazio";
+            lblAlertaCampoVazio.Size = new Size(76, 15);
+            lblAlertaCampoVazio.TabIndex = 13;
+            lblAlertaCampoVazio.Text = "Campo Vazio";
             // 
             // txtCategoriaNome
             // 
@@ -69,7 +81,20 @@
             txtCategoriaNome.Name = "txtCategoriaNome";
             txtCategoriaNome.Size = new Size(296, 25);
             txtCategoriaNome.TabIndex = 5;
+            txtCategoriaNome.TextChanged += txtCategoriaNome_TextChanged;
             txtCategoriaNome.KeyUp += txtCategoriaNome_KeyUp;
+            // 
+            // lblAlertaCadastroEfetuado
+            // 
+            lblAlertaCadastroEfetuado.AutoSize = true;
+            lblAlertaCadastroEfetuado.BackColor = Color.FromArgb(128, 255, 128);
+            lblAlertaCadastroEfetuado.ForeColor = SystemColors.ActiveCaptionText;
+            lblAlertaCadastroEfetuado.Location = new Point(9, 68);
+            lblAlertaCadastroEfetuado.Name = "lblAlertaCadastroEfetuado";
+            lblAlertaCadastroEfetuado.Size = new Size(104, 15);
+            lblAlertaCadastroEfetuado.TabIndex = 12;
+            lblAlertaCadastroEfetuado.Text = "Cadastro Efetuado";
+            lblAlertaCadastroEfetuado.Visible = false;
             // 
             // lblCategoriaNome
             // 
@@ -83,8 +108,8 @@
             // 
             // btnCadastrar
             // 
-            btnCadastrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCadastrar.Location = new Point(308, 61);
+            btnCadastrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCadastrar.Location = new Point(315, 97);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(82, 26);
             btnCadastrar.TabIndex = 3;
@@ -106,10 +131,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(421, 121);
+            ClientSize = new Size(424, 150);
             Controls.Add(panel1);
             Name = "CadastrarCategoria";
             Text = "CadastrarCategoria";
+            Click += CadastrarCategoria_Click;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -122,6 +148,8 @@
         private TextBox txtCategoriaNome;
         private Label lblCategoriaNome;
         private Button btnCadastrar;
-        private Label lblCadastroEfetuado;
+        private Label lblAlertaCadastroEfetuado;
+        private Label lblAlertaCampoVazio;
+        private Label lblAlertaCategoriaJaExistente;
     }
 }

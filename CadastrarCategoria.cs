@@ -12,20 +12,56 @@ namespace SistemaCadastroDeUsuario
 {
     public partial class CadastrarCategoria : Form
     {
-        private static CadastrarCategoria _instance;
+        private static CadastrarCategoria _instanceAdd;
+        private static CadastrarCategoria _instanceAtt;
+        private static Categoria _categoria;
+
+        public static void SetCategoriaToUpdate(Categoria categoria)
+        {
+            _categoria = categoria;
+        }
+
         public CadastrarCategoria()
         {
             InitializeComponent();
+            if (_categoria != null)
+            {
+                txtCategoriaNome.Text = _categoria.Nome;
+                btnCadastrar.Text = "Atualizar";
+                Text = "Atualizar Categoria";
+            }
+            else
+            {
+                btnCadastrar.Text = "Cadastrar";
+                Text = "Cadastrar Categoria";
+            }
         }
 
         public static CadastrarCategoria GetInstance()
         {
-            if (_instance == null || _instance.IsDisposed)
+            if (_categoria == null)
             {
-                _instance = new CadastrarCategoria();
+                if (_instanceAdd == null || _instanceAdd.IsDisposed)
+                {
+                    _instanceAdd = new CadastrarCategoria();
+
+                }
+                return _instanceAdd;
             }
-            return _instance;
+            else
+            {
+                if (_instanceAdd == null || _instanceAtt.IsDisposed)
+                {
+                    _instanceAtt = new CadastrarCategoria();
+
+                }
+                return _instanceAtt;
+
+            }
+
         }
+
+
 
         #region Salvar
 
@@ -44,18 +80,28 @@ namespace SistemaCadastroDeUsuario
         private void Save()
         {
 
-                Categoria categoria = new Categoria();
-                categoria.Nome = txtCategoriaNome.Text;
+            Categoria categoria = new Categoria();
+            categoria.Nome = txtCategoriaNome.Text;
 
 
-                CategoriaRepository.SaveOrUpdate(categoria);
+            CategoriaRepository.SaveOrUpdate(categoria);
 
-                txtCategoriaNome.Clear();
-                txtCategoriaNome.Focus();
+            txtCategoriaNome.Clear();
+            txtCategoriaNome.Focus();
 
-            lblCadastroEfetuado.Visible = true;
+            lblAlertaCadastroEfetuado.Visible = true;
 
         }
         #endregion
+
+        private void CadastrarCategoria_Click(object sender, EventArgs e)
+        {
+            Salvar();
+        }
+
+        private void txtCategoriaNome_TextChanged(object sender, EventArgs e)
+        {
+            lblAlertaCategoriaJaExistente.Visible = false;
+        }
     }
 }
