@@ -39,8 +39,8 @@ namespace SistemaCadastroDeUsuario
 
         private void txtNome_KeyUp(object sender, KeyEventArgs e)
         {
-            txtPreco.Focus();
-            txtPreco.SelectAll();
+            txtQuantidade.Focus();
+            txtQuantidade.SelectAll();
         }
         private void txtPreco_KeyUp(object sender, KeyEventArgs e)
         {
@@ -63,7 +63,7 @@ namespace SistemaCadastroDeUsuario
         {
             Produto produto = new Produto();
             produto.Nome = txtNome.Text;
-            produto.Preco = Decimal.Parse(txtPreco.Text);
+            produto.Preco = Decimal.Parse(txtQuantidade.Text);
             produto.Estoque = UInt32.Parse(txtEstoque.Text);
             produto.Ativo = ckhAtivo.Checked;
 
@@ -83,7 +83,7 @@ namespace SistemaCadastroDeUsuario
             lblaprodutoCadastrado.Visible = true;
 
             txtNome.Clear();
-            txtPreco.Clear();
+            txtQuantidade.Clear();
             txtEstoque.Clear();
             txtNome.Focus();
             cmdCatergoria.SelectedIndex = -1;
