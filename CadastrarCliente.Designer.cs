@@ -39,12 +39,14 @@
             txtEmail = new TextBox();
             lblAlertaCamposObrigatorios = new Label();
             mskCpf = new MaskedTextBox();
+            lblAlertaCpfInvalido = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(lblAlertaCpfInvalido);
             panel1.Controls.Add(mskCpf);
             panel1.Controls.Add(lblAlertaCamposObrigatorios);
             panel1.Controls.Add(txtEmail);
@@ -77,7 +79,7 @@
             lblAlertaEmailInvalido.Name = "lblAlertaEmailInvalido";
             lblAlertaEmailInvalido.Size = new Size(81, 15);
             lblAlertaEmailInvalido.TabIndex = 35;
-            lblAlertaEmailInvalido.Text = "Email Inválido";
+            lblAlertaEmailInvalido.Text = "Email inválido";
             // 
             // lblAlertaClienteCadastrado
             // 
@@ -155,6 +157,16 @@
             mskCpf.Size = new Size(100, 23);
             mskCpf.TabIndex = 39;
             // 
+            // lblAlertaCpfInvalido
+            // 
+            lblAlertaCpfInvalido.AutoSize = true;
+            lblAlertaCpfInvalido.BackColor = Color.FromArgb(255, 128, 255);
+            lblAlertaCpfInvalido.Location = new Point(272, 131);
+            lblAlertaCpfInvalido.Name = "lblAlertaCpfInvalido";
+            lblAlertaCpfInvalido.Size = new Size(71, 15);
+            lblAlertaCpfInvalido.TabIndex = 40;
+            lblAlertaCpfInvalido.Text = "Cpf inválido";
+            // 
             // CadastrarCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -181,5 +193,6 @@
         private Label lblAlertaCamposObrigatorios;
         private TextBox txtEmail;
         private MaskedTextBox mskCpf;
+        private Label lblAlertaCpfInvalido;
     }
 }

@@ -14,9 +14,22 @@ namespace SistemaCadastroDeUsuario
     public partial class CadastrarCliente : Form
     {
         private static CadastrarCliente _instance;
+        private static Cliente? _clienteAtualizar;
         public CadastrarCliente()
         {
             InitializeComponent();
+
+            if (_clienteAtualizar != null)
+            {
+                txtNome.Text = _clienteAtualizar.Nome;
+                txtEmail.Text = _clienteAtualizar.Email;
+                mskCpf.Text = _clienteAtualizar.Cpf;
+            }
+        }
+
+        public static void SetClienteToUpdate(Cliente cliente)
+        {
+            _clienteAtualizar = cliente;
         }
 
         public static CadastrarCliente GetInstance()
@@ -29,27 +42,47 @@ namespace SistemaCadastroDeUsuario
         }
 
 
-
-       
-
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Save();
         }
         private void Save()
         {
-            Cliente cliente = new Cliente();
-            cliente.Nome = txtNome.Text;
-            cliente.Cpf = txtCpf.Text;
+            lblAlertaCamposObrigatorios.Visible = false;
+            lblAlertaClienteCadastrado.Visible = false;
+            lblAlertaCpfInvalido.Visible = false;
+            lblAlertaEmailInvalido.Visible = false;
 
-            ClienteRepository.SaveOrUpdate(cliente);
+            mskCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
 
-            lblAlertaClienteCadastrado.Visible = true;
+            // Verificando se os campos estão preenchidos
+            if (txtNome.Text.Trim() == "" || txtEmail.Text.Trim() == ""
+                || mskCpf.Text.Trim() == "")
+            {
+                lblAlertaCamposObrigatorios.Visible = true;
+                return;
+            }
 
-            txtNome.Clear();
-            txtCpf.Clear();
-            txtNome.Focus();
+            if (!mskCpf.MaskCompleted)
+            {
+                mskCpf.Focus();
+                lblAlertaCamposObrigatorios.Visible = true;
+                return;
+            }
+            mskCpf.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
 
+            // Verificando se o cpf do cliente já existe
+            foreach (Cliente c in ClienteRepository.FindAll())
+            {
+                if (c.Cpf == mskCpf.Text.Trim())
+                {
+                    mskCpf.Focus();
+                    mskCpf.SelectAll();
+                    lblAlertaCpfInvalido.Visible = true;
+                    return;
+                }
+
+            }
         }
     }
 }
