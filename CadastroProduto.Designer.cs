@@ -1,6 +1,6 @@
 ﻿namespace SistemaCadastroDeUsuario
 {
-    partial class CadastrarProdutos
+    partial class CadastrarProduto
     {
         /// <summary>
         /// Required designer variable.

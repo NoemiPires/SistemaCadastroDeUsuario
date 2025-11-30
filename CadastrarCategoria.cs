@@ -113,7 +113,7 @@ namespace SistemaCadastroDeUsuario
 
             // Salvando no banco de dados
             CategoriaRepository.SaveOrUpdate(c);
-            CadastrarProdutos.UpdateListCategoriasSalvos();
+            CadastrarProduto.UpdateListCategoriasSalvos();
 
             txtCategoriaNome.Clear();
             txtCategoriaNome.Focus();

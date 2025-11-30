@@ -139,7 +139,7 @@ namespace SistemaCadastroDeUsuario
         private void mnuCadastroNovoProduto_Click(object sender, EventArgs e)
         {
             Categoria categoria = CategoriaRepository.FindAll().First();
-            CadastrarProdutos cadastrar = CadastrarProdutos.GetInstance(categoria);
+            CadastrarProduto cadastrar = CadastrarProduto.GetInstance(categoria);
             cadastrar.MdiParent = this;
             cadastrar.BringToFront();
             cadastrar.Show();

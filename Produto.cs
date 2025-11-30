@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,9 @@ namespace SistemaCadastroDeUsuario
         public Decimal Preco { get; set; }
         public UInt32 Estoque { get; set; }
         public Boolean Ativo { get; set; }
-        public Categoria CategoriaId { get; set; }
+
+        [ForeignKey("categoria_id")]
+        public Categoria Categoria { get; set; }
 
         // Metodo para atualizar o estoque assim que uma compra for realizada
         public void AtualizarEstoque(UInt32 quantidadeVendida)
