@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            lblAlertaCpfInvalido = new Label();
+            mskCpf = new MaskedTextBox();
+            lblAlertaCamposObrigatorios = new Label();
+            txtEmail = new TextBox();
             lblEmail = new Label();
             lblAlertaEmailInvalido = new Label();
             lblAlertaClienteCadastrado = new Label();
@@ -36,10 +40,6 @@
             txtNome = new TextBox();
             lblCpf = new Label();
             lblNome = new Label();
-            txtEmail = new TextBox();
-            lblAlertaCamposObrigatorios = new Label();
-            mskCpf = new MaskedTextBox();
-            lblAlertaCpfInvalido = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,6 +61,45 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(367, 215);
             panel1.TabIndex = 0;
+            // 
+            // lblAlertaCpfInvalido
+            // 
+            lblAlertaCpfInvalido.AutoSize = true;
+            lblAlertaCpfInvalido.BackColor = Color.FromArgb(255, 128, 255);
+            lblAlertaCpfInvalido.Location = new Point(195, 131);
+            lblAlertaCpfInvalido.Name = "lblAlertaCpfInvalido";
+            lblAlertaCpfInvalido.Size = new Size(71, 15);
+            lblAlertaCpfInvalido.TabIndex = 40;
+            lblAlertaCpfInvalido.Text = "Cpf inválido";
+            // 
+            // mskCpf
+            // 
+            mskCpf.Location = new Point(77, 123);
+            mskCpf.Mask = "000\\.000\\.000-00";
+            mskCpf.Name = "mskCpf";
+            mskCpf.Size = new Size(100, 23);
+            mskCpf.TabIndex = 39;
+            mskCpf.TextChanged += mskCpf_TextChanged;
+            mskCpf.KeyUp += mskCpf_KeyUp;
+            // 
+            // lblAlertaCamposObrigatorios
+            // 
+            lblAlertaCamposObrigatorios.AutoSize = true;
+            lblAlertaCamposObrigatorios.BackColor = Color.FromArgb(255, 128, 255);
+            lblAlertaCamposObrigatorios.Location = new Point(13, 191);
+            lblAlertaCamposObrigatorios.Name = "lblAlertaCamposObrigatorios";
+            lblAlertaCamposObrigatorios.Size = new Size(118, 15);
+            lblAlertaCamposObrigatorios.TabIndex = 38;
+            lblAlertaCamposObrigatorios.Text = "Campos obrigatórios";
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(77, 67);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(189, 23);
+            txtEmail.TabIndex = 37;
+            txtEmail.TextChanged += txtEmail_TextChanged;
+            txtEmail.KeyUp += txtEmail_KeyUp;
             // 
             // lblEmail
             // 
@@ -111,6 +150,8 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(270, 25);
             txtNome.TabIndex = 29;
+            txtNome.TextChanged += txtNome_TextChanged;
+            txtNome.KeyUp += txtNome_KeyUp;
             // 
             // lblCpf
             // 
@@ -131,41 +172,6 @@
             lblNome.Size = new Size(47, 17);
             lblNome.TabIndex = 24;
             lblNome.Text = "Nome:";
-            // 
-            // txtEmail
-            // 
-            txtEmail.Location = new Point(77, 67);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(189, 23);
-            txtEmail.TabIndex = 37;
-            // 
-            // lblAlertaCamposObrigatorios
-            // 
-            lblAlertaCamposObrigatorios.AutoSize = true;
-            lblAlertaCamposObrigatorios.BackColor = Color.FromArgb(255, 128, 255);
-            lblAlertaCamposObrigatorios.Location = new Point(13, 191);
-            lblAlertaCamposObrigatorios.Name = "lblAlertaCamposObrigatorios";
-            lblAlertaCamposObrigatorios.Size = new Size(118, 15);
-            lblAlertaCamposObrigatorios.TabIndex = 38;
-            lblAlertaCamposObrigatorios.Text = "Campos obrigatórios";
-            // 
-            // mskCpf
-            // 
-            mskCpf.Location = new Point(77, 123);
-            mskCpf.Mask = "000\\.000\\.000-00";
-            mskCpf.Name = "mskCpf";
-            mskCpf.Size = new Size(100, 23);
-            mskCpf.TabIndex = 39;
-            // 
-            // lblAlertaCpfInvalido
-            // 
-            lblAlertaCpfInvalido.AutoSize = true;
-            lblAlertaCpfInvalido.BackColor = Color.FromArgb(255, 128, 255);
-            lblAlertaCpfInvalido.Location = new Point(272, 131);
-            lblAlertaCpfInvalido.Name = "lblAlertaCpfInvalido";
-            lblAlertaCpfInvalido.Size = new Size(71, 15);
-            lblAlertaCpfInvalido.TabIndex = 40;
-            lblAlertaCpfInvalido.Text = "Cpf inválido";
             // 
             // CadastrarCliente
             // 

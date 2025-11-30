@@ -132,6 +132,55 @@ namespace SistemaCadastroDeUsuario
             return r.IsMatch(email);
         }
 
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            lblAlertaCamposObrigatorios.Visible = false;
+            lblAlertaClienteCadastrado.Visible = false;
+            lblAlertaCpfInvalido.Visible = false;
+            lblAlertaEmailInvalido.Visible = false;
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            lblAlertaCamposObrigatorios.Visible = false;
+            lblAlertaClienteCadastrado.Visible = false;
+            lblAlertaCpfInvalido.Visible = false;
+            lblAlertaEmailInvalido.Visible = false;
+        }
+
+        private void mskCpf_TextChanged(object sender, EventArgs e)
+        {
+            lblAlertaCamposObrigatorios.Visible = false;
+            lblAlertaClienteCadastrado.Visible = false;
+            lblAlertaCpfInvalido.Visible = false;
+            lblAlertaEmailInvalido.Visible = false;
+        }
+
+        private void txtNome_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtEmail.Focus();
+                txtEmail.SelectAll();
+            }
+        }
+
+        private void txtEmail_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                mskCpf.Focus();
+                mskCpf.SelectAll();
+            }
+        }
+
+        private void mskCpf_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Save();
+            }
+        }
     }
 }
-}
+
