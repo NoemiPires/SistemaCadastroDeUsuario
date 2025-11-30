@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZstdSharp.Unsafe;
@@ -83,6 +84,54 @@ namespace SistemaCadastroDeUsuario
                 }
 
             }
+
+            if (!ValidarEmail(txtEmail.Text.Trim()))
+            {
+                txtEmail.Focus();
+                txtEmail.SelectAll();
+                lblAlertaEmailInvalido.Visible = true;
+                return;
+            }
+
+            if (_clienteAtualizar != null)
+            {
+                _clienteAtualizar.Nome = txtNome.Text.Trim();
+                _clienteAtualizar.Email = txtEmail.Text.Trim();
+                _clienteAtualizar.Cpf = mskCpf.Text.Trim();
+                ClienteRepository.SaveOrUpdate(_clienteAtualizar);
+                ListaClientes.GetInstance(false).UpdateListClientes();
+                _clienteAtualizar = null;
+                lblAlertaClienteCadastrado.Visible = true;
+                return;
+            }
+
+            Cliente cliente = new Cliente()
+            {
+                Nome = txtNome.Text.Trim(),
+                Email = txtEmail.Text.Trim(),
+                Cpf = mskCpf.Text.Trim()
+            };
+
+            ClienteRepository.SaveOrUpdate(cliente);
+            ListaClientes.GetInstance(false).UpdateListClientes();
+
+            txtNome.Clear();
+            txtNome.Focus();
+            txtEmail.Clear();
+            mskCpf.Clear();
+
+            lblAlertaClienteCadastrado.Visible = true;
+
         }
+
+        private Boolean ValidarEmail(String email)
+        {
+            String emailpadrao = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|mil|int|info|biz|io|dev|app|com\.br|net\.br|org\.br|edu\.br|gov\.br)$";
+
+            Regex r = new Regex(emailpadrao);
+            return r.IsMatch(email);
+        }
+
     }
+}
 }

@@ -12,6 +12,7 @@ namespace SistemaCadastroDeUsuario
         public UInt32 Id { get; set; }
         public String Nome { get; set; }
         public String Cpf { get; set; }
+        public String Email { get; set; }
 
         //relacionamento
         public List<Compra> Compras { get; set; }
