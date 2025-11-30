@@ -8,15 +8,14 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ZstdSharp.Unsafe;
 
 namespace SistemaCadastroDeUsuario
 {
-    public partial class CadastrarCliente : Form
+    public partial class CadastroCliente : Form
     {
-        private static CadastrarCliente _instance;
+        private static CadastroCliente? _instance;
         private static Cliente? _clienteAtualizar;
-        public CadastrarCliente()
+        private CadastroCliente()
         {
             InitializeComponent();
 
@@ -26,33 +25,33 @@ namespace SistemaCadastroDeUsuario
                 txtEmail.Text = _clienteAtualizar.Email;
                 mskCpf.Text = _clienteAtualizar.Cpf;
             }
+
         }
 
-        public static void SetClienteToUpdate(Cliente cliente)
+        public static void Set(Cliente c)
         {
-            _clienteAtualizar = cliente;
+            _clienteAtualizar = c;
         }
-
-        public static CadastrarCliente GetInstance()
+        public static CadastroCliente GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
             {
-                _instance = new CadastrarCliente();
+                _instance = new Ca();
             }
             return _instance;
         }
 
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Save();
+            Salvar();
         }
-        private void Save()
+
+        private void Salvar()
         {
-            lblAlertaCamposObrigatorios.Visible = false;
-            lblAlertaClienteCadastrado.Visible = false;
-            lblAlertaCpfInvalido.Visible = false;
-            lblAlertaEmailInvalido.Visible = false;
+            lblAlertaVazio.Visible = false;
+            lblAlertaSucesso.Visible = false;
+            lblAlertaCliente.Visible = false;
+            lblAlertaEmail.Visible = false;
 
             mskCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
 
@@ -60,14 +59,14 @@ namespace SistemaCadastroDeUsuario
             if (txtNome.Text.Trim() == "" || txtEmail.Text.Trim() == ""
                 || mskCpf.Text.Trim() == "")
             {
-                lblAlertaCamposObrigatorios.Visible = true;
+                lblAlertaVazio.Visible = true;
                 return;
             }
 
             if (!mskCpf.MaskCompleted)
             {
                 mskCpf.Focus();
-                lblAlertaCamposObrigatorios.Visible = true;
+                lblAlertaVazio.Visible = true;
                 return;
             }
             mskCpf.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
@@ -79,17 +78,16 @@ namespace SistemaCadastroDeUsuario
                 {
                     mskCpf.Focus();
                     mskCpf.SelectAll();
-                    lblAlertaCpfInvalido.Visible = true;
+                    lblAlertaCliente.Visible = true;
                     return;
                 }
-
             }
 
             if (!ValidarEmail(txtEmail.Text.Trim()))
             {
                 txtEmail.Focus();
                 txtEmail.SelectAll();
-                lblAlertaEmailInvalido.Visible = true;
+                lblAlertaEmail.Visible = true;
                 return;
             }
 
@@ -101,7 +99,7 @@ namespace SistemaCadastroDeUsuario
                 ClienteRepository.SaveOrUpdate(_clienteAtualizar);
                 ListaClientes.GetInstance(false).UpdateListClientes();
                 _clienteAtualizar = null;
-                lblAlertaClienteCadastrado.Visible = true;
+                lblAlertaSucesso.Visible = true;
                 return;
             }
 
@@ -120,7 +118,7 @@ namespace SistemaCadastroDeUsuario
             txtEmail.Clear();
             mskCpf.Clear();
 
-            lblAlertaClienteCadastrado.Visible = true;
+            lblAlertaSucesso.Visible = true;
 
         }
 
@@ -134,26 +132,26 @@ namespace SistemaCadastroDeUsuario
 
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
-            lblAlertaCamposObrigatorios.Visible = false;
-            lblAlertaClienteCadastrado.Visible = false;
-            lblAlertaCpfInvalido.Visible = false;
-            lblAlertaEmailInvalido.Visible = false;
+            lblAlertaVazio.Visible = false;
+            lblAlertaSucesso.Visible = false;
+            lblAlertaCliente.Visible = false;
+            lblAlertaEmail.Visible = false;
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            lblAlertaCamposObrigatorios.Visible = false;
-            lblAlertaClienteCadastrado.Visible = false;
-            lblAlertaCpfInvalido.Visible = false;
-            lblAlertaEmailInvalido.Visible = false;
+            lblAlertaVazio.Visible = false;
+            lblAlertaSucesso.Visible = false;
+            lblAlertaCliente.Visible = false;
+            lblAlertaEmail.Visible = false;
         }
 
         private void mskCpf_TextChanged(object sender, EventArgs e)
         {
-            lblAlertaCamposObrigatorios.Visible = false;
-            lblAlertaClienteCadastrado.Visible = false;
-            lblAlertaCpfInvalido.Visible = false;
-            lblAlertaEmailInvalido.Visible = false;
+            lblAlertaVazio.Visible = false;
+            lblAlertaSucesso.Visible = false;
+            lblAlertaCliente.Visible = false;
+            lblAlertaEmail.Visible = false;
         }
 
         private void txtNome_KeyUp(object sender, KeyEventArgs e)
@@ -178,9 +176,8 @@ namespace SistemaCadastroDeUsuario
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Save();
+                Salvar();
             }
         }
     }
 }
-
